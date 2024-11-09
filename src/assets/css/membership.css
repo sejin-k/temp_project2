@@ -1,0 +1,17 @@
+.membership__area {
+  padding: 100px 0;
+  min-height: calc(100vh - 200px);
+}
+
+.membership__area .section__title p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.membership__area .pricing__area {
+  padding: 0;
+}
+
+.sp_bottom_70 {
+  margin-bottom: 70px;
+} 
