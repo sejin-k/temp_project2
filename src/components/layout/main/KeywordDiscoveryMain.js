@@ -92,7 +92,7 @@ const KeywordDiscoveryMain = () => {
     const fetchCategories = async () => {
         try {
             const params = new URLSearchParams({
-                platform_name: '네이버'
+                platformId: 1
             });
             
             const response = await fetch(
@@ -107,7 +107,7 @@ const KeywordDiscoveryMain = () => {
             }
 
             const data = await response.json();
-            setCategoryData(data.data.category_list);
+            setCategoryData(data.categoryList);
         } catch (err) {
             console.error('카테고리 데이터 조회 중 오류:', err);
         }

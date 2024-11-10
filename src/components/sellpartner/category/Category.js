@@ -16,7 +16,7 @@ const Category = ({ isDarkBg, bg, onAddCategory, selectedCategories }) => {
         const fetchCategories = async () => {
             try {
                 const params = new URLSearchParams({
-                    platform_name: '네이버'
+                    platformId: 1
                 });
                 
                 const response = await fetch(
@@ -31,7 +31,7 @@ const Category = ({ isDarkBg, bg, onAddCategory, selectedCategories }) => {
                 }
 
                 const data = await response.json();
-                setCategoryData(data.data.category_list);
+                setCategoryData(data.categoryList);
                 setIsLoading(false);
             } catch (err) {
                 setError(err.message);
