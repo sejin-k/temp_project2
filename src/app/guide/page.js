@@ -1,12 +1,10 @@
 import GuideMain from "@/components/layout/main/GuideMain";
+// import { HeaderProvider } from "@/providers/HeaderContex";
+
+import MembershipMain from "@/components/layout/main/MembershipMain";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 
-export const metadata = {
-  title: "가이드 | 셀파트너",
-  description: "셀파트너 이용 가이드",
-};
-
-export default function Guide() {
+export default function GuidePage() {
   return (
     <PageWrapper
       headerStyle={3}

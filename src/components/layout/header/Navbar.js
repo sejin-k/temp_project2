@@ -11,18 +11,13 @@ const Navbar = () => {
         <nav className="header__nav">
           <ul className="header__nav-list">
             <li className="header__nav-item">
-              <Link href="/keyword" className="btn btn-outline">
+              <Link href="/keyword-discovery" className="btn btn-outline">
                 키워드 발굴
               </Link>
             </li>
             <li className="header__nav-item">
-              <Link href="/recommend" className="btn btn-outline">
+              <Link href="/product-recommend" className="btn btn-outline">
                 상품 추천
-              </Link>
-            </li>
-            <li className="header__nav-item">
-              <Link href="/guide" className="btn btn-outline">
-                가이드
               </Link>
             </li>
           </ul>

@@ -13,8 +13,7 @@ import Video from "@/components/sections/videos/Video";
 import PinkColor from "@/components/shared/others/PinkColor";
 import { useHeaderContex } from "@/providers/HeaderContex";
 import OpenMarketBest from "@/components/sections/openmarket/OpenMarketBest";
-import KeywordDiscovery from "@/components/sections/keyword/KeywordDiscovery";
-import ProductRecommend from "@/components/sections/recommend/ProductRecommend";
+import GuideKeyword from "@/components/sections/guide/GuideKeyword";
 
 const IndexMain = () => {
   const { isOnepage } = useHeaderContex();
@@ -22,8 +21,7 @@ const IndexMain = () => {
   return (
     <main>
       <Hero1 />
-      <KeywordDiscovery />
-      <ProductRecommend />
+      <GuideKeyword />
       <OpenMarketBest />
       <OfferedServices />
       <Video />

@@ -1,30 +1,24 @@
 "use client";
-import { useState } from "react";
-import About from "@/components/sections/about/About";
 import Contact1 from "@/components/sections/contacts/Contact1";
-import OfferedServices from "@/components/sections/services/OfferedServices";
-import Team from "@/components/sections/team/Team";
-import PinkColor from "@/components/shared/others/PinkColor";
-import { useHeaderContex } from "@/providers/HeaderContex";
-import KeywordDiscovery from "@/components/sections/keyword/KeywordDiscovery";
-import KeywordGuide from "@/components/sections/keyword/KeywordGuide";
-import ProductRecommend from "@/components/sections/recommend/ProductRecommend";
-import About3 from "@/components/sections/about/About3";
+import Hero2 from "@/components/sections/hero-banners/Hero2";
+import heroStartupImage from "@/assets/img/herobaner/herobanner__startup.jpg";
+import GuideDiscovery from "@/components/sections/guide/GuideDiscovery";
+import Brands5 from "@/components/sections/brands/Brands5";
 
 const GuideMain = () => {
-  const { isOnepage } = useHeaderContex();
-
   return (
     <main>
-      <KeywordDiscovery />
-      <KeywordGuide />
-      <ProductRecommend />
-      {/* <OfferedServices /> */}
-      <About />
-      <About3 />
-      {/* <Team /> */}
-      {/* <PinkColor /> */}
-      {isOnepage ? <Contact1 /> : ""}
+      <Hero2
+        title={
+          <>
+            가이드 <span className="text__gradient">안내</span>
+          </>
+        }
+        img={heroStartupImage}
+      />
+      <Brands5 type={2} />
+      <GuideDiscovery />
+      <div className="border__line"></div>
     </main>
   );
 };
