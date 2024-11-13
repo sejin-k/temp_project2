@@ -7,34 +7,36 @@ import HeaderLarge from "./HeaderLarge";
 import HeaderMobile from "./HeaderMobile";
 import { useHeaderContex } from "@/providers/HeaderContex";
 import MobileMenu2 from "./MobileMenu2";
-import HeaderAnimate from "./HeaderAnimate";
 import HeaderTop from "./HeaderTop";
-import stickyHeader from "@/libs/stickyHeader";
 
 const Header = () => {
   const { style, bg, isNotHeaderTop } = useHeaderContex();
   useEffect(() => {
     mobileMenu();
-    stickyHeader();
   }, []);
   return (
     <>
-      {isNotHeaderTop ? "" : style === 3 ? <HeaderAnimate /> : ""}
-      <header>
+      <header className="fixed-header">
         <div
-          className={`headerarea ${bg === "black" ? "bg__black" : ""} ${
-            style === 3 ? "" : "headerarea__transparent"
-          } ${
+          className={`headerarea fixed-top ${
+            bg === "black" ? "bg__black" : ""
+          } ${style === 3 ? "" : "headerarea__transparent"} ${
             !style
               ? "headerarea--1 main__header "
               : `headerarea--${style}  headerarea--headerarea__display__none`
-          } header__sticky  `}
+          }`}
+          style={{
+            backgroundColor: "#fff",
+            boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+            zIndex: 1000,
+          }}
         >
           {style === 2 ? <HeaderTop /> : ""}
           <HeaderLarge />
           {style === 4 ? "" : <HeaderMobile />}
         </div>
       </header>
+      <div style={{ paddingTop: "80px" }} />
       {style === 4 ? <MobileMenu2 /> : <MobileMenu />}
     </>
   );

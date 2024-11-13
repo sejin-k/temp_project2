@@ -14,14 +14,21 @@ import PinkColor from "@/components/shared/others/PinkColor";
 import { useHeaderContex } from "@/providers/HeaderContex";
 import OpenMarketBest from "@/components/sections/openmarket/OpenMarketBest";
 import GuideKeyword from "@/components/sections/guide/GuideKeyword";
+import Hero2 from "@/components/sections/hero-banners/Hero2";
+import Hero3 from "@/components/sections/hero-banners/Hero3";
+import Hero4 from "@/components/sections/hero-banners/Hero4";
 
 const IndexMain = () => {
   const { isOnepage } = useHeaderContex();
 
   return (
     <main>
-      <Hero1 />
-      <GuideKeyword />
+      {/* <Hero1 /> */}
+      {/* <Hero2 /> */}
+      {/* <Hero3 /> */}
+      <Hero4 />
+
+      {/* <GuideKeyword /> */}
       <OpenMarketBest />
       <OfferedServices />
       <Video />

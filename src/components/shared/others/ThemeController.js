@@ -43,7 +43,7 @@ const ThemeController = () => {
 
   return (
     <div className="mode_switcher my_switcher">
-      <button id="light--to-dark-button" className="light align-items-center">
+      {/* <button id="light--to-dark-button" className="light align-items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="ionicon dark__mode"
@@ -86,7 +86,7 @@ const ThemeController = () => {
 
         <span className="light__mode">Light</span>
         <span className="dark__mode">Dark</span>
-      </button>
+      </button> */}
     </div>
   );
 };

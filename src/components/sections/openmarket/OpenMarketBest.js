@@ -1,6 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import naverIcon from "@/assets/img/markets/naver.png";
+import coupangIcon from "@/assets/img/markets/coupang.png";
+import elevenstreetIcon from "@/assets/img/markets/11street.png";
+import gmarketIcon from "@/assets/img/markets/gmarket.png";
 
 const OpenMarketBest = () => {
   const [selectedMarket, setSelectedMarket] = useState("naver");
@@ -51,10 +55,10 @@ const OpenMarketBest = () => {
   };
 
   const markets = [
-    { id: "naver", name: "네이버", icon: "/images/markets/naver.png" },
-    { id: "coupang", name: "쿠팡", icon: "/images/markets/coupang.png" },
-    { id: "11st", name: "11번가", icon: "/images/markets/11st.png" },
-    { id: "gmarket", name: "G마켓", icon: "/images/markets/gmarket.png" },
+    { id: "naver", name: "네이버", icon: naverIcon },
+    { id: "coupang", name: "쿠팡", icon: coupangIcon },
+    { id: "11st", name: "11번가", icon: elevenstreetIcon },
+    { id: "gmarket", name: "G마켓", icon: gmarketIcon },
   ];
 
   const categories = [
@@ -170,6 +174,17 @@ const OpenMarketBest = () => {
                   }`}
                   onClick={() => setSelectedMarket(market.id)}
                 >
+                  <Image
+                    src={market.icon}
+                    alt={market.name}
+                    width={100}
+                    height={100}
+                    style={{
+                      display: "block",
+                      margin: "0 auto 8px auto",
+                      objectFit: "contain",
+                    }}
+                  />
                   <span>{market.name}</span>
                 </button>
               </li>

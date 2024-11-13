@@ -1,7 +1,4 @@
 import GuideMain from "@/components/layout/main/GuideMain";
-// import { HeaderProvider } from "@/providers/HeaderContex";
-
-import MembershipMain from "@/components/layout/main/MembershipMain";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 
 export default function GuidePage() {

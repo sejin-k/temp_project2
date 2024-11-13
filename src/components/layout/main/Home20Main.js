@@ -33,7 +33,7 @@ const Home20Main = () => {
         }
         img={heroStartupImage}
       />
-      <Brands5 type={2} />
+      {/* <Brands5 type={2} /> */}
       <Skills title={"Best amazing skills we have."} type={3} />
       <Video video={2} />
       <OpenMarketBest />

@@ -11998,13 +11998,15 @@ h4 {
 }
 
 .default__button.btn-outline {
-  background: var(--whiteColor);
+  background: none;
+  /* background: var(--whiteColor); */
   border: 1px solid var(--borderColor);
   color: var(--blackColor);
 }
 
 .default__button.btn-outline:hover {
   border-color: var(--primaryColor);
+  font-weight: bold;
   color: var(--primaryColor);
 }
 
@@ -12403,7 +12405,7 @@ h4 {
 
 .header__nav-list {
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 15px;
   margin: 0;
   padding: 0;
@@ -12417,18 +12419,21 @@ h4 {
 .btn {
   padding: 8px 16px;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .btn-outline {
-  border: 1px solid #e0e0e0;
+  /* border: 1px solid #e0e0e0; */
+  background: none;
   background: transparent;
   color: #333;
 }
 
 .btn-outline:hover {
+  font-weight: bold;
+  transform: scale(1.2);
   background: #f5f5f5;
 }
 
@@ -12458,5 +12463,22 @@ h4 {
 }
 
 .headerarea__logo {
-  margin-right: 40px;
+  margin-right: 10px;
+}
+
+
+
+/* css 수정 - 11.11 */
+
+.hero4 {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: #000000;
+}
+
+.nav-link.arrow-btn:hover{
+  color: #0f259e;
 }

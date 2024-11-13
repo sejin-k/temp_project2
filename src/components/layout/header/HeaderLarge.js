@@ -16,14 +16,12 @@ const HeaderLarge = () => {
           !style ? "" : `headerarea__main__wrapper--${style}`
         } `}
       >
-        <div className="headerarea__component__wrap">
-          {/* logo area */}
+        <div
+          className="headerarea__component__wrap"
+          style={{ display: "flex", alignItems: "center", gap: "20px" }}
+        >
           <LogoHeader />
-
-          {/* navbar */}
           {style === 4 ? "" : <Navbar />}
-
-          {/* header right */}
           <HeaderRight />
         </div>
       </div>

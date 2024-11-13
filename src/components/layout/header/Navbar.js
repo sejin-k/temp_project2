@@ -6,10 +6,22 @@ const Navbar = () => {
   const { style } = useHeaderContex();
 
   return (
-    <div className="headerarea__component headerarea__nav-left">
+    <div
+      className="headerarea__nav-left"
+      style={{ margin: 0, marginLeft: "-400px" }}
+    >
       <div className="main__menu d-flex align-items-center">
         <nav className="header__nav">
-          <ul className="header__nav-list">
+          <ul
+            className="header__nav-list"
+            style={{
+              display: "flex",
+              gap: "10px",
+              margin: 0,
+              padding: 0,
+              listStyle: "none",
+            }}
+          >
             <li className="header__nav-item">
               <Link href="/keyword-discovery" className="btn btn-outline">
                 키워드 발굴

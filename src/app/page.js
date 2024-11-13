@@ -1,14 +1,15 @@
-import Home20Main from "@/components/layout/main/Home20Main";
-// import IndexMain from "@/components/layout/main/IndexMain";
-import ThemeController from "@/components/shared/others/ThemeController";
+import IndexMain from "@/components/layout/main/IndexMain";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 
 export default function Home() {
   return (
-    <PageWrapper>
-      <ThemeController />
-      {/* <IndexMain /> */}
-      <Home20Main />
+    <PageWrapper
+      headerStyle={3}
+      footerStyle={3}
+      headerBg="theme-3"
+      footerBg="theme-3"
+    >
+      <IndexMain />
     </PageWrapper>
   );
 }
