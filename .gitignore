@@ -1,2 +1,11 @@
+# Next.js 파일
+# 노드 모듈
 node_modules
+# 넥스트 빌드 파일
 .next
+# 패키지 락 파일
+package-lock.json
+
+# 디바이스 관련 파일
+# 맥 캐시 파일
+.DS_Store
