@@ -23,12 +23,26 @@ const Navbar = () => {
             }}
           >
             <li className="header__nav-item">
-              <Link href="/keyword-discovery" className="btn btn-outline">
+              <Link 
+                href="/keyword-discovery" 
+                className="btn btn-outline"
+                style={{
+                  fontWeight: "700",  // 글자 굵기 추가
+                  fontSize: "16px"    // 글자 크기 설정
+                }}
+              >
                 키워드 발굴
               </Link>
             </li>
             <li className="header__nav-item">
-              <Link href="/product-recommend" className="btn btn-outline">
+              <Link 
+                href="/product-recommend" 
+                className="btn btn-outline"
+                style={{
+                  fontWeight: "700",  // 글자 굵기 추가
+                  fontSize: "16px"    // 글자 크기 설정
+                }}
+              >
                 상품 추천
               </Link>
             </li>

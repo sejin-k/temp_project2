@@ -6,6 +6,8 @@ import KeywordDiscovery from "@/components/sections/keyword-discovery/KeywordDis
 import Brands5 from "@/components/sections/brands/Brands5";
 
 const KeywordDiscoveryMain = () => {
+  const isDarkMode = false;
+
   return (
     <main>
       <Hero2
@@ -17,7 +19,7 @@ const KeywordDiscoveryMain = () => {
         img={heroStartupImage}
       />
       <Brands5 type={2} />
-      <KeywordDiscovery />
+      <KeywordDiscovery isDarkMode={isDarkMode} />
       <div className="border__line"></div>
     </main>
   );

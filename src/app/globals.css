@@ -102,7 +102,7 @@
   --boxShadow1: 0 0 20px 5px rgba(95, 45, 237, 0.1);
 }
 
-.is_dark {
+/* .is_dark {
   --bodyColor: #fff;
   --bodyBg: #0c0e2b;
   --headingColor: #fff;
@@ -115,7 +115,7 @@
   --pinkcolor: #170f2f;
   --blackBlue: #fff;
   --navyBlue2: #fff;
-}
+} */
 
 /*------------------------------
 Default CSS

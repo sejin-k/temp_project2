@@ -17,18 +17,16 @@ import GuideKeyword from "@/components/sections/guide/GuideKeyword";
 import Hero2 from "@/components/sections/hero-banners/Hero2";
 import Hero3 from "@/components/sections/hero-banners/Hero3";
 import Hero4 from "@/components/sections/hero-banners/Hero4";
+import MarketplaceNav from "@/components/sections/marketplace/MarketplaceNav";
 
 const IndexMain = () => {
   const { isOnepage } = useHeaderContex();
+  const isDarkMode = false;
 
   return (
     <main>
-      {/* <Hero1 /> */}
-      {/* <Hero2 /> */}
-      {/* <Hero3 /> */}
       <Hero4 />
-
-      {/* <GuideKeyword /> */}
+      <MarketplaceNav />
       <OpenMarketBest />
       <OfferedServices />
       <Video />

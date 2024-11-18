@@ -1,10 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import allIcon from "@/assets/img/markets/all.png";
 import naverIcon from "@/assets/img/markets/naver.png";
 import coupangIcon from "@/assets/img/markets/coupang.png";
 import elevenstreetIcon from "@/assets/img/markets/11street.png";
 import gmarketIcon from "@/assets/img/markets/gmarket.png";
+import auctionIcon from "@/assets/img/markets/auction.png";
 
 const OpenMarketBest = () => {
   const [selectedMarket, setSelectedMarket] = useState("naver");
@@ -54,13 +56,16 @@ const OpenMarketBest = () => {
     },
   };
 
+  // markets 배열에서 첫 번째 요소가 네이버 버튼입니다.
   const markets = [
-    { id: "naver", name: "네이버", icon: naverIcon },
+    { id: "all", name: "ALL", icon: allIcon },
+    { id: "naver", name: "네이버", icon: naverIcon }, // 네이버 버튼으로 수정
     { id: "coupang", name: "쿠팡", icon: coupangIcon },
     { id: "11st", name: "11번가", icon: elevenstreetIcon },
     { id: "gmarket", name: "G마켓", icon: gmarketIcon },
+    { id: "auction", name: "옥션", icon: auctionIcon },
   ];
-
+  
   const categories = [
     { id: "all", name: "전체" },
     { id: "fashion", name: "패션의류" },

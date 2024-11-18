@@ -6,8 +6,10 @@ import GuideDiscovery from "@/components/sections/guide/GuideDiscovery";
 import Brands5 from "@/components/sections/brands/Brands5";
 
 const GuideMain = () => {
+  const isDarkMode = false;
+
   return (
-    <main>
+    <div className="main-wrapper">
       <Hero2
         title={
           <>
@@ -19,7 +21,7 @@ const GuideMain = () => {
       <Brands5 type={2} />
       <GuideDiscovery />
       <div className="border__line"></div>
-    </main>
+    </div>
   );
 };
 
