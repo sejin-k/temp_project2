@@ -52,15 +52,14 @@ const ProductRecommend = () => {
       />
 
       <div className="container">
-        {recommendList.length > 0 && (
-          <div className="section__title text-left sp_bottom_40">
-            <div className="section__title__heading">
-              <h3>추천 카테고리</h3>
-            </div>
+        <div className="section__title text-left sp_bottom_40">
+          <div className="section__title__heading">
+            <h3>추천 카테고리</h3>
           </div>
-        )}
+        </div>
       </div>
       <RecommendCart recommendList={recommendList} />
+
     </main>
   );
 };
