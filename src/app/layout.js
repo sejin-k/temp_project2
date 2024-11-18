@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import "./globals.css";
 // import "@/assets/css/responsive.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
+import { AuthProvider } from "@/providers/AuthProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,7 +27,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable}>
       <body className={`${inter.className}`}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <AuthProvider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );

@@ -1,10 +1,14 @@
 import Link from "next/link";
 import ItemMobile from "./ItemMobile";
 import { useHeaderContex } from "@/providers/HeaderContex";
+import { useAuth } from "@/providers/AuthProvider";
+import Image from "next/image";
+import userIcon from "@/assets/img/login/user_white.svg";
 
 const NavbarMobile = () => {
   const { isOnepage, style, headerType, isCollection, home } =
     useHeaderContex();
+  const { isLogIn } = useAuth();
   const mobileItems = [
     {
       name: isOnepage ? "HOME" : "Home",
@@ -427,34 +431,18 @@ const NavbarMobile = () => {
       <div className="offcanvas__account--items">
         <Link
           className="offcanvas__account--items__btn d-flex align-items-center"
-          href="/login"
+          href={isLogIn ? "/mypage" : "/login"}
         >
           <span className="offcanvas__account--items__icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20.51"
-              height="19.443"
-              viewBox="0 0 512 512"
-            >
-              <path
-                d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="32"
-              />
-              <path
-                d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z"
-                fill="none"
-                stroke="currentColor"
-                strokeMiterlimit="10"
-                strokeWidth="32"
-              />
-            </svg>
+            <Image 
+              src={userIcon}
+              alt="User Icon"
+              width={20}
+              height={20}
+            />
           </span>
           <span className="offcanvas__account--items__label">
-            Login / Register
+            {isLogIn ? "마이페이지" : "로그인 / 회원가입"}
           </span>
         </Link>
       </div>

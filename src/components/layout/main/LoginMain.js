@@ -1,7 +1,7 @@
 "use client";
-import Link from "next/link";
 import { useEffect } from "react";
 import { useTheme } from "@/providers/ThemeProvider";
+import SocialLoginButton from "@/components/sellpartner/buttons/SocialLoginButton";
 import "@/assets/css/login.css";
 
 const LoginMain = () => {
@@ -50,34 +50,28 @@ const LoginMain = () => {
 
                 {/* 소셜 로그인 버튼들 */}
                 <div className="login__buttons">
-                  <Link href="#" className="login__button naver__button">
-                    <div className="button__inner">
-                      <span className="button__text">네이버로 시작하기</span>
-                    </div>
-                  </Link>
+                  <SocialLoginButton provider="naver">
+                    네이버로 시작하기
+                  </SocialLoginButton>
 
-                  <Link href="#" className="login__button kakao__button">
-                    <div className="button__inner">
-                      <span className="button__text">카카오로 시작하기</span>
-                    </div>
-                  </Link>
+                  <SocialLoginButton provider="kakao">
+                    카카오로 시작하기
+                  </SocialLoginButton>
 
-                  <Link href="#" className="login__button google__button">
-                    <div className="button__inner">
-                      <span className="button__text">구글로 시작하기</span>
-                    </div>
-                  </Link>
+                  <SocialLoginButton provider="google">
+                    구글로 시작하기
+                  </SocialLoginButton>
                 </div>
 
                 {/* 계정 정보 찾기 링크 */}
-                <div className="login__footer sp_top_30">
+                {/* <div className="login__footer sp_top_30">
                   <Link
                     href="#"
                     className="text-white opacity-75 hover-underline"
                   >
                     계정 정보를 잊으셨나요? &gt;
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
