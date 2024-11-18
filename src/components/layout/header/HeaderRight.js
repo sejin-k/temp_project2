@@ -3,7 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useHeaderContex } from "@/providers/HeaderContex";
 import { useAuth } from "@/providers/AuthProvider";
-import userIcon from "@/assets/img/login/user_white.svg";
+import userIconWhite from "@/assets/img/login/user_white.svg";
+import userIconBlack from "@/assets/img/login/user_black.svg";
 import UserDropdown from "./UserDropdown";
 import { useState, useRef, useEffect } from "react";
 
@@ -11,6 +12,7 @@ const HeaderRight = () => {
     const { style } = useHeaderContex();
     const { isLogin, loading, logout } = useAuth();
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
     const dropdownRef = useRef(null);
 
     useEffect(() => {
@@ -48,19 +50,20 @@ const HeaderRight = () => {
                             {loading ? (
                                 <div className="w-[24px] h-[24px] animate-pulse bg-gray-200 rounded-full" />
                             ) : isLogin ? (
-                                <div className="relative inline-block" ref={dropdownRef}>
+                                <div className="btn" ref={dropdownRef}>
                                     <button
                                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                                        className="flex items-center focus:outline-none"
+                                        onMouseEnter={() => setIsHovered(true)}
+                                        onMouseLeave={() => setIsHovered(false)}
+                                        className="flex items-center focus:outline-none transition-all duration-300"
+                                        style={{ background: 'transparent' }}
                                     >
                                         <Image
-                                            src={userIcon}
+                                            src={isHovered ? userIconBlack : userIconWhite}
                                             alt="user icon"
                                             width={36}
                                             height={36}
-                                            className={`transition-opacity duration-300 ${style === "white" ? "opacity-100" : "opacity-70"
-                                                }`}
-                                            style={{ background: 'transparent' }}
+                                            className="transition-all duration-300"
                                         />
                                     </button>
 
