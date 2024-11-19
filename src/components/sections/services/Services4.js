@@ -10,7 +10,7 @@ const Services4 = ({ title, desc, service }) => {
     <div
       className="service sp_top_120 sp_bottom_130 special__spacing"
       id="service__area"
-      style={{ background: `var(--pinkcolor) url('${serviceBgImage3.src}')` }}
+      style={{ background: `#F6F9FF url('${serviceBgImage3.src}')` }}
     >
       <div className="container">
         <div className="row">
@@ -29,7 +29,7 @@ const Services4 = ({ title, desc, service }) => {
               )}
               <div className="section__title__heading">
                 <h3>
-                  {title ? title : "OUR MOST POPULAR CONSULTING SERVICE."}
+                  {title ? title : "셀파트너의 3가지 기능"}
                 </h3>
               </div>
               {desc ? (
@@ -55,9 +55,9 @@ const Services4 = ({ title, desc, service }) => {
               data-aos="fade-up"
               data-aos-duration="1500"
             >
-              <div className="service__bitton__4 text-center">
+              {/* <div className="service__bitton__4 text-center">
                 <ButtonPrimary text={"OTHER SERVICE"} path={"/services"} />
-              </div>
+              </div> */}
             </div>
           )}
         </div>

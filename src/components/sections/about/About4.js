@@ -32,18 +32,17 @@ const About4 = () => {
                   <span>OUR ABOUT</span>
                 </div>
                 <div className="section__title__heading">
-                  <h3>DISCOVER OUR BUSINESS CONSULTANCY DIFFEREENCE.</h3>
+                  <h3>셀파트너(SellPartner)는 위탁판매, 구매대행, 사입 등의 온라인 판매자를 위한 이커머스 데이터 플랫폼입니다.</h3>
                 </div>
               </div>
               <div className="about__text__2">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing sed do
-                  eiusmod tempor incididunt ut et dolore magna aliqua
-                  consectetur adipiscing elit aliqua.
+                저희는 잘 팔릴 물건을 발굴하고, 판매자 분들의 매출을 
+                최대한으로 이끌 수 있도록 고민하고 연구 합니다.
                 </p>
               </div>
 
-              <div className="about__mission__vission special__spacing">
+              {/* <div className="about__mission__vission special__spacing">
                 <div className="row">
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="about__mission__vission__wrapper">
@@ -64,10 +63,10 @@ const About4 = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <div className="about__button">
-                <ButtonPrimary text="LEARN MORE ABOUT" path="/about" />
+                <ButtonPrimary text="셀파트너 더 알아보기" path="http://sellpartner.kr" />
               </div>
             </div>
           </div>

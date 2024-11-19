@@ -1,6 +1,12 @@
 "use client";
 import { useState } from "react";
 import About from "@/components/sections/about/About";
+import About4 from "@/components/sections/about/About4";
+// import Services1 from "@/components/sections/services/Services1";
+import Services2 from "@/components/sections/services/Services2";
+import Services3 from "@/components/sections/services/Services3";
+import Services4 from "@/components/sections/services/Services4";
+
 import Blogs from "@/components/sections/blogs/Blogs";
 import Brands from "@/components/sections/brands/Brands";
 import Contact1 from "@/components/sections/contacts/Contact1";
@@ -17,7 +23,6 @@ import GuideKeyword from "@/components/sections/guide/GuideKeyword";
 import Hero2 from "@/components/sections/hero-banners/Hero2";
 import Hero3 from "@/components/sections/hero-banners/Hero3";
 import Hero4 from "@/components/sections/hero-banners/Hero4";
-import MarketplaceNav from "@/components/sections/marketplace/MarketplaceNav";
 
 const IndexMain = () => {
   const { isOnepage } = useHeaderContex();
@@ -25,19 +30,18 @@ const IndexMain = () => {
 
   return (
     <main>
+
       <Hero4 />
-      <MarketplaceNav />
+
       <OpenMarketBest />
-      <OfferedServices />
-      <Video />
-      <About />
-      <Team />
-      <PinkColor />
-      <Projects />
-      <Testimonials />
+      <About4 />
+      <Services4 />
+
+      {/* <PinkColor /> */}
+      {/* <Testimonials /> */}
       {isOnepage ? <Contact1 /> : ""}
-      <Brands />
-      <Blogs />
+      {/* <Brands />
+      <Blogs /> */}
     </main>
   );
 };

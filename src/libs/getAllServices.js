@@ -1,7 +1,7 @@
-import serviceImage1 from "@/assets/img/service/service__1.png";
-import serviceImage2 from "@/assets/img/service/service__2.png";
-import serviceImage3 from "@/assets/img/service/service__3.png";
-import serviceImage4 from "@/assets/img/service/service__4.png";
+// import serviceImage1 from "@/assets/img/service/service__1.png";
+// import serviceImage2 from "@/assets/img/service/service__2.png";
+// import serviceImage3 from "@/assets/img/service/service__3.png";
+// import serviceImage4 from "@/assets/img/service/service__4.png";
 import serviceImage6 from "@/assets/img/service/service__6.png";
 import serviceImage7 from "@/assets/img/service/service__7.png";
 import serviceImage8 from "@/assets/img/service/service__8.png";
@@ -18,6 +18,10 @@ import projectImage12 from "@/assets/img/project/project__12.png";
 import projectImage13 from "@/assets/img/project/project__13.png";
 import projectImage14 from "@/assets/img/project/project__14.png";
 import projectImage15 from "@/assets/img/service/service__details__1.png";
+import serviceImage1 from "@/assets/img/service/service_1.png";
+import serviceImage2 from "@/assets/img/service/service_2.png";
+import serviceImage3 from "@/assets/img/service/service_3.png";
+import serviceImage4 from "@/assets/img/service/service_4.png";
 const getAllServices = () => {
   const services = [
     {
@@ -172,43 +176,43 @@ const getAllServices = () => {
       title: "Legal Consulting",
       desc: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
       detailsImg: projectImage14,
-      img: serviceImage16,
+      img: serviceImage1,
       category: "Financial Restructuring",
       duration: "2100",
     },
     {
       id: 18,
-      title: "STRATEGY PLANNING",
-      desc: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      title: "오픈마켓 베스트 상품",
+      desc: "오픈마켓(스마트스토어, 쿠팡, 11번가 등)에 있는 카테고리 별 베스트 상품 정보 제공",
       detailsImg: projectImage13,
-      img: serviceImage9,
+      img: serviceImage1,
       category: "Business Process",
       duration: "1500",
     },
     {
       id: 19,
-      title: "FINANCIAL ANALYSIS",
-      desc: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      title: "트렌드 키워드 정보",
+      desc: "소비자들이 현재 많이 찾는 키워드 유추와 함께상품수,검색수 등의 키워드 정보 제공",
       detailsImg: projectImage12,
-      img: serviceImage10,
+      img: serviceImage2,
       category: "Financial Restructuring",
       duration: "1700",
     },
     {
       id: 20,
-      title: "MARKET RESEARCH",
-      desc: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      title: "AI 기반 상품 추천",
+      desc: "매일 80만개의 상품 정보 수집 후 셀파트너만의 AI 알고리즘을 통해 잘 팔릴 상품 추천",
       detailsImg: projectImage11,
-      img: serviceImage11,
+      img: serviceImage3,
       category: "Cost Reduction Analysis",
       duration: "1900",
     },
     {
       id: 21,
-      title: "GROWTH STRATEGIES",
-      desc: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      title: "개발 예정 서비스",
+      desc: "오픈마켓 상품등록, 카테고리 추천, SEO 최적화 , 상세 페이지 제작 등",
       detailsImg: projectImage15,
-      img: serviceImage12,
+      img: serviceImage4,
       category: "Cost Reduction Analysis",
       duration: "2100",
     },
