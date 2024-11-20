@@ -10,15 +10,6 @@ const KeywordDiscoveryMain = () => {
 
   return (
     <main>
-      <Hero2
-        title={
-          <>
-            키워드 <span className="text__gradient">발굴</span>
-          </>
-        }
-        img={heroStartupImage}
-      />
-      <Brands5 type={2} />
       <KeywordDiscovery isDarkMode={isDarkMode} />
       <div className="border__line"></div>
     </main>

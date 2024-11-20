@@ -135,10 +135,16 @@ const KeywordDiscovery = () => {
         {/* 카테고리 선택 영역 */}
         <div className="mt-4">
           {/* 카테고리 헤더 */}
-          <div className="section__title text-left sp_bottom_20">
+          {/* <div className="section__title text-left sp_bottom_20">
             <div className="section__title__heading">
               <h3>카테고리</h3>
             </div>
+          </div> */}
+          <div
+            className="section__title"
+            style={{ textAlign: "left", marginBottom: "40px" }}
+          >
+            <h3>카테고리 선택</h3>
           </div>
 
           {/* 카테고리 선택 영역 */}
@@ -438,10 +444,11 @@ const KeywordDiscovery = () => {
         {/* 데이터 테이블 */}
         <div className="mt-4">
           {/* 키워드 발굴 헤더 */}
-          <div className="section__title text-left sp_bottom_20">
-            <div className="section__title__heading">
-              <h3>키워드 발굴</h3>
-            </div>
+          <div
+            className="section__title"
+            style={{ textAlign: "left", marginBottom: "40px" }}
+          >
+            <h3>키워드 결과</h3>
           </div>
 
           {/* 테이블 */}
