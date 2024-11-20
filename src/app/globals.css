@@ -10440,6 +10440,7 @@ Grid Area
   }
 }
 .footer {
+  background-color: #060606;  /* 옅은 회색으로 변경 */
   background-size: cover;
   background-repeat: no-repeat;
 }

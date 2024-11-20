@@ -5,10 +5,10 @@ const CompanyInfo = () => {
         className="footer__company__info text-center"
         style={{
           borderTop: "1px solid rgba(255, 255, 255, 0.1)",
-          marginTop: "30px",
-          paddingTop: "20px",
+          // marginTop: "30px",
+          // paddingTop: "20px",
           fontSize: "13px",
-          color: "rgba(255, 255, 255, 0.8)",
+          color: "#868e96",
         }}
       >
         <div className="company-details">
@@ -22,11 +22,11 @@ const CompanyInfo = () => {
             }}
           >
             <span>셀파트너</span>
-            <span style={{ color: "rgba(255, 255, 255, 0.3)" }}>|</span>
+            {/* <span style={{ color: "adb5bd" }}>|</span> */}
             <span>대표: 황인범</span>
-            <span style={{ color: "rgba(255, 255, 255, 0.3)" }}>|</span>
+            {/* <span style={{ color: "#adb5bd" }}>|</span> */}
             <span>사업자등록번호: 405-07-58496</span>
-            <span style={{ color: "rgba(255, 255, 255, 0.3)" }}>|</span>
+            {/* <span style={{ color: "#adb5bd" }}>|</span> */}
             <span>통신판매업신고: 제2024-서울강남-1234호</span>
           </div>
           <div
@@ -40,13 +40,13 @@ const CompanyInfo = () => {
             }}
           >
             <span>서울특별시 용산구 서빙고로 17 4층</span>
-            <span style={{ color: "rgba(255, 255, 255, 0.3)" }}>|</span>
+            {/* <span style={{ color: "#adb5bd" }}>|</span> */}
 
             <span>대표번호: 010-7202-8295</span>
-            <span style={{ color: "rgba(255, 255, 255, 0.3)" }}>|</span>
+            {/* <span style={{ color: "#adb5bd" }}>|</span> */}
             <span>이메일: sellpartners@gmail.com</span>
           </div>
-          <div className="mt-2" style={{ color: "rgba(255, 255, 255, 0.6)" }}>
+          <div className="mt-2" style={{ color: "#868e96" }}>
             ©2024 sellpartner. All rights reserved.
           </div>
         </div>

@@ -31,7 +31,7 @@ const LinksFooter = () => {
         style={{
           marginBottom: "20px",
           borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
-          paddingBottom: "20px",
+          // paddingBottom: "20px",
         }}
       >
         <ul
@@ -50,10 +50,11 @@ const LinksFooter = () => {
               <a
                 href={link.url}
                 style={{
-                  color: "#fff",
+                  color: "#868e96",
                   textDecoration: "none",
                   fontSize: "13px",
-                  fontWeight: index === 2 ? "bold" : "normal",
+                  fontWeight: "bold",
+                  // fontWeight: index === 2 ? "bold" : "normal",
                   opacity: 0.8,
                 }}
               >
