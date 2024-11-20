@@ -37,13 +37,13 @@ const ProductRecommend = () => {
 
   return (
     <main>
-      <HeroInner title={"상품 추천"} currentItem={"Product Recommend"} />
+      {/* <HeroInner title={"상품 추천"} currentItem={"Product Recommend"} /> */}
 
       <div className="container">
         <div className="section__title text-left sp_bottom_40">
-          <div className="section__title__heading">
+          {/* <div className="section__title__heading">
             <h3>카테고리</h3>
-          </div>
+          </div> */}
         </div>
       </div>
       <Category
@@ -54,12 +54,11 @@ const ProductRecommend = () => {
       <div className="container">
         <div className="section__title text-left sp_bottom_40">
           <div className="section__title__heading">
-            <h3>추천 카테고리</h3>
+            <h3>선택 된 카테고리</h3>
           </div>
         </div>
       </div>
       <RecommendCart recommendList={recommendList} />
-
     </main>
   );
 };
