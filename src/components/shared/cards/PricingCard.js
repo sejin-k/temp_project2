@@ -55,7 +55,7 @@ const PricingCard = ({ plan }) => {
           </div>
           <div className="pricing__single__button">
             <Link className="default__button common__gradient__bg" href="#">
-              <span>GET STARTED</span>
+              <span>시 작 하 기</span>
             </Link>
           </div>
         </div>
