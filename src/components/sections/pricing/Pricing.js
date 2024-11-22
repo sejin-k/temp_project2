@@ -122,8 +122,9 @@ const Pricing = ({ plan, title, isDarkBg, isGrdient, tag, bg, isNotTag }) => {
               )}
               <div className="section__title__heading">
                 <h3>
-                  {title ? title : "멤버쉽을 통해 매출 상승을 이끌어 보세요."}
+                  {"멤버쉽을 통해"}
                 </h3>
+                <h3>{"매출 상승을 이끌어 보세요"}</h3>
               </div>
             </div>
           </div>
@@ -198,7 +199,7 @@ const Pricing = ({ plan, title, isDarkBg, isGrdient, tag, bg, isNotTag }) => {
       {/* 멤버십 비교표 추가 */}
       <div
         className="membership-comparison container sp_bottom_120"
-        style={{ background: bg === "white" ? "" : "var(--white)" }}
+        style={{ background: bg === "white" ? "" : "var(--white)", padding: "120px 0" }}
       >
         <div className="comparison-header">
           <h3 className="text-center mb-5">멤버십 구독상품 비교</h3>

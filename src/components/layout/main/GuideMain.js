@@ -10,15 +10,15 @@ const GuideMain = () => {
 
   return (
     <div className="main-wrapper">
-      <Hero2
+      {/* <Hero2
         title={
           <>
             가이드 <span className="text__gradient">안내</span>
           </>
         }
         img={heroStartupImage}
-      />
-      <Brands5 type={2} />
+      /> */}
+      {/* <Brands5 type={2} /> */}
       <GuideDiscovery />
       <div className="border__line"></div>
     </div>

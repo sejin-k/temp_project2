@@ -7557,6 +7557,12 @@ button.default__button {
   width: 100%;
 }
 
+.empty__space {
+  background: var(--bodyBg);
+  height: 300px;
+  width: 100%;
+}
+
 .project__small__img img {
   position: absolute;
 }

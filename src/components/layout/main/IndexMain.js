@@ -27,6 +27,7 @@ import CallToAction from "@/components/sections/CallToActions/CallToAction";
 import WorkProcess from "@/components/sections/work-process/WorkProcess";
 import CounterUp2 from "@/components/sections/counter-up/CounterUp2";
 import Offer2 from "@/components/sections/offers/Offer2";
+import EmptySpace from "@/components/shared/others/emptySpace";
 
 const IndexMain = () => {
   const { isOnepage } = useHeaderContex();
@@ -47,9 +48,10 @@ const IndexMain = () => {
 
       <CallToAction />
 
+      <EmptySpace />
       {/* <PinkColor /> */}
       {/* <Testimonials /> */}
-      {isOnepage ? <Contact1 /> : ""}
+      {/* {isOnepage ? <Contact1 /> : ""} */}
       {/* <Brands />
       <Blogs /> */}
     </main>
