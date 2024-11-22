@@ -69,7 +69,7 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     if (process.env.NODE_ENV === 'development') {
       const debugButton = document.createElement('button');
-      debugButton.innerHTML = '인증상태 새로고침';
+      // debugButton.innerHTML = '인증상태 새로고침';
       debugButton.style.position = 'fixed';
       debugButton.style.bottom = '20px';
       debugButton.style.right = '20px';

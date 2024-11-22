@@ -25,13 +25,13 @@ const CallToAction = ({ title, label }) => {
                   <h3>
                     {title
                       ? title
-                      : "READY TO ELEVATE BUSINESS TO NEW HEIGHTS?"}
+                      : "셀파트너는 판매자를 위해 고민하고 또 고민합니다. 혹시 원하시는 서비스나 제안이 있으실까요?"}
                   </h3>
                 </div>
 
                 <div className="section__title__btn">
                   <ButtonPrimary
-                    text="STARTED NOW"
+                    text="제안하기"
                     path="/services"
                     button={"white"}
                   />

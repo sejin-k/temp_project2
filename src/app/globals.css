@@ -2038,7 +2038,7 @@ button.default__button {
   text-align: left;
 }
 .section__title--3 .section__title__heading h3 {
-  color: var(--whiteColor);
+  color: var(--blackColor);
 }
 .section__title--3 .section__title__button span {
   color: var(--whiteColor);
@@ -2070,13 +2070,13 @@ button.default__button {
   margin-top: -2px;
 }
 .section__title--4 .section__title__small span {
-  color: var(--whiteColor);
+  color: var(--blackColor);
 }
 .section__title--4 .section__title__small span::before {
-  background: var(--whiteColor);
+  background: var(--blackColor);
 }
 .section__title--4 .section__title__heading h3 {
-  color: var(--whiteColor);
+  color: var(--blackColor);
 }
 .section__title__btn {
   margin-top: 38px;
@@ -5913,6 +5913,8 @@ button.default__button {
 }
 .about__img__wrapper img {
   max-width: 100%;
+  max-height: 100%;
+
 }
 .about__inner {
   padding-left: 35px;
@@ -6643,6 +6645,7 @@ button.default__button {
 .about__list ul {
   display: flex;
   flex-wrap: wrap;
+  font-size: 14px;
 }
 .about__list ul li {
   width: 50%;
@@ -8771,7 +8774,8 @@ button.default__button {
 }
 
 .facts {
-  background: var(--gradientColor);
+  /* background: var(--gradientColor); */
+  background: var(--borderColor3);
 }
 .facts__inner {
   display: flex;
@@ -9058,7 +9062,7 @@ button.default__button {
 }
 
 .work__process__single {
-  background: rgba(225, 225, 225, 0.2);
+  background: rgba(250, 127, 244, 0.2);
   padding: 38px;
   text-align: center;
   margin-right: 50px;
@@ -12008,7 +12012,7 @@ Dark Mode
 ```
 </rewritten_file>
 .is_dark .bg__black .section__title--3 .section__title__heading h3 {
-  color: var(--whiteColor);
+  color: var(--blackColorb);
 }
 .is_dark .direction__btn--2 svg path {
   stroke: var(--blackColor);

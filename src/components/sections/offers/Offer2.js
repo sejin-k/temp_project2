@@ -1,17 +1,18 @@
 import Image from "next/image";
 import aboutHrImage from "@/assets/img/about/about__hr.png";
 import aboutEventImage from "@/assets/img/about/event__about.png";
+import ctaFreeImage from "@/assets/img/freepik/free__1.png";
 import Link from "next/link";
 
 const Offer2 = ({ type, isVideo, img, title, tag, id, pt }) => {
   return (
+
     <div
-      className={`about ext-about position-relative sp_bottom_140  ${
-        pt ? pt : isVideo ? "sp_top_140" : type === 2 ? "" : "sp_top_140"
-      }`}
+      className={`about ext-about position-relative sp_bottom_140 sp_top_140 padding-top: 140px;" 
+        `}
       id={id ? id : "tb_about"}
     >
-      <div className="container">
+      <div className="container ">
         <div className="row">
           <div
             className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12"
@@ -25,7 +26,8 @@ const Offer2 = ({ type, isVideo, img, title, tag, id, pt }) => {
               <Image
                 className="about__img__1"
                 src={
-                  isVideo && !img ? aboutEventImage : img ? img : aboutHrImage
+                  isVideo && !img ? ctaFreeImage : img ? img : ctaFreeImage
+                  // isVideo && !img ? aboutHrImage : img ? img : aboutHrImage
                 }
                 placeholder="blur"
                 alt="about__hr"
@@ -67,47 +69,47 @@ const Offer2 = ({ type, isVideo, img, title, tag, id, pt }) => {
                   type === 2 ? "section__title--3" : ""
                 }`}
               >
-                <div className="section__title__button">
+                <div class="section__title__small"><span>OUR ABOUT</span></div>
+                {/* <div className="section__title__button">
                   <span className="text__gradient">
                     {tag ? tag : "How we help"}
                   </span>
-                </div>
+                </div> */}
                 <div className="section__title__heading">
                   <h3>
                     {title
                       ? title
                       : type === 2
-                      ? "NEXT LEVEL ANALYTICS TO CONTROL YOUR BUSINESS."
-                      : "Your one-stop solution for all Human Resource needs."}
+                      ? "셀파트너(SellPartner)는 온라인 판매자를 위한 이커머스 데이터 플랫폼입니다."
+                      : "셀파트너(SellPartner)는 온라인 판매자를 위한 이커머스 데이터 플랫폼입니다."}
                   </h3>
                 </div>
               </div>
               <p className="sp_bottom_10">
-                Welcome to our comprehensive HR solutions hub, your one-stop
-                destination for addressing all your HR needs. Whether {"you're"}{" "}
-                a small startup or a large corporation.
+              저희는 잘 팔릴 물건을 발굴하고, 판매자 분들의 매출을 최대한으로 이끌 수 있도록 고민하고 연구 합니다.
               </p>
               <div className="about__list">
                 <ul>
                   <li>
-                    <i className="icofont-check"></i>Hiring Solution
+                    <i className="icofont-check"></i>온라인 판매를 처음 하시는 분들
                   </li>
                   <li>
-                    <i className="icofont-check"></i>Finding the right talent
+                    <i className="icofont-check"></i>어떤 물건을 판매해야 할지 모르겠는 분들
                   </li>
                   <li>
-                    <i className="icofont-check"></i>Onboarding Solution
+                    <i className="icofont-check"></i>한 달 매출이 200이 넘지 않는 분들
                   </li>
                   <li>
-                    <i className="icofont-check"></i>Smooth onboarding sets
+                    <i className="icofont-check"></i>위탁판매나 사입판매를 하시는 분들
+                  </li>
+                  
+                  {/* <li>
+                    <i className="icofont-check"></i>잘 팔릴 물건을 찾는 분들
                   </li>
                   <li>
-                    <i className="icofont-check"></i>Competitive compensation
-                  </li>
-                  <li>
-                    <i className="icofont-check"></i>A positive workplace
-                    culture
-                  </li>
+                    <i className="icofont-check"></i>온라인 판매자를 전업으로 하시고 싶은 분
+                  </li> */}
+
                 </ul>
               </div>
               <div className="about__vision__wrapper">
@@ -116,9 +118,9 @@ const Offer2 = ({ type, isVideo, img, title, tag, id, pt }) => {
                     className={`default__button  ${
                       type === 2 ? "" : "btn__black"
                     }`}
-                    href="/about"
+                    href="http://sellpartner.kr"
                   >
-                    LEARN MORE ABOUT
+                    셀파트너 더 알아보기
                   </Link>
                 </div>
               </div>

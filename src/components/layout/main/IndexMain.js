@@ -23,6 +23,10 @@ import GuideKeyword from "@/components/sections/guide/GuideKeyword";
 import Hero2 from "@/components/sections/hero-banners/Hero2";
 import Hero3 from "@/components/sections/hero-banners/Hero3";
 import Hero4 from "@/components/sections/hero-banners/Hero4";
+import CallToAction from "@/components/sections/CallToActions/CallToAction";
+import WorkProcess from "@/components/sections/work-process/WorkProcess";
+import CounterUp2 from "@/components/sections/counter-up/CounterUp2";
+import Offer2 from "@/components/sections/offers/Offer2";
 
 const IndexMain = () => {
   const { isOnepage } = useHeaderContex();
@@ -33,9 +37,15 @@ const IndexMain = () => {
 
       <Hero4 />
 
-      <OpenMarketBest />
-      <About4 />
+      {/* <OpenMarketBest /> */}
+      <Offer2 type={2} />
+
+      {/* <About4 /> */}
       <Services4 />
+      <WorkProcess />
+      {/* <CounterUp2 /> */}
+
+      <CallToAction />
 
       {/* <PinkColor /> */}
       {/* <Testimonials /> */}

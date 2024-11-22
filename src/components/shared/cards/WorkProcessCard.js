@@ -14,9 +14,10 @@ const WorkProcessCard = ({ item }) => {
       </div>
       <div className="work__process__content">
         <div className="work__process__name">
-          <h6>
-            <Link href={path}>{title}</Link>
-          </h6>
+          <h5>
+            {/* <Link href={path}>{title}</Link> */}
+            {title}
+          </h5>
         </div>
         <div className="work__process__text">
           <p>{desc}</p>

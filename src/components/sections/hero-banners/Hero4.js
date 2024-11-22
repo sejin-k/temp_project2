@@ -23,6 +23,7 @@ const Hero4 = () => {
                 data-aos-delay="100"
                 style={{ fontSize: "2.5rem" }}
               >
+                <br /><br />
                 어려운 상품소싱, 더이상 헤멜 필요 없이
                 <br />
                 <span className="text__gradient">

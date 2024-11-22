@@ -378,7 +378,7 @@ const OpenMarketBest = () => {
                                     <h4
                                         className="title mb-2"
                                         style={{
-                                            fontSize: "14px",
+                                            fontSize: "15px",
                                             fontWeight: "normal",
                                             height: "40px",
                                             overflow: "hidden",
@@ -391,7 +391,16 @@ const OpenMarketBest = () => {
                                     >
                                         {product.productName}
                                     </h4>
-
+                                    <div
+                                            className="original-price text-muted text-decoration-line-through"
+                                            style={{
+                                                fontSize: "12px",
+                                                marginTop: "4px",
+                                            }}
+                                        >   
+                                            
+                                            {product.listPrice}
+                                        </div>
                                     <div className="price-info mb-2">
                                         <span
                                             className="discount-rate text-danger me-2"
@@ -410,15 +419,7 @@ const OpenMarketBest = () => {
                                         >
                                             {product.price}
                                         </span>
-                                        <div
-                                            className="original-price text-muted text-decoration-line-through"
-                                            style={{
-                                                fontSize: "12px",
-                                                marginTop: "4px",
-                                            }}
-                                        >
-                                            {product.listPrice}
-                                        </div>
+
                                     </div>
 
                                     {/* <div
