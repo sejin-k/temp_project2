@@ -31,7 +31,7 @@ const GuideDiscovery = () => {
   ]);
 
   return (
-    <section className="guide__discovery section__space">
+    <section className="guide__discovery section__space" style={{ paddingTop: "120px" }}>
       <div className="container">
         <div className="section__title text-center">
           <div className="section__title__button">
