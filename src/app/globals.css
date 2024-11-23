@@ -2905,13 +2905,15 @@ button.default__button {
   margin-top: -2px;
 }
 .section__title--4 .section__title__small span {
-  color: var(--blackColor);
+  color: var(--whiteColor);
 }
 .section__title--4 .section__title__small span::before {
-  background: var(--blackColor);
+  background: var(--whiteColor);
 }
 .section__title--4 .section__title__heading h3 {
-  color: var(--blackColor);
+  /* color: var(--blackColor); */
+  color: var(--whiteColor);
+
 }
 .section__title__btn {
   margin-top: 38px;

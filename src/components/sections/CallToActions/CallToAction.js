@@ -5,6 +5,7 @@ import ctaImage3 from "@/assets/img/cta/cta__3.png";
 import ctaImage4 from "@/assets/img/cta/cta__4.png";
 import ctaFreeImage from "@/assets/img/freepik/free__1.png";
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
+import PinkColor from "@/components/shared/others/PinkColor";
 
 const CallToAction = ({ title, label }) => {
   return (
