@@ -18,7 +18,7 @@ const ServiceCard2 = ({ service, type }) => {
         <div className="service__single__inner">
           <div className="service__img">
             <Image src={img} alt="" />
-            <div className="service__bg__img">
+            {/* <div className="service__bg__img">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="165"
@@ -45,7 +45,7 @@ const ServiceCard2 = ({ service, type }) => {
                   </linearGradient>
                 </defs>
               </svg>
-            </div>
+            </div> */}
           </div>
           <div className="service__content">
             <div className="service__heading">
@@ -59,7 +59,7 @@ const ServiceCard2 = ({ service, type }) => {
               <p>{desc}</p>
             </div>
           </div>
-          <div className="service__icon service__icon--2">
+          {/* <div className="service__icon service__icon--2">
             <Link
               className={`direction__btn  ${
                 type === 2 ? "" : "direction__btn--2"
@@ -91,7 +91,7 @@ const ServiceCard2 = ({ service, type }) => {
                 />
               </svg>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

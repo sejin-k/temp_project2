@@ -20,7 +20,7 @@ const HeroSlide = ({ slide }) => {
             <p>{desc}</p>
           </div>
           <div className="herobanner__button">
-            <ButtonPrimary path={path} text="OUR ALL SERVICES" />
+            <ButtonPrimary path={path} text="지금 무료 체험하기" />
           </div>
         </div>
       </div>

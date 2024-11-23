@@ -4,6 +4,8 @@ import heroVectorImage4 from "@/assets/img/herobaner/vector__4.png";
 import Image from "next/image";
 import ButtonPopup from "@/components/shared/buttons/ButtonPopup";
 import heroHrImage from "@/assets/img/herobaner/front__img__hr.png";
+import heroHrImage1 from "@/assets/img/herobaner/herobanner_1.jpg";
+
 import heroSassImage from "@/assets/img/herobaner/herobanner__sass.png";
 const Hero7 = ({ type }) => {
   return (
@@ -26,7 +28,9 @@ const Hero7 = ({ type }) => {
                     ""
                   ) : (
                     <div className="herobanner__small__text">
-                      <span className="text__gradient">BEST HR AGENCY</span>
+                      <span className="text__gradient">
+                        E-commerce AI solution
+                      </span>
                     </div>
                   )}
                   <div className="herobanner__title herobanner__title--2">
@@ -42,24 +46,24 @@ const Hero7 = ({ type }) => {
                       ) : (
                         <>
                           {" "}
-                          We Optimize Your{" "}
+                          셀파트너 AI를 통해{" "}
                           <span className="text__gradient">
-                            Human Resource
+                            매출 성장을
                           </span>{" "}
-                          Process.
+                          경험해보세요.
                         </>
                       )}
                     </h1>
                   </div>
                   <div className="herobanner__text herobanner__text--2">
                     <p>
-                      Sagittis purus amet volutpat consequat mauris nunc congue
-                      nisi and tortor.
+                      매일 80만개의 데이터를 분석하고 학습하는 셀파트너 AI를
+                      통해 잘 팔릴 만한 상품을 찾아드립니다.
                     </p>
                   </div>
                   <div className="herobanner__button">
                     <ButtonPrimary
-                      text={"OUR ALL SERVICES"}
+                      text={"지금 무료 체험하기"}
                       path={"/service"}
                     />
                     <div className="video__button">
@@ -75,7 +79,7 @@ const Hero7 = ({ type }) => {
               <div className="col-xxl-6 col-xl-5 col-lg-6 col-md-12 col-sm-12">
                 <div className="herobanner__front__img" data-tilt>
                   <Image
-                    src={type === 2 ? heroSassImage : heroHrImage}
+                    src={type === 2 ? heroSassImage : heroHrImage1}
                     alt="HR"
                     placeholder="blur"
                   />

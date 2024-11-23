@@ -4,7 +4,6 @@ import brandImage7 from "@/assets/img/brand/brand__7.png";
 import brandImage8 from "@/assets/img/brand/brand__8.png";
 import brandImage9 from "@/assets/img/brand/brand__9.png";
 
-
 import Image from "next/image";
 
 const CounterUp2 = () => {
@@ -14,7 +13,7 @@ const CounterUp2 = () => {
       title: "누적되는 상품 수",
       img: brandImage6,
 
-      num: 80000,
+      num: 88952,
       sym: "+",
       duration: 1500,
       imgDuration: null,
@@ -23,7 +22,7 @@ const CounterUp2 = () => {
       id: 2,
       title: "누적되는 리뷰 수",
       img: brandImage7,
-      num: 320000,
+      num: 323531,
       sym: "+",
       duration: 2000,
       imgDuration: 1800,
@@ -41,7 +40,7 @@ const CounterUp2 = () => {
       id: 4,
       title: "오픈마켓 수",
       img: brandImage9,
-      num: 5,
+      num: 10,
       sym: "+",
       duration: 2800,
       imgDuration: 2600,

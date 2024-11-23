@@ -2,11 +2,11 @@ import Image from "next/image";
 import aboutHrImage from "@/assets/img/about/about__hr.png";
 import aboutEventImage from "@/assets/img/about/event__about.png";
 import ctaFreeImage from "@/assets/img/freepik/free__1.png";
+import worryImage from "@/assets/img/freepik/worry__1.png";
 import Link from "next/link";
 
 const Offer2 = ({ type, isVideo, img, title, tag, id, pt }) => {
   return (
-
     <div
       className={`about ext-about position-relative sp_bottom_140 sp_top_140 padding-top: 140px;" 
         `}
@@ -26,7 +26,7 @@ const Offer2 = ({ type, isVideo, img, title, tag, id, pt }) => {
               <Image
                 className="about__img__1"
                 src={
-                  isVideo && !img ? ctaFreeImage : img ? img : ctaFreeImage
+                  isVideo && !img ? worryImage : img ? img : worryImage
                   // isVideo && !img ? aboutHrImage : img ? img : aboutHrImage
                 }
                 placeholder="blur"
@@ -69,7 +69,9 @@ const Offer2 = ({ type, isVideo, img, title, tag, id, pt }) => {
                   type === 2 ? "section__title--3" : ""
                 }`}
               >
-                <div class="section__title__small"><span>OUR ABOUT</span></div>
+                <div class="section__title__small">
+                  <span>Probluems</span>
+                </div>
                 {/* <div className="section__title__button">
                   <span className="text__gradient">
                     {tag ? tag : "How we help"}
@@ -80,36 +82,43 @@ const Offer2 = ({ type, isVideo, img, title, tag, id, pt }) => {
                     {title
                       ? title
                       : type === 2
-                      ? "셀파트너(SellPartner)는 온라인 판매자를 위한 이커머스 데이터 플랫폼입니다."
+                      ? "아직도 잘 팔리는 상품을 찾기위해 돌아다니고 계시나요?"
                       : "셀파트너(SellPartner)는 온라인 판매자를 위한 이커머스 데이터 플랫폼입니다."}
                   </h3>
                 </div>
               </div>
-              <p className="sp_bottom_10">
-              저희는 잘 팔릴 물건을 발굴하고, 판매자 분들의 매출을 최대한으로 이끌 수 있도록 고민하고 연구 합니다.
+              <p style={{ marginBottom: "0px" }}>
+                현재 많은 판매자 분들은 감과 경험에 의존하여 상품을 선택하시고
+                계십니다.
               </p>
+              <p>혹시 아래 유형에 해당하지 않으시나요?</p>
               <div className="about__list">
                 <ul>
                   <li>
-                    <i className="icofont-check"></i>온라인 판매를 처음 하시는 분들
+                    <i className="icofont-check"></i>상품 선택을 감과 경험에만
+                    의존하고 계신 분들
                   </li>
                   <li>
-                    <i className="icofont-check"></i>어떤 물건을 판매해야 할지 모르겠는 분들
+                    <i className="icofont-check"></i>온라인 판매를 이제 막
+                    시작하신 분들
                   </li>
                   <li>
-                    <i className="icofont-check"></i>한 달 매출이 200이 넘지 않는 분들
+                    <i className="icofont-check"></i>어떤 상품을 판매해야 할지
+                    고민이 많으신 분들
                   </li>
                   <li>
-                    <i className="icofont-check"></i>위탁판매나 사입판매를 하시는 분들
-                  </li>
-                  
-                  {/* <li>
-                    <i className="icofont-check"></i>잘 팔릴 물건을 찾는 분들
+                    <i className="icofont-check"></i>월 매출 100만 원을 넘기지
+                    못하고 계신 분들
                   </li>
                   <li>
-                    <i className="icofont-check"></i>온라인 판매자를 전업으로 하시고 싶은 분
-                  </li> */}
+                    <i className="icofont-check"></i>매출 성장을 위해 적합한
+                    상품을 찾고 계신 분들
+                  </li>
 
+                  <li>
+                    <i className="icofont-check"></i>수익성 높은 상품을 빠르게
+                    파악하고 싶으신 분들
+                  </li>
                 </ul>
               </div>
               <div className="about__vision__wrapper">
@@ -118,9 +127,10 @@ const Offer2 = ({ type, isVideo, img, title, tag, id, pt }) => {
                     className={`default__button  ${
                       type === 2 ? "" : "btn__black"
                     }`}
-                    href="http://sellpartner.kr"
+                    href="#service__area"
+                    scroll={true}
                   >
-                    셀파트너 더 알아보기
+                    더 알아보기
                   </Link>
                 </div>
               </div>

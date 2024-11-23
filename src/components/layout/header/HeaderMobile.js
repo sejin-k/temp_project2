@@ -48,7 +48,7 @@ const HeaderMobile = () => {
 
         <div className="headerarea__component mobile__component__right">
           <div className="headerarea__right">
-            <div className="headerarea__cart__wraper">
+            {/* <div className="headerarea__cart__wraper">
               <div className="headerarea__cart__icon">
                 <Link href="#">
                   <svg
@@ -93,11 +93,11 @@ const HeaderMobile = () => {
                 <div className="headerarea__cart__border__dot"></div>
               </div>
 
-              <CartHeader />
-            </div>
+              <CartHeader /> */}
+            {/* </div> */}
             <div className="headerarea__button">
               <ButtonPrimary
-                text="QUATE"
+                text="로그인/가입"
                 path="#"
                 button={!style || style === 3 ? "" : "white"}
               />

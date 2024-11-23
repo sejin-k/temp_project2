@@ -11,23 +11,24 @@ import HeroSlide from "@/components/shared/hero-banner/HeroSlide";
 const Hero1 = () => {
   const slides = [
     {
-      title: "WE ARE CONSULTING AGENCY",
-      desc: "Sagittis purus amet volutpat consequat mauris nunc congue nisi and tortor.",
+      title: "셀파트너와 함께라면 성공적인 상품 소싱과 매출 성장 한번에!",
+      desc: "매일 80만개의 데이터를 분석하고 학습하는 셀파트너 AI를 통해 잘 팔릴 만한 상품을 찾아드립니다.",
       path: "/services",
       img: herobannerImage1,
     },
-    {
-      title: "WE ARE CONSULTING AGENCY",
-      desc: "Sagittis purus amet volutpat consequat mauris nunc congue nisi and tortor.",
-      path: "/services",
-      img: herobannerImage2,
-    },
-    {
-      title: "WE ARE CONSULTING AGENCY",
-      desc: "Sagittis purus amet volutpat consequat mauris nunc congue nisi and tortor.",
-      path: "/services",
-      img: herobannerImage3,
-    },
+    // ,
+    // {
+    //   title: "WE ARE CONSULTING AGENCY",
+    //   desc: "Sagittis purus amet volutpat consequat mauris nunc congue nisi and tortor.",
+    //   path: "/services",
+    //   img: herobannerImage2,
+    // },
+    // {
+    //   title: "WE ARE CONSULTING AGENCY",
+    //   desc: "Sagittis purus amet volutpat consequat mauris nunc congue nisi and tortor.",
+    //   path: "/services",
+    //   img: herobannerImage3,
+    // },
   ];
   return (
     <div

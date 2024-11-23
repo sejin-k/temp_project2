@@ -12,7 +12,8 @@ const LogoHeader = () => {
         <Link href="/">
           <Image
             placeholder="blur"
-            className={style === 4 ? "logo-image2" : ""}
+            // className={style === 4 ? "logo-image2" : ""}
+            className="ㅠㅠ"
             src={style === 4 && bodyBg !== "black" ? logoImage2 : logoImage1}
             alt="Bastun Logo"
           />

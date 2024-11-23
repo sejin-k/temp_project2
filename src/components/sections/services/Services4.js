@@ -24,13 +24,11 @@ const Services4 = ({ title, desc, service }) => {
                 ""
               ) : (
                 <div className="section__title__small">
-                  <span>OUR SECTION</span>
+                  <span>Solutions</span>
                 </div>
               )}
               <div className="section__title__heading">
-                <h3>
-                  {title ? title : "셀파트너의 3가지 기능"}
-                </h3>
+                <h3>{title ? title : "셀파트너의 솔루션"}</h3>
               </div>
               {desc ? (
                 <div className="section__title__text">

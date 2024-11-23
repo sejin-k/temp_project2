@@ -183,7 +183,7 @@ const getAllServices = () => {
     {
       id: 18,
       title: "오픈마켓 베스트 상품",
-      desc: "오픈마켓(스마트스토어, 쿠팡, 11번가 등)에 있는 카테고리 별 베스트 상품 정보 제공",
+      desc: "스마트스토어, 쿠팡, 11번가 등 주요 오픈마켓에서 각 카테고리별 베스트 상품 정보를 제공합니다.",
       detailsImg: projectImage13,
       img: serviceImage1,
       category: "Business Process",
@@ -192,7 +192,7 @@ const getAllServices = () => {
     {
       id: 19,
       title: "트렌드 키워드 정보",
-      desc: "소비자들이 현재 많이 찾는 키워드 유추와 함께상품수,검색수 등의 키워드 정보 제공",
+      desc: "소비자들이 많이 찾는 키워드와 관련된 데이터(상품 수, 검색량, 광고 수 등)를 제공합니다.",
       detailsImg: projectImage12,
       img: serviceImage2,
       category: "Financial Restructuring",
@@ -201,7 +201,7 @@ const getAllServices = () => {
     {
       id: 20,
       title: "AI 기반 상품 추천",
-      desc: "매일 80만개의 상품 정보 수집 후 셀파트너만의 AI 알고리즘을 통해 잘 팔릴 상품 추천",
+      desc: "일 80만 개 이상의 상품 데이터를 분석하여 AI 알고리즘으로 높은 판매 가능성을 가진 상품을 추천합니다.",
       detailsImg: projectImage11,
       img: serviceImage3,
       category: "Cost Reduction Analysis",

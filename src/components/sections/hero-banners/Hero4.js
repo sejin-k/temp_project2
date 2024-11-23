@@ -9,11 +9,11 @@ const Hero4 = () => {
   }, []);
 
   return (
-    <section className="hero4">
+    <section className="hero4" id="hero4">
       <div className="container">
         <div
           className="row justify-content-center"
-          style={{ paddingTop: "50px", paddingBottom: "0px" }}
+          style={{ paddingTop: "100px", paddingBottom: "100px" }}
         >
           <div className="col-lg-8 text-center">
             <div className="hero4__content">
@@ -23,7 +23,8 @@ const Hero4 = () => {
                 data-aos-delay="100"
                 style={{ fontSize: "2.5rem" }}
               >
-                <br /><br />
+                <br />
+                <br />
                 어려운 상품소싱, 더이상 헤멜 필요 없이
                 <br />
                 <span className="text__gradient">

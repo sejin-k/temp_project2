@@ -11,7 +11,9 @@ const Services2 = ({ all, service, type, title, pt, pb, isBg, isNotTitle }) => {
   const currentCategory = useSearchParams().get("category");
   const allServices = getAllServices();
   const services = allServices
-    ?.slice(all ? 0 : 10, all ? 6 : 13)
+    // ?.slice(all ? 0 : 10, all ? 6 : 13)
+    ?.slice(all ? 17 : 17, all ? 20 : 20)
+
     .filter(({ category }) =>
       currentCategory
         ? category.toLowerCase().split(" ").join("-") === currentCategory
@@ -20,15 +22,17 @@ const Services2 = ({ all, service, type, title, pt, pb, isBg, isNotTitle }) => {
   return (
     <div
       className="service__video__sec__wrap"
-      style={
-        service === 2 && !isBg
-          ? {}
-          : {
-              background: `var(--pinkcolor) url('${
-                type === 2 ? serviceBgImage5.src : serviceBgImage2.src
-              }')`,
-            }
-      }
+      // style={
+
+      //   service === 2 && !isBg
+      //     ? {}
+      //     : {
+      //         background: `var(--pinkcolor) url('${
+      //           type === 2 ? serviceBgImage5.src : serviceBgImage2.src
+      //         }')`,
+      //       }
+      // }
+      style={{ background: `#F6F9FF url('${serviceBgImage2.src}')` }}
     >
       {/* service__section__start --> */}
       <div
@@ -58,7 +62,7 @@ const Services2 = ({ all, service, type, title, pt, pb, isBg, isNotTitle }) => {
                     <span className="text__gradient">Our Service</span>
                   </div>
                   <div className="section__title__heading">
-                    <h3>{title ? title : "WE OFFER CONSULTANCY SERVICES."}</h3>
+                    <h3>{title ? title : "셀파트너의 대표적인 솔루션"}</h3>
                   </div>
                 </div>
               </div>
@@ -78,7 +82,7 @@ const Services2 = ({ all, service, type, title, pt, pb, isBg, isNotTitle }) => {
       {/* service__section__end --> */}
 
       {/* video__section__start --> */}
-      {service === 2 ? "" : <Video2 />}
+      {/* {service === 2 ? "" : <Video2 />} */}
       {/* video__section__end --> */}
     </div>
   );

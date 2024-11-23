@@ -22,7 +22,7 @@ const Navbar = () => {
               listStyle: "none",
             }}
           >
-            <li className="header__nav-item">
+            {/* <li className="header__nav-item">
               <Link 
                 href="/keyword-discovery" 
                 className="btn btn-outline"
@@ -45,7 +45,7 @@ const Navbar = () => {
               >
                 상품 추천
               </Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </div>

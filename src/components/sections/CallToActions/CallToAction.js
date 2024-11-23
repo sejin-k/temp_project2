@@ -19,13 +19,13 @@ const CallToAction = ({ title, label }) => {
                 data-aos-duration="1500"
               >
                 <div className="section__title__small">
-                  <span>{label ? label : "CALL TO ACTION"}</span>
+                  <span>{label ? label : "Contact"}</span>
                 </div>
                 <div className="section__title__heading">
                   <h3>
                     {title
                       ? title
-                      : "셀파트너는 판매자를 위해 고민하고 또 고민합니다. 혹시 원하시는 서비스나 제안이 있으실까요?"}
+                      : "셀파트너는 판매자를 위해 고민하고 또 고민합니다. 원하시는 서비스나 제안이 있으실까요?"}
                   </h3>
                 </div>
 
