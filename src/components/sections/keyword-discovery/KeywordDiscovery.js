@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import CategoryDropdown from "@/components/sellpartner/category/CategoryDropdown";
+import FilterSection from "./FilterSection";
+
 
 const KeywordDiscovery = () => {
   const [categoryData, setCategoryData] = useState([]);
@@ -88,18 +90,89 @@ const KeywordDiscovery = () => {
     return filters.기간 !== null;
   };
 
-  // 테이블 데이터
-  const tableData = [
-    {
-      id: 72,
-      키워드: "릴라이더디자인스",
-      카테고리: "티셔츠",
-      검색수: 3300,
-      상품수: 1360,
-    },
-    // ... 더 많은 데이터
-  ];
+  const [keywords, setKeywords] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
+  // 필터값을 API 파라미터로 변환하는 함수
+  const getApiParameters = () => {
+    let selectedCategory = null;
+    if (selectedCategories.depth4) {
+      selectedCategory = selectedCategories.depth4.categoryDepth4Id;
+    } else if (selectedCategories.depth3) {
+      selectedCategory = selectedCategories.depth3.categoryDepth3Id;
+    } else if (selectedCategories.depth2) {
+      selectedCategory = selectedCategories.depth2.categoryDepth2Id;
+    } else if (selectedCategories.depth1) {
+      selectedCategory = selectedCategories.depth1.categoryDepth1Id;
+    }
+
+    // 검색수 필터 파싱
+    const searchCntFilter = filters.검색수;
+    const [minSearch, maxSearch] = searchCntFilter.split("-").map(num => 
+      parseInt(num.replace(/,/g, ""))
+    );
+
+    // 상품수 필터 파싱
+    const productCntFilter = filters.상품수;
+    const [minProduct, maxProduct] = productCntFilter.split("-").map(num => 
+      parseInt(num.replace(/,/g, ""))
+    );
+
+    console.log(filters.검색수?.[0]);
+
+    // 경쟁강도 파싱
+    const competitionFilter = filters.경쟁강도;
+
+    return {
+      categoryId: selectedCategory,
+      minSearchCnt: minSearch,
+      maxSearchCnt: maxSearch,
+      minProductCnt: minProduct,
+      maxProductCnt: maxProduct,
+      competitionIntensity: competitionFilter
+    };
+  };
+
+  // 키워드 조회 API 호출 함수
+  const fetchKeywords = async () => {
+    try {
+      setIsLoading(true);
+      const params = getApiParameters();
+      console.log(params);
+
+      const queryString = new URLSearchParams(params).toString();
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_SERVER_URL}/service/keyword-discovery/keyword?${queryString}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("키워드 조회에 실패했습니다");
+      }
+
+      const data = await response.json();
+      setKeywords(data.keywords || []);
+    } catch (error) {
+      console.error("키워드 조회 중 오류:", error);
+      // 에러 처리 로직 추가 가능
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // 조회 버튼 클릭 핸들러
+  const handleSearch = () => {
+    if (isAllFiltersSelected()) {
+      fetchKeywords();
+    }
+  };
+
+  console.log(categoryData);
   useEffect(() => {
     // 카테고리 데이터 fetch
     const fetchCategories = async () => {
@@ -109,7 +182,7 @@ const KeywordDiscovery = () => {
         });
 
         const response = await fetch(
-          `http://localhost:8000/service/product-recommend/category?${params}`,
+          `${process.env.NEXT_PUBLIC_BACKEND_SERVER_URL}/service/product-recommend/category?${params}`,
           {
             method: "GET",
           }
@@ -135,11 +208,6 @@ const KeywordDiscovery = () => {
         {/* 카테고리 선택 영역 */}
         <div className="mt-4">
           {/* 카테고리 헤더 */}
-          {/* <div className="section__title text-left sp_bottom_20">
-            <div className="section__title__heading">
-              <h3>카테고리</h3>
-            </div>
-          </div> */}
           <div
             className="section__title"
             style={{ textAlign: "left", marginBottom: "40px" }}
@@ -152,306 +220,68 @@ const KeywordDiscovery = () => {
             <div className="category_row_bg">
               <div className="d-flex justify-content-between">
                 {/* 대분류 */}
-                <div
-                  className={`dropdown-container ${
-                    showDropdowns.depth1 ? "active" : ""
-                  }`}
-                  style={{ flex: 1 }}
-                >
-                  <div className="category-label mb-2">대분류</div>
-                  <div
-                    className="category_row"
-                    onClick={() => toggleDropdown(1)}
-                  >
-                    <div className="category_row__contents">
-                      <span className="category_name">
-                        {selectedCategories.depth1?.categoryDepth1Name ||
-                          "대분류"}
-                      </span>
-                    </div>
-                  </div>
-                  {showDropdowns.depth1 && (
-                    <div className="category-dropdown">
-                      {categoryData.map((cat) => (
-                        <div
-                          key={cat.categoryDepth1Id}
-                          className="category-dropdown-item"
-                          onClick={() => handleCategorySelect(1, cat)}
-                        >
-                          {cat.categoryDepth1Name}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                <CategoryDropdown
+                  depth={1}
+                  categoryName="대분류"
+                  parentCategory={categoryData}
+                  selectedCategories={selectedCategories}
+                  showDropdowns={showDropdowns}
+                  toggleDropdown={toggleDropdown}
+                  handleCategorySelect={handleCategorySelect}
+                />
 
                 {/* 중분류 */}
-                <div
-                  className={`dropdown-container ${
-                    showDropdowns.depth2 ? "active" : ""
-                  }`}
-                  style={{ flex: 1, marginLeft: "10px" }}
-                >
-                  <div className="category-label mb-2">중분류</div>
-                  <div
-                    className="category_row"
-                    onClick={() => toggleDropdown(2)}
-                  >
-                    <div className="category_row__contents">
-                      <span className="category_name">
-                        {selectedCategories.depth2?.categoryDepth2Name ===
-                        "선택 없음"
-                          ? ""
-                          : selectedCategories.depth2?.categoryDepth2Name ||
-                            "중분류"}
-                      </span>
-                    </div>
-                  </div>
-                  {showDropdowns.depth2 && selectedCategories.depth1 && (
-                    <div className="category-dropdown">
-                      <div
-                        className="category-dropdown-item"
-                        onClick={() =>
-                          handleCategorySelect(2, {
-                            categoryDepth2Id: null,
-                            categoryDepth2Name: "선택 없음",
-                          })
-                        }
-                      >
-                        선택 없음
-                      </div>
-                      {selectedCategories.depth1.childCategory.map((cat) => (
-                        <div
-                          key={cat.categoryDepth2Id}
-                          className="category-dropdown-item"
-                          onClick={() => handleCategorySelect(2, cat)}
-                        >
-                          {cat.categoryDepth2Name}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                <CategoryDropdown
+                  depth={2}
+                  categoryName="중분류"
+                  parentCategory={categoryData}
+                  selectedCategories={selectedCategories}
+                  showDropdowns={showDropdowns}
+                  toggleDropdown={toggleDropdown}
+                  handleCategorySelect={handleCategorySelect}
+                />
 
                 {/* 소분류 */}
-                <div
-                  className={`dropdown-container ${
-                    showDropdowns.depth3 ? "active" : ""
-                  }`}
-                  style={{ flex: 1, marginLeft: "10px" }}
-                >
-                  <div className="category-label mb-2">소분류</div>
-                  <div
-                    className="category_row"
-                    onClick={() => toggleDropdown(3)}
-                  >
-                    <div className="category_row__contents">
-                      <span className="category_name">
-                        {selectedCategories.depth3?.categoryDepth3Name ===
-                        "선택 없음"
-                          ? ""
-                          : selectedCategories.depth3?.categoryDepth3Name ||
-                            "소분류"}
-                      </span>
-                    </div>
-                  </div>
-                  {showDropdowns.depth3 && selectedCategories.depth2 && (
-                    <div className="category-dropdown">
-                      <div
-                        className="category-dropdown-item"
-                        onClick={() =>
-                          handleCategorySelect(3, {
-                            categoryDepth3Id: null,
-                            categoryDepth3Name: "선택 없음",
-                          })
-                        }
-                      >
-                        선택 없음
-                      </div>
-                      {selectedCategories.depth2.childCategory.map((cat) => (
-                        <div
-                          key={cat.categoryDepth3Id}
-                          className="category-dropdown-item"
-                          onClick={() => handleCategorySelect(3, cat)}
-                        >
-                          {cat.categoryDepth3Name}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                <CategoryDropdown
+                  depth={3}
+                  categoryName="소분류"
+                  parentCategory={categoryData}
+                  selectedCategories={selectedCategories}
+                  showDropdowns={showDropdowns}
+                  toggleDropdown={toggleDropdown}
+                  handleCategorySelect={handleCategorySelect}
+                />
 
                 {/* 세분류 */}
-                <div
-                  className={`dropdown-container ${
-                    showDropdowns.depth4 ? "active" : ""
-                  }`}
-                  style={{ flex: 1, marginLeft: "10px" }}
-                >
-                  <div className="category-label mb-2">세분류</div>
-                  <div
-                    className="category_row"
-                    onClick={() => toggleDropdown(4)}
-                  >
-                    <div className="category_row__contents">
-                      <span className="category_name">
-                        {selectedCategories.depth4?.categoryDepth4Name ===
-                        "선택 없음"
-                          ? ""
-                          : selectedCategories.depth4?.categoryDepth4Name ||
-                            "세분류"}
-                      </span>
-                    </div>
-                  </div>
-                  {showDropdowns.depth4 && selectedCategories.depth3 && (
-                    <div className="category-dropdown">
-                      <div
-                        className="category-dropdown-item"
-                        onClick={() =>
-                          handleCategorySelect(4, {
-                            categoryDepth4Id: null,
-                            categoryDepth4Name: "선택 없음",
-                          })
-                        }
-                      >
-                        선택 없음
-                      </div>
-                      {selectedCategories.depth3.childCategory.map((cat) => (
-                        <div
-                          key={cat.categoryDepth4Id}
-                          className="category-dropdown-item"
-                          onClick={() => handleCategorySelect(4, cat)}
-                        >
-                          {cat.categoryDepth4Name}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                <CategoryDropdown
+                  depth={4}
+                  categoryName="세분류"
+                  parentCategory={categoryData}
+                  selectedCategories={selectedCategories}
+                  showDropdowns={showDropdowns}
+                  toggleDropdown={toggleDropdown}
+                  handleCategorySelect={handleCategorySelect}
+                />
               </div>
             </div>
           </div>
         </div>
 
         {/* 필터 섹션 */}
-        <div className="category_row mt-4">
-          <div className="p-4">
-            {/* 기간 필터 */}
-            <div className="filter-group mb-4">
-              <div className="d-flex align-items-center">
-                <label className="filter-label me-4">기간</label>
-                <div className="filter-buttons">
-                  <button
-                    className={`keyword-filter__button ${
-                      filters.기간 === "최근 30일" ? "selected" : "unselected"
-                    }`}
-                    onClick={() => handleFilterClick("기간", "최근 30일")}
-                  >
-                    최근 30일
-                  </button>
-                  <button
-                    className={`keyword-filter__button ${
-                      filters.기간 === "과거 선택" ? "selected" : "unselected"
-                    }`}
-                    onClick={() => handleFilterClick("기간", "과거 선택")}
-                  >
-                    과거 선택
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className="keyword-filter__section">
-              {/* 검색 필터 */}
-              <div className="keyword-filter__group">
-                <div className="d-flex align-items-center">
-                  <label className="keyword-filter__label me-4">검색수</label>
-                  <div className="keyword-filter__buttons">
-                    {["0-5,000", "500-5,000", "0-10,000", "5,000-10,000"].map(
-                      (value) => (
-                        <button
-                          key={value}
-                          className={`keyword-filter__button ${
-                            filters.검색수 === value ? "selected" : "unselected"
-                          }`}
-                          onClick={() => handleFilterClick("검색수", value)}
-                        >
-                          {value}
-                        </button>
-                      )
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              {/* 상품수 필터 */}
-              <div className="keyword-filter__group">
-                <div className="d-flex align-items-center">
-                  <label className="keyword-filter__label me-4">상품수</label>
-                  <div className="keyword-filter__buttons">
-                    {["0-2,000", "0-5,000", "0-10,000", "5,000-10,000"].map(
-                      (value) => (
-                        <button
-                          key={value}
-                          className={`keyword-filter__button ${
-                            filters.상품수 === value ? "selected" : "unselected"
-                          }`}
-                          onClick={() => handleFilterClick("상품수", value)}
-                        >
-                          {value}
-                        </button>
-                      )
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              {/* 경쟁강도 필터 */}
-              <div className="keyword-filter__group">
-                <div className="d-flex align-items-center">
-                  <label className="keyword-filter__label me-4">경쟁강도</label>
-                  <div className="keyword-filter__buttons">
-                    {["0-2", "0-5", "0-10"].map((value) => (
-                      <button
-                        key={value}
-                        className={`keyword-filter__button ${
-                          filters.경쟁강도 === value ? "selected" : "unselected"
-                        }`}
-                        onClick={() => handleFilterClick("경쟁강도", value)}
-                      >
-                        {value}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* 필터 적용 버튼 */}
-              <div className="d-flex justify-content-end mt-3">
-                <button
-                  className={`keyword-filter__button ${
-                    isAllFiltersSelected() ? "selected" : "unselected"
-                  }`}
-                  disabled={!isAllFiltersSelected()}
-                >
-                  조회
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <FilterSection 
+          filters={filters}
+          handleFilterClick={handleFilterClick}
+          isAllFiltersSelected={isAllFiltersSelected}
+          onSearch={handleSearch}
+          isLoading={isLoading}
+        />
 
         {/* 데이터 테이블 */}
         <div className="mt-4">
-          {/* 키워드 발굴 헤더 */}
-          <div
-            className="section__title"
-            style={{ textAlign: "left", marginBottom: "40px" }}
-          >
+          <div className="section__title" style={{ textAlign: "left", marginBottom: "40px" }}>
             <h3>키워드 결과</h3>
           </div>
 
-          {/* 테이블 */}
           <div className="table-responsive">
             <table className="table">
               <thead>
@@ -464,15 +294,25 @@ const KeywordDiscovery = () => {
                 </tr>
               </thead>
               <tbody>
-                {tableData.map((row) => (
-                  <tr key={row.id}>
-                    <td>{row.id}</td>
-                    <td>{row.키워드}</td>
-                    <td>{row.카테고리}</td>
-                    <td>{row.검색수}</td>
-                    <td>{row.상품수}</td>
+                {isLoading ? (
+                  <tr>
+                    <td colSpan="5" className="text-center">로딩중...</td>
                   </tr>
-                ))}
+                ) : keywords.length > 0 ? (
+                  keywords.map((keyword, index) => (
+                    <tr key={index}>
+                      <td>{index + 1}</td>
+                      <td>{keyword.keywordName}</td>
+                      <td>{keyword.categoryName}</td>
+                      <td>{keyword.searchCnt}</td>
+                      <td>{keyword.productCnt}</td>
+                    </tr>
+                  )).sort((a, b) => a.rank - b.rank)
+                ) : (
+                  <tr>
+                    <td colSpan="5" className="text-center">데이터가 없습니다</td>
+                  </tr>
+                )}
               </tbody>
             </table>
           </div>
