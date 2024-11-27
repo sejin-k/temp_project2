@@ -1,52 +1,131 @@
 'use client'
 import RecommendCard from "./recommendCard"
-import { useState } from 'react';
+import { useState } from 'react'
 import Popup from "@/components/sellpartner/popup/Popup";
 import TossPayments from "@/components/sellpartner/payment/TossPayments";
+import * as PortOne from "@portone/browser-sdk/v2";
 
-function RecommendCart({ recommendList }) {
-    const [showPopup, setShowPopup] = useState(false);
-    const [popupContent, setPopupContent] = useState(null);
-    const [categoryPrices, setCategoryPrices] = useState({});
-
+function RecommendCart({ recommendList, handleChangeRecommendCnt }) {
     // 모든 카드의 총액 계산
-    const totalAmount = Object.values(categoryPrices).reduce((sum, price) => sum + price, 0);
+    const totalAmount = recommendList.reduce((sum, item) => sum + item.amount, 0);
 
-    // 테스트 데이터
-    const paymentInfo = {
-        amount: totalAmount,
-        orderId: "Dbnd6a2l7lVsdeqx1YA9X",
-        orderName: "토스 티셔츠 외 2건",
-        customer: {
-            customerId: "x9YEjeoYSurBKSkwyNGe1",
-            email: "customer123@gmail.com",
-            name: "김토스",
-            phoneNumber: "01012341234",
+    /* 토스 페이먼츠 결제 코드 시작 ================================================================== */
+    // const [showPopup, setShowPopup] = useState(false);
+    // const [popupContent, setPopupContent] = useState(null);
+
+    // // 테스트 데이터
+    // const paymentInfo = {
+    //     amount: totalAmount,
+    //     orderId: "Dbnd6a2l7lVsdeqx1YA9X",
+    //     orderName: "토스 티셔츠 외 2건",
+    //     customer: {
+    //         customerId: "x9YEjeoYSurBKSkwyNGe1",
+    //         email: "customer123@gmail.com",
+    //         name: "김토스",
+    //         phoneNumber: "01012341234",
+    //     }
+    // }
+
+    // // 결제하기 버튼 클릭 핸들러
+    // const handlePaymentClick = () => {
+    //     setShowPopup(true);
+    //     setPopupContent(
+    //         <TossPayments
+    //             paymentInfo={paymentInfo}
+    //             changePopupContent={setPopupContent}
+    //         />
+    //     );
+    // };
+
+    // const handleClosePopup = () => {
+    //     setShowPopup(false);
+    // };
+    /* 토스 페이먼츠 결제 코드 끝 ================================================================== */
+
+    /* 포트원 결제 코드 시작 ====================================================================== */
+    const createOrderId = async () => {
+        // 백엔드 오더아이디 생성 API 호출
+        console.log(JSON.stringify({totalAmount, recommendList}));
+        const response = await fetch('/api/payment/order', {
+            method: 'POST',
+            body: JSON.stringify({totalAmount, recommendList}),
+        });
+
+        // 응답 실패 시 에러 발생
+        if (!response.ok) {
+            throw new Error('Failed to create order ID');
         }
+
+        // 응답 데이터 반환
+        const data = await response.json();
+        return data.orderId;
     }
 
-    const handlePriceChange = (categoryId, price) => {
-        setCategoryPrices(prev => ({
-            ...prev,
-            [categoryId]: price
-        }));
-    };
+    const orderComplete = async (orderId) => {
+        // 결제 완료 요청 API 호출
+        const notified = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_SERVER_URL}/payment/complete`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({orderId}),
+        });
+    }
 
-    // 결제하기 버튼 클릭 핸들러
-    const handlePaymentClick = () => {
-        setShowPopup(true);
-        setPopupContent(
-            <TossPayments
-                paymentInfo={paymentInfo}
-                changePopupContent={setPopupContent}
-            />
-        );
-    };
+    const productRecommend = async () => {
+        const data = recommendList.map((item) => {
+            return {
+                categoryId: item.categoryId,
+                productCnt: item.recommendCnt,
+                minPrice: item.minPrice,
+                maxPrice: item.maxPrice,
+            }
+        })
+        const productRecommendData = {
+            serviceId: "PORECO010000",
+            data
+        }
 
-    const handleClosePopup = () => {
-        setShowPopup(false);
-    };
+        // 상품 추천 요청 API 호출
+        const response = await fetch(`/api/service/product-recommend`, {
+            method: 'POST',
+            body: JSON.stringify(productRecommendData),
+        });
+    }
 
+    const handlePaymentClick = async () => {
+        // 백엔드 오더 생성 API 호출
+        const orderId = await createOrderId();
+        
+        // 포트원 결제창 호출
+        const response = await PortOne.requestPayment({
+            storeId: process.env.NEXT_PUBLIC_STORE_ID,
+            channelKey: process.env.NEXT_PUBLIC_CHANNEL_KEY,
+            paymentId: orderId,
+            orderName: "상품 추천 서비스",
+            totalAmount: totalAmount,
+            currency: "CURRENCY_KRW",
+            payMethod: "CARD",
+            // redirectUrl: ~~ // 결제 완료 후 리다이렉트할 URL(필요시 사용)
+        });
+
+        // 결제 요청 오류 
+        if (response.code !== undefined) {
+            return alert(response.message);
+        }
+
+        // 결제 완료 요청 API 호출
+        const notified = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_SERVER_URL}/payment/complete`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                orderId: orderId,
+            }),
+        });
+
+        // 상품 추천 요청 API 호출
+        await productRecommend();
+    }
+    /* 포트원 결제 코드 끝 ====================================================================== */
+    
     return (
         <div className="gridarea__wrapper">
             <div className="container">
@@ -56,7 +135,7 @@ function RecommendCart({ recommendList }) {
                             key={index}
                             categoryId={item.categoryId}
                             categoryName={item.categoryName}
-                            onPriceChange={handlePriceChange}
+                            handleChangeRecommendCnt={handleChangeRecommendCnt}
                         />
                     ))}
                 </div>
@@ -80,17 +159,17 @@ function RecommendCart({ recommendList }) {
                 </div>
             </div>
 
-            {/* 결제 팝업 */}
-            {showPopup && (
+            {/* 토스 페이먼츠 결제 팝업 */}
+            {/* {showPopup && (
                 <Popup
                     headerText="결제 정보"
                     contentComponent={popupContent}
                     changePopupContent={setPopupContent}
                     onClose={handleClosePopup}
                 />
-            )}
+            )} */}
         </div>
     );
 }
 
-export default RecommendCart
+export default RecommendCart;

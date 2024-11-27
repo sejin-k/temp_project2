@@ -2,7 +2,7 @@
 import RecommendCntRadio from "@/components/sellpartner/recommendCart/recommendCntRadio";
 import { useState, useEffect } from "react";
 
-function RecommendCard({categoryId, categoryName, onPriceChange}) {
+function RecommendCard({categoryId, categoryName, handleChangeRecommendCnt}) {
     const [checkedCnt, setCheckedCnt] = useState(30);
     const [priceRange, setPriceRange] = useState({min: 0, max: 100000});
     const [totalPrice, setTotalPrice] = useState(30000); // 기본값 3만원
@@ -22,14 +22,14 @@ function RecommendCard({categoryId, categoryName, onPriceChange}) {
         setCheckedCnt(cnt);
         const newPrice = getPriceByCount(cnt);
         setTotalPrice(newPrice);
-        onPriceChange(categoryId, newPrice);
+        handleChangeRecommendCnt(categoryId, cnt, newPrice);
     };
     
     // 컴포넌트 마운트 시 초기 가격 설정
     useEffect(() => {
         const initialPrice = getPriceByCount(checkedCnt);
         setTotalPrice(initialPrice);
-        onPriceChange(categoryId, initialPrice);
+        handleChangeRecommendCnt(categoryId, checkedCnt, initialPrice);
     }, []);
 
     const handlePriceChange = (e, type) => {

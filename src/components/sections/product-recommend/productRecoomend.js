@@ -1,15 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
-// import RecommendCart
 import Category from "@/components/sections/category/Category";
 import RecommendCart from "@/components/sections/recommendCart/recommendCart";
 import HeroInner from "@/components/sections/hero-banners/HeroInner";
 
 const ProductRecommend = () => {
-  const [recommendList, setRecommendList] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const [recommendList, setRecommendList] = useState([]);
 
   const handleAddCategory = (categoryId, categoryName, isChecked) => {
     if (isChecked) {
@@ -20,6 +18,7 @@ const ProductRecommend = () => {
         recommendCnt: 30,
         minPrice: 0,
         maxPrice: 100000,
+        amount: 30000,
       };
 
       setSelectedCategories((prev) => [...prev, newCategory]);
@@ -33,6 +32,14 @@ const ProductRecommend = () => {
         prev.filter((cat) => cat.categoryId !== categoryId)
       );
     }
+  };
+
+  const handleChangeRecommendCnt = (categoryId, recommendCnt, amount) => {
+    setRecommendList((prev) =>
+      prev.map((cat) =>
+        cat.categoryId === categoryId ? { ...cat, recommendCnt: recommendCnt, amount: amount } : cat
+      )
+    );
   };
 
   return (
@@ -58,7 +65,8 @@ const ProductRecommend = () => {
           </div>
         </div>
       </div>
-      <RecommendCart recommendList={recommendList} />
+      <RecommendCart recommendList={recommendList} handleChangeRecommendCnt={handleChangeRecommendCnt} />
+
     </main>
   );
 };

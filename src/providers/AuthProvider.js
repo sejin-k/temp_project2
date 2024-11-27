@@ -66,20 +66,20 @@ export function AuthProvider({ children }) {
   }, []);
 
   // 개발용 디버깅 도구
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'development') {
-      const debugButton = document.createElement('button');
-      // debugButton.innerHTML = '인증상태 새로고침';
-      debugButton.style.position = 'fixed';
-      debugButton.style.bottom = '20px';
-      debugButton.style.right = '20px';
-      debugButton.style.zIndex = '9999';
-      debugButton.onclick = checkAuthStatus;
-      document.body.appendChild(debugButton);
+//   useEffect(() => {
+//     if (process.env.NODE_ENV === 'development') {
+//       const debugButton = document.createElement('button');
+//       debugButton.innerHTML = '인증상태 새로고침';
+//       debugButton.style.position = 'fixed';
+//       debugButton.style.bottom = '20px';
+//       debugButton.style.right = '20px';
+//       debugButton.style.zIndex = '9999';
+//       debugButton.onclick = checkAuthStatus;
+//       document.body.appendChild(debugButton);
 
-      return () => debugButton.remove();
-    }
-  }, []);
+//       return () => debugButton.remove();
+//     }
+//   }, []);
 
   return (
     <AuthContext.Provider value={{ 
