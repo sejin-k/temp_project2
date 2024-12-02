@@ -18,7 +18,7 @@ const FilterSection = ({
     },
     {
       label: "경쟁강도",
-      options: ["하", "중", "상"]
+      options: ["낮음", "중간", "높음"]
     }
   ];
 
