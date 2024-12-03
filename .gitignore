@@ -9,3 +9,6 @@ package-lock.json
 # 디바이스 관련 파일
 # 맥 캐시 파일
 .DS_Store
+
+# 환경 변수 파일
+.env.local
