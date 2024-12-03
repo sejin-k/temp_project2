@@ -66,7 +66,6 @@ const OpenMarketBest = () => {
 
         getMarketInfo();
     }, []);
-    console.log(marketInfo);
 
     const handleMarketClick = (platformId) => {
         setSelectedMarket(platformId);
@@ -131,46 +130,9 @@ const OpenMarketBest = () => {
         if (selectedMarket && selectedCategory && selectedCategory2) {
             getProducts();
         }
-    }, [selectedMarket, selectedCategory, selectedCategory2]);
+    }, [selectedCategory2]);
 
-    // 100개의 더미 상품 데이터 생성 함수
-    const generateDummyProducts = (category) => {
-        const products = [];
-        for (let i = 1; i <= 100; i++) {
-            const basePrice = Math.floor(Math.random() * 900000) + 100000;
-            const discountRate = Math.floor(Math.random() * 60) + 5;
-            const originalPrice = Math.floor(basePrice / (1 - discountRate / 100));
-            const rating = (Math.random() * (5 - 4) + 4).toFixed(1);
-            const reviewCount = Math.floor(Math.random() * 90000) + 1000;
-
-            products.push({
-                id: i,
-                title: `${category} 인기상품 ${i}호`,
-                price: `${basePrice.toLocaleString()}원`,
-                originalPrice: `${originalPrice.toLocaleString()}원`,
-                discountRate: `${discountRate}%`,
-                mall: `판매처 ${i}`,
-                rating: parseFloat(rating),
-                reviewCount: reviewCount,
-                category: category,
-                imageUrl: `https://picsum.photos/200/200?random=${i}`,
-            });
-        }
-        return products;
-    };
-
-    // 네이버 쇼핑 더미데이터
-    const dummyProducts = {
-        naver: {
-            all: generateDummyProducts("all"),
-            fashion: generateDummyProducts("fashion"),
-            beauty: generateDummyProducts("beauty"),
-            digital: generateDummyProducts("digital"),
-            food: generateDummyProducts("food"),
-            home: generateDummyProducts("home"),
-        },
-    };
-
+    
     // 마켓이나 카테고리 변경시 상품 목록 업데이트
     // useEffect(() => {
     //   if (selectedMarket === "naver") {

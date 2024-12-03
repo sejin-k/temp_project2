@@ -38,6 +38,18 @@ const HeaderRight = () => {
           <ul className="header__nav-list">
             <li className="header__nav-item">
               <Link
+                href="/openmarket-best"
+                className="btn btn-outline"
+                style={{
+                  fontWeight: "700", // Navbar와 동일한 굵기
+                  fontSize: "16px", // Navbar와 동일한 크기
+                }}
+              >
+                오픈마켓 베스트
+              </Link>
+            </li>
+            <li className="header__nav-item">
+              <Link
                 href="/keyword-discovery"
                 className="btn btn-outline"
                 style={{
