@@ -69,7 +69,7 @@ const Offer2 = ({ type, isVideo, img, title, tag, id, pt }) => {
                   type === 2 ? "section__title--3" : ""
                 }`}
               >
-                <div class="section__title__small">
+                <div className="section__title__small">
                   <span>Probluems</span>
                 </div>
                 {/* <div className="section__title__button">

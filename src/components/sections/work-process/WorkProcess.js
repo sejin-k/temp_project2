@@ -89,7 +89,7 @@ const WorkProcess = ({ type }) => {
             data-aos-duration="1500"
           >
             <div className="section__title section__title--3 text-center sp_bottom_70">
-              <div class="section__title__small">
+              <div className="section__title__small">
                 <span>HOW?</span>
               </div>
               {/* <div className="section__title__button">
