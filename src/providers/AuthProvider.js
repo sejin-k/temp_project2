@@ -8,14 +8,16 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   // 서버에서 인증 상태 확인
-  const checkAuthStatus = async () => {
+  const checkAuthStatus = async (skipStorageUpdate = false) => {
     try {
       const response = await fetch('/api/auth/status');
       const data = await response.json();
       setIsLogin(data.isLogin);
       
-      // 로컬 스토리지 업데이트로 다른 탭에 알림
-      localStorage.setItem('auth_sync', data.timestamp);
+      // skipStorageUpdate가 false일 때만 로컬 스토리지 업데이트
+      if (!skipStorageUpdate) {
+        localStorage.setItem('auth_sync', data.timestamp);
+      }
     } catch (error) {
       console.error('인증 상태 확인 실패:', error);
     } finally {
@@ -56,7 +58,8 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const handleStorageChange = (e) => {
       if (e.key === 'auth_sync') {
-        checkAuthStatus();
+        // storage 이벤트에 의한 checkAuthStatus 호출 시 skipStorageUpdate를 true로 설정
+        checkAuthStatus(true);
         console.log('🔄 인증 상태 동기화:', e.newValue);
       }
     };
