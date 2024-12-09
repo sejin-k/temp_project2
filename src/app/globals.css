@@ -3695,10 +3695,16 @@ button.default__button {
 }
 .headerarea__logo {
   display: flex;
+  max-width: 150px;
   height: 100%;
   align-items: center;
 }
 @media (min-width: 992px) and (max-width: 1365px) {
+  .headerarea__logo img {
+    max-width: 150px;
+  }
+}
+@media (max-width: 2465px) {
   .headerarea__logo img {
     max-width: 150px;
   }
@@ -14143,14 +14149,20 @@ h4 {
 }
 
 .btn-primary {
-  background: #6366f1;
+  background: #FE0094;
   color: white;
-  border: 1px solid #6366f1;
+  border: 1px solid #FE0094;
 }
 
 .btn-primary:hover {
-  background: #4f46e5;
-  border-color: #4f46e5;
+  background: #ffffff;
+  color: black;
+  border-color: #FE0094;
+  border: 1px solid #FE0094;
+
+  /* background: #ff60bd;
+  border-color: #ff60bd; */
+
 }
 
 .headerarea__main__wrapper {
@@ -14169,6 +14181,7 @@ h4 {
 
 .headerarea__logo {
   margin-right: 10px;
+  max-width: 150px;
 }
 
 

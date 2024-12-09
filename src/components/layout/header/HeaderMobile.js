@@ -1,5 +1,6 @@
 import Image from "next/image";
-import logoImage1 from "@/assets/img/logo/Logo_1.png";
+import logoImage7 from "@/assets/img/logo/Logo__7.png";
+import logoImage8 from "@/assets/img/logo/Logo__8.png";
 import Link from "next/link";
 import CartHeader from "./CartHeader";
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
@@ -39,7 +40,7 @@ const HeaderMobile = () => {
               <Image
                 placeholder="blur"
                 className="mobile__log--img"
-                src={logoImage1}
+                src={logoImage8}
                 alt="logo-img"
               />
             </Link>

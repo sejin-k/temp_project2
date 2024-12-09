@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import CategoryDropdown from "@/components/sellpartner/category/CategoryDropdown";
 import FilterSection from "./FilterSection";
 
-
 const KeywordDiscovery = () => {
   const [categoryData, setCategoryData] = useState([]);
   // 선택된 카테고리 상태 관리
@@ -108,15 +107,15 @@ const KeywordDiscovery = () => {
 
     // 검색수 필터 파싱
     const searchCntFilter = filters.검색수;
-    const [minSearch, maxSearch] = searchCntFilter.split("-").map(num => 
-      parseInt(num.replace(/,/g, ""))
-    );
+    const [minSearch, maxSearch] = searchCntFilter
+      .split("-")
+      .map((num) => parseInt(num.replace(/,/g, "")));
 
     // 상품수 필터 파싱
     const productCntFilter = filters.상품수;
-    const [minProduct, maxProduct] = productCntFilter.split("-").map(num => 
-      parseInt(num.replace(/,/g, ""))
-    );
+    const [minProduct, maxProduct] = productCntFilter
+      .split("-")
+      .map((num) => parseInt(num.replace(/,/g, "")));
 
     console.log(filters.검색수?.[0]);
 
@@ -129,7 +128,7 @@ const KeywordDiscovery = () => {
       maxSearchCnt: maxSearch,
       minProductCnt: minProduct,
       maxProductCnt: maxProduct,
-      competitionIntensity: competitionFilter
+      competitionIntensity: competitionFilter,
     };
   };
 
@@ -268,7 +267,7 @@ const KeywordDiscovery = () => {
         </div>
 
         {/* 필터 섹션 */}
-        <FilterSection 
+        <FilterSection
           filters={filters}
           handleFilterClick={handleFilterClick}
           isAllFiltersSelected={isAllFiltersSelected}
@@ -278,7 +277,10 @@ const KeywordDiscovery = () => {
 
         {/* 데이터 테이블 */}
         <div className="mt-4">
-          <div className="section__title" style={{ textAlign: "left", marginBottom: "40px" }}>
+          <div
+            className="section__title"
+            style={{ textAlign: "left", marginBottom: "40px" }}
+          >
             <h3>키워드 결과</h3>
           </div>
 
@@ -296,21 +298,27 @@ const KeywordDiscovery = () => {
               <tbody>
                 {isLoading ? (
                   <tr>
-                    <td colSpan="5" className="text-center">로딩중...</td>
+                    <td colSpan="5" className="text-center">
+                      로딩중...
+                    </td>
                   </tr>
                 ) : keywords.length > 0 ? (
-                  keywords.map((keyword, index) => (
-                    <tr key={index}>
-                      <td>{index + 1}</td>
-                      <td>{keyword.keywordName}</td>
-                      <td>{keyword.categoryName}</td>
-                      <td>{keyword.searchCnt}</td>
-                      <td>{keyword.productCnt}</td>
-                    </tr>
-                  )).sort((a, b) => a.rank - b.rank)
+                  keywords
+                    .map((keyword, index) => (
+                      <tr key={index}>
+                        <td>{index + 1}</td>
+                        <td>{keyword.keywordName}</td>
+                        <td>{keyword.categoryName}</td>
+                        <td>{keyword.searchCnt}</td>
+                        <td>{keyword.productCnt}</td>
+                      </tr>
+                    ))
+                    .sort((a, b) => a.rank - b.rank)
                 ) : (
                   <tr>
-                    <td colSpan="5" className="text-center">데이터가 없습니다</td>
+                    <td colSpan="5" className="text-center">
+                      데이터가 없습니다
+                    </td>
                   </tr>
                 )}
               </tbody>
