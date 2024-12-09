@@ -8,6 +8,7 @@ import * as PortOne from "@portone/browser-sdk/v2";
 function RecommendCart({ recommendList, handleChangeRecommendCnt }) {
     // 모든 카드의 총액 계산
     const totalAmount = recommendList.reduce((sum, item) => sum + item.amount, 0);
+    let orderId = "";
 
     /* 토스 페이먼츠 결제 코드 시작 ================================================================== */
     // const [showPopup, setShowPopup] = useState(false);
@@ -45,10 +46,15 @@ function RecommendCart({ recommendList, handleChangeRecommendCnt }) {
     /* 포트원 결제 코드 시작 ====================================================================== */
     const createOrderId = async () => {
         // 백엔드 오더아이디 생성 API 호출
-        console.log(JSON.stringify({totalAmount, recommendList}));
+        const orderCreateData = {
+            totalAmount,
+            recommendList,
+            serviceId: "PORECO010000"
+        }
+
         const response = await fetch('/api/payment/order', {
             method: 'POST',
-            body: JSON.stringify({totalAmount, recommendList}),
+            body: JSON.stringify(orderCreateData),
         });
 
         // 응답 실패 시 에러 발생
@@ -81,8 +87,11 @@ function RecommendCart({ recommendList, handleChangeRecommendCnt }) {
         })
         const productRecommendData = {
             serviceId: "PORECO010000",
-            data
+            data,
+            orderId
         }
+
+        console.log(JSON.stringify(productRecommendData));
 
         // 상품 추천 요청 API 호출
         const response = await fetch(`/api/service/product-recommend`, {
@@ -93,7 +102,7 @@ function RecommendCart({ recommendList, handleChangeRecommendCnt }) {
 
     const handlePaymentClick = async () => {
         // 백엔드 오더 생성 API 호출
-        const orderId = await createOrderId();
+        orderId = await createOrderId();
         
         // 포트원 결제창 호출
         const response = await PortOne.requestPayment({
