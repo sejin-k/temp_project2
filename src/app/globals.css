@@ -1713,7 +1713,7 @@ li {
  */
 :root {
   --bodyColor: #222222;
-  --bodyBg: #fff;
+  --bodyBg: #ff0000;
   --whiteColor: #ffffff;
   --blackColor: #0a0624;
   --blackBlue: #110c34;
@@ -14194,11 +14194,11 @@ h4 {
 }
 
 .nav-link {
-  color: #000000;
+  color: #FE0094;
 }
 
 .nav-link.arrow-btn:hover{
-  color: #0f259e;
+  color: #FE0094;
 }
 
 /* 결제 팝업 스타일 css 추가 - 11.14 */
