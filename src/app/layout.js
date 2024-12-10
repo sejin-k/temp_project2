@@ -19,8 +19,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Home 1 | Bastun- Business Consulting Next Js Template",
-  description: "Home 1 | Bastun- Business Consulting Next Js Template",
+  title: "셀파트너 - 셀러 활동의 파트너",
+  description: "셀파트너 - 셀러 활동의 파트너",
 };
 
 export default function RootLayout({ children }) {

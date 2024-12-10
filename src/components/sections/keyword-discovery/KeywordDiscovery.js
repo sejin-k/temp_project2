@@ -221,7 +221,7 @@ const KeywordDiscovery = () => {
                 {/* 대분류 */}
                 <CategoryDropdown
                   depth={1}
-                  categoryName="대분류"
+                  categoryName="1차 카테고리"
                   parentCategory={categoryData}
                   selectedCategories={selectedCategories}
                   showDropdowns={showDropdowns}
@@ -232,7 +232,7 @@ const KeywordDiscovery = () => {
                 {/* 중분류 */}
                 <CategoryDropdown
                   depth={2}
-                  categoryName="중분류"
+                  categoryName="2차 카테고리"
                   parentCategory={categoryData}
                   selectedCategories={selectedCategories}
                   showDropdowns={showDropdowns}
@@ -243,7 +243,7 @@ const KeywordDiscovery = () => {
                 {/* 소분류 */}
                 <CategoryDropdown
                   depth={3}
-                  categoryName="소분류"
+                  categoryName="3차 카테고리"
                   parentCategory={categoryData}
                   selectedCategories={selectedCategories}
                   showDropdowns={showDropdowns}
@@ -254,7 +254,7 @@ const KeywordDiscovery = () => {
                 {/* 세분류 */}
                 <CategoryDropdown
                   depth={4}
-                  categoryName="세분류"
+                  categoryName="4차 카테고리"
                   parentCategory={categoryData}
                   selectedCategories={selectedCategories}
                   showDropdowns={showDropdowns}
