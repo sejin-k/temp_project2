@@ -201,23 +201,84 @@ const KeywordDiscovery = () => {
     fetchCategories();
   }, []);
 
+  // 정렬 상태 추가
+  const [sortConfig, setSortConfig] = useState({
+    key: "rank",
+    direction: "asc",
+  });
+
+  // 정렬 처리 함수
+  const handleSort = (key) => {
+    setSortConfig((prev) => ({
+      key,
+      direction: prev.key === key && prev.direction === "asc" ? "desc" : "asc",
+    }));
+  };
+
+  // 정렬된 키워드 데이터 계산
+  const sortedKeywords = [...keywords].sort((a, b) => {
+    if (sortConfig.key === "rank") {
+      return sortConfig.direction === "asc" ? a.rank - b.rank : b.rank - a.rank;
+    }
+    if (sortConfig.key === "searchCnt") {
+      return sortConfig.direction === "asc"
+        ? a.searchCnt - b.searchCnt
+        : b.searchCnt - a.searchCnt;
+    }
+    if (sortConfig.key === "productCnt") {
+      return sortConfig.direction === "asc"
+        ? a.productCnt - b.productCnt
+        : b.productCnt - a.productCnt;
+    }
+    if (sortConfig.key === "competitionRate") {
+      return sortConfig.direction === "asc"
+        ? a.competitionRate - b.competitionRate
+        : b.competitionRate - a.competitionRate;
+    }
+    return 0;
+  });
+
+  // 테이블 헤더에 정렬 표시 스타일 수정
+  const getSortIndicator = (key) => {
+    if (sortConfig.key === key) {
+      return sortConfig.direction === "asc" ? " ▲" : " ▼";
+    }
+    return " ▼";
+  };
+
+  // 테이블 헤더 스타일 추가
+  const getHeaderStyle = (key) => ({
+    cursor: "pointer",
+    userSelect: "none",
+    color: sortConfig.key === key ? "#000" : "#888",
+  });
+
   return (
-    <main className="main_wrapper">
+    <main className="main_wrapper" style={{ paddingTop: "100px" }}>
       <div className="container">
         {/* 카테고리 선택 영역 */}
         <div className="mt-4">
           {/* 카테고리 헤더 */}
           <div
             className="section__title"
-            style={{ textAlign: "left", marginBottom: "40px" }}
+            style={{ textAlign: "left", marginBottom: "20px" }}
           >
-            <h3>카테고리 선택</h3>
+            <h3>카테고리 별 검색</h3>
           </div>
 
-          {/* 카테고리 선택 영역 */}
-          <div className="category__gradient">
-            <div className="category_row_bg">
-              <div className="d-flex justify-content-between">
+          {/* 카테고리 선택 ���역 */}
+          <div
+            className="category__gradient"
+            style={{ position: "relative", zIndex: 1 }}
+          >
+            <div
+              className="category_row_bg"
+              style={{ position: "relative", zIndex: 1 }}
+            >
+              <div
+                className="d-flex justify-content-between"
+                style={{ position: "relative", zIndex: 9999 }}
+              >
                 {/* 대분류 */}
                 <CategoryDropdown
                   depth={1}
@@ -267,13 +328,15 @@ const KeywordDiscovery = () => {
         </div>
 
         {/* 필터 섹션 */}
-        <FilterSection
-          filters={filters}
-          handleFilterClick={handleFilterClick}
-          isAllFiltersSelected={isAllFiltersSelected}
-          onSearch={handleSearch}
-          isLoading={isLoading}
-        />
+        <div style={{ position: "relative", zIndex: 0 }}>
+          <FilterSection
+            filters={filters}
+            handleFilterClick={handleFilterClick}
+            isAllFiltersSelected={isAllFiltersSelected}
+            onSearch={handleSearch}
+            isLoading={isLoading}
+          />
+        </div>
 
         {/* 데이터 테이블 */}
         <div className="mt-4">
@@ -288,35 +351,55 @@ const KeywordDiscovery = () => {
             <table className="table">
               <thead>
                 <tr>
-                  <th>순위</th>
+                  <th
+                    onClick={() => handleSort("rank")}
+                    style={getHeaderStyle("rank")}
+                  >
+                    순위{getSortIndicator("rank")}
+                  </th>
                   <th>키워드</th>
                   <th>카테고리</th>
-                  <th>검색수</th>
-                  <th>상품수</th>
+                  <th
+                    onClick={() => handleSort("searchCnt")}
+                    style={getHeaderStyle("searchCnt")}
+                  >
+                    검색량{getSortIndicator("searchCnt")}
+                  </th>
+                  <th
+                    onClick={() => handleSort("productCnt")}
+                    style={getHeaderStyle("productCnt")}
+                  >
+                    상품수{getSortIndicator("productCnt")}
+                  </th>
+                  <th
+                    onClick={() => handleSort("competitionRate")}
+                    style={getHeaderStyle("competitionRate")}
+                  >
+                    경쟁률{getSortIndicator("competitionRate")}
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {isLoading ? (
                   <tr>
-                    <td colSpan="5" className="text-center">
+                    <td colSpan="6" className="text-center">
                       로딩중...
                     </td>
                   </tr>
-                ) : keywords.length > 0 ? (
-                  keywords
-                    .map((keyword, index) => (
-                      <tr key={index}>
-                        <td>{index + 1}</td>
-                        <td>{keyword.keywordName}</td>
-                        <td>{keyword.categoryName}</td>
-                        <td>{keyword.searchCnt}</td>
-                        <td>{keyword.productCnt}</td>
-                      </tr>
-                    ))
-                    .sort((a, b) => a.rank - b.rank)
+                ) : sortedKeywords.length > 0 ? (
+                  sortedKeywords.map((keyword, index) => (
+                    <tr key={index}>
+                      <td>{index + 1}</td>
+                      <td>{keyword.keywordName}</td>
+                      <td>{keyword.categoryName}</td>
+                      <td>{keyword.searchCnt}</td>
+                      <td>{keyword.productCnt}</td>
+                      <td>{keyword.competitionRate}</td>
+                    </tr>
+                  ))
                 ) : (
                   <tr>
-                    <td colSpan="5" className="text-center">
+                    <td colSpan="6" className="text-center">
                       데이터가 없습니다
                     </td>
                   </tr>
