@@ -42,11 +42,11 @@ export default function ProductTable({ products }) {
           {products
             .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             .map((product) => (
-              <TableRow key={product.platformProductId}>
+              <TableRow key={product.productId}>
                 <TableCell>
-                    <div className="relative" style={{position: 'relative', width: '100px', height: '100px' }}>
+                    <div className="relative" style={{position: 'relative', width: '150px', height: '150px' }}>
                         <Image
-                            src={product.imgUrl}
+                            src={product.imageUrl }
                             alt={product.productName}
                             fill
                             className="rounded-md object-cover"
@@ -59,16 +59,16 @@ export default function ProductTable({ products }) {
                   </div>
                 </TableCell>
                 <TableCell align="right">
-                  {product.price.toLocaleString()}원
+                  {product.price?.toLocaleString()}원
                 </TableCell>
                 <TableCell align="right">
-                  {product.purchaseCnt.toLocaleString()}
+                  {product.purchaseCnt?.toLocaleString()}
                 </TableCell>
                 <TableCell align="right">
-                  {product.reviewCnt.toLocaleString()}
+                  {product.reviewCnt?.toLocaleString()}
                 </TableCell>
                 <TableCell align="right">
-                  {product.wishCnt.toLocaleString()}
+                  {product.wishCnt?.toLocaleString()}
                 </TableCell>
                 {/* <TableCell align="right">
                   {product.expectedSales.toLocaleString()}
