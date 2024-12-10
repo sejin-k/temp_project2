@@ -13898,7 +13898,7 @@ h4 {
 
 /* 카테고리 라벨 스타일 */
 .category-label {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--blackColor);
   padding: 0 5px;

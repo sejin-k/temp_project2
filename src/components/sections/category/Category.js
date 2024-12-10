@@ -117,17 +117,17 @@ const Category = ({ isDarkBg, bg, onAddCategory, selectedCategories }) => {
   };
 
   return (
-      <div className="container">
-        <div className="tab-content tab__content__wrapper" id="myTabContent">
-          {categoryData?.map((data, idx) => (
-            <div
-              key={idx}
-              className={`tab-pane fade  ${idx === 0 ? "active show" : ""}`}
-              id={`projects__${idx === 0 ? "one" : "two"}`}
-              role="tabpanel"
-              aria-labelledby={`projects__${idx === 0 ? "one" : "two"}`}
-            >
-              {/* <div className="social__wrapper">
+    <div className="container">
+      <div className="tab-content tab__content__wrapper" id="myTabContent">
+        {categoryData?.map((data, idx) => (
+          <div
+            key={idx}
+            className={`tab-pane fade  ${idx === 0 ? "active show" : ""}`}
+            id={`projects__${idx === 0 ? "one" : "two"}`}
+            role="tabpanel"
+            aria-labelledby={`projects__${idx === 0 ? "one" : "two"}`}
+          >
+            {/* <div className="social__wrapper">
                 <div className="row">
                   <CategoryCard
                     data={categoryDepth1Data}
@@ -155,39 +155,39 @@ const Category = ({ isDarkBg, bg, onAddCategory, selectedCategories }) => {
                 </div>
               </div> */}
 
-              <div style={{ border: '1px solid #ddd', borderRadius: '8px' }}>
-                <CategorySection
-                  name="대분류"
-                  data={categoryDepth1Data}
-                  onDataChange={handleCategoryDepth1Change}
-                  onAddCategory={onAddCategory}
-                  selectedCategories={selectedCategories}
-                />
-                <CategorySection
-                  name="중분류"
-                  data={categoryDepth2Data}
-                  onDataChange={handleCategoryDepth2Change}
-                  onAddCategory={onAddCategory}
-                  selectedCategories={selectedCategories}
-                />
-                <CategorySection
-                  name="소분류"
-                  data={categoryDepth3Data}
-                  onDataChange={handleCategoryDepth3Change}
-                  onAddCategory={onAddCategory}
-                  selectedCategories={selectedCategories}
-                />
-                <CategorySection
-                  name="세분류"
-                  data={categoryDepth4Data}
-                  onAddCategory={onAddCategory}
-                  selectedCategories={selectedCategories}
-                />
-              </div>
+            <div style={{ border: "1px solid #ddd", borderRadius: "8px" }}>
+              <CategorySection
+                name="대분류"
+                data={categoryDepth1Data}
+                onDataChange={handleCategoryDepth1Change}
+                onAddCategory={onAddCategory}
+                selectedCategories={selectedCategories}
+              />
+              <CategorySection
+                name="중분류"
+                data={categoryDepth2Data}
+                onDataChange={handleCategoryDepth2Change}
+                onAddCategory={onAddCategory}
+                selectedCategories={selectedCategories}
+              />
+              <CategorySection
+                name="소분류"
+                data={categoryDepth3Data}
+                onDataChange={handleCategoryDepth3Change}
+                onAddCategory={onAddCategory}
+                selectedCategories={selectedCategories}
+              />
+              <CategorySection
+                name="세분류"
+                data={categoryDepth4Data}
+                onAddCategory={onAddCategory}
+                selectedCategories={selectedCategories}
+              />
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
+    </div>
   );
 };
 
