@@ -155,7 +155,14 @@ const Category = ({ isDarkBg, bg, onAddCategory, selectedCategories }) => {
                 </div>
               </div> */}
 
-            <div style={{ border: "1px solid #ddd", borderRadius: "8px" }}>
+            <div
+              className="container3"
+              style={{
+                border: "1px solid #ddd",
+                borderRadius: "8px",
+                // backgroundColor: "#fe0094",
+              }}
+            >
               <CategorySection
                 name="대분류"
                 data={categoryDepth1Data}

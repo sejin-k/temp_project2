@@ -124,6 +124,7 @@ Default CSS
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: inherit;
 }
 
 body {
@@ -233,6 +234,9 @@ li {
     max-width: 1355px;
   }
 }
+
+
+
 
 .container,
 .container-fluid,
@@ -2593,7 +2597,7 @@ li {
 
 .default__button {
   padding: 20px 45px;
-  background: var(--gradientColor);
+  background: #FE0094;
   color: var(--whiteColor);
   font-size: 14px;
   font-style: normal;
@@ -13420,7 +13424,7 @@ Dark Mode
 }
 
 [type="radio"]:checked {
-  border: 0.4em solid blue;
+  border: 0.4em solid rgb(248, 194, 225);
 }
 
 [type="radio"]:focus-visible {

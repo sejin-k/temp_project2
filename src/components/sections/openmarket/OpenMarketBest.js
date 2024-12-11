@@ -110,7 +110,7 @@ const OpenMarketBest = () => {
     // 중분류 카테고리 선택 시
     setSelectedCategory2(categoryId);
     setCurrentPage(1); // 페이지 초기화
-    setIsExpanded(false); // 카테고리 변경시 접힌 상태로 초��화
+    setIsExpanded(false); // 카테고리 변경시 접힌 상태로 초기화
   };
 
   // 오픈 마켓 별 베스트 상품 조회 API 호축
@@ -665,7 +665,7 @@ const OpenMarketBest = () => {
 
         {allProducts.length === 0 && selectedMarket !== "naver" && (
           <div className="col-12 text-center py-5">
-            <p>해당 마켓의 데이터는 준비 중입니다.</p>
+            <p>해당 마켓의 데이터는 준비 ��입니다.</p>
           </div>
         )}
       </div>

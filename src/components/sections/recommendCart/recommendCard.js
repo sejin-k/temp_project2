@@ -1,65 +1,65 @@
-'use client'
+"use client";
 import RecommendCntRadio from "@/components/sellpartner/recommendCart/recommendCntRadio";
 import { useState, useEffect } from "react";
 
-function RecommendCard({categoryId, categoryName, handleChangeRecommendCnt}) {
-    const [checkedCnt, setCheckedCnt] = useState(30);
-    const [priceRange, setPriceRange] = useState({min: 0, max: 100000});
-    const [totalPrice, setTotalPrice] = useState(30000); // 기본값 3만원
-    
-    // 추천 건수에 따른 가격 매핑
-    const getPriceByCount = (count) => {
-        const priceMap = {
-            30: 30000,  // 3만원
-            50: 50000,  // 5만원
-            100: 100000  // 10만원
-        };
-        return priceMap[count];
-    };
+function RecommendCard({ categoryId, categoryName, handleChangeRecommendCnt }) {
+  const [checkedCnt, setCheckedCnt] = useState(30);
+  const [priceRange, setPriceRange] = useState({ min: 0, max: 100000 });
+  const [totalPrice, setTotalPrice] = useState(30000); // 기본값 3만원
 
-    // 추천 건수 변경 시 가격도 자동 변경
-    const handleCntChange = (cnt) => {
-        setCheckedCnt(cnt);
-        const newPrice = getPriceByCount(cnt);
-        setTotalPrice(newPrice);
-        handleChangeRecommendCnt(categoryId, cnt, newPrice);
+  // 추천 건수에 따른 가격 매핑
+  const getPriceByCount = (count) => {
+    const priceMap = {
+      30: 30000, // 3만원
+      50: 50000, // 5만원
+      100: 100000, // 10만원
     };
-    
-    // 컴포넌트 마운트 시 초기 가격 설정
-    useEffect(() => {
-        const initialPrice = getPriceByCount(checkedCnt);
-        setTotalPrice(initialPrice);
-        handleChangeRecommendCnt(categoryId, checkedCnt, initialPrice);
-    }, []);
+    return priceMap[count];
+  };
 
-    const handlePriceChange = (e, type) => {
-        const value = parseInt(e.target.value);
-        setPriceRange(prev => {
-            const newRange = {
-                ...prev,
-                [type]: value
-            };
-            if (type === 'min' && value > prev.max) {
-                newRange.min = prev.max;
-            } else if (type === 'max' && value < prev.min) {
-                newRange.max = prev.min;
-            }
-            return newRange;
-        });
-    };
+  // 추천 건수 변경 시 가격도 자동 변경
+  const handleCntChange = (cnt) => {
+    setCheckedCnt(cnt);
+    const newPrice = getPriceByCount(cnt);
+    setTotalPrice(newPrice);
+    handleChangeRecommendCnt(categoryId, cnt, newPrice);
+  };
 
-    return (
-        <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-            <div className="recommend-card">
-                <div className="recommend-card__header">
-                    <h3 className="category-name">{categoryName}</h3>
-                </div>
-                <div className="recommend-card__content">
-                    <div className="product-count-section">
-                        <h4>상품 추천 개수</h4>
-                        <RecommendCntRadio onDataChange={handleCntChange} />
-                    </div>
-                    <div className="price-range-section">
+  // 컴포넌트 마운트 시 초기 가격 설정
+  useEffect(() => {
+    const initialPrice = getPriceByCount(checkedCnt);
+    setTotalPrice(initialPrice);
+    handleChangeRecommendCnt(categoryId, checkedCnt, initialPrice);
+  }, []);
+
+  const handlePriceChange = (e, type) => {
+    const value = parseInt(e.target.value);
+    setPriceRange((prev) => {
+      const newRange = {
+        ...prev,
+        [type]: value,
+      };
+      if (type === "min" && value > prev.max) {
+        newRange.min = prev.max;
+      } else if (type === "max" && value < prev.min) {
+        newRange.max = prev.min;
+      }
+      return newRange;
+    });
+  };
+
+  return (
+    <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+      <div className="recommend-card">
+        <div className="recommend-card__header">
+          <h3 className="category-name">{categoryName}</h3>
+        </div>
+        <div className="recommend-card__content">
+          <div className="product-count-section">
+            <h4>상품 추천 개수</h4>
+            <RecommendCntRadio onDataChange={handleCntChange} />
+          </div>
+          {/* <div className="price-range-section">
                         <h4>가격 범위</h4>
                         <div className="price-range-slider">
                             <div className="double-slider">
@@ -100,15 +100,15 @@ function RecommendCard({categoryId, categoryName, handleChangeRecommendCnt}) {
                                 />
                             </div>
                         </div>
-                    </div>
-                    <div className="total-price-section">
-                        <h4>금액</h4>
-                        <p className="total-price">{totalPrice?.toLocaleString()}원</p>
-                    </div>
-                </div>
-            </div>
+                    </div> */}
+          <div className="total-price-section">
+            <h4>금액</h4>
+            <p className="total-price">{totalPrice?.toLocaleString()}원</p>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default RecommendCard;

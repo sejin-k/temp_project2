@@ -164,8 +164,15 @@ function RecommendCart({ recommendList, handleChangeRecommendCnt }) {
             </span>
           </div>
         </div>
-        <div className="sp_bottom_40">
-          <button className="default__button" onClick={handlePaymentClick}>
+        <div
+          className="sp_bottom_40"
+          style={{ textAlign: "right", marginTop: "20px" }}
+        >
+          <button
+            className="default__button"
+            onClick={handlePaymentClick}
+            style={{ backgroundColor: "#FE0094" }}
+          >
             결제하기
           </button>
         </div>
