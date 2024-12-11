@@ -15,15 +15,16 @@ const Pricing = ({ plan, title, isDarkBg, isGrdient, tag, bg, isNotTag }) => {
       {
         id: 1,
         // name: "셀파트너 라이트",
-        name: "FREE",
+        name: "Free",
+        origin_price: "12,000원",
         price: "무료",
-        // business: "Small Business",
         features: ["셀파트너가 처음이라면", "무료로 체험해보세요"],
       },
       {
         id: 2,
         // name: "셀파트너 코어",
-        name: "베이직",
+        name: "Basic",
+        origin_price: "32,000원",
         price: "15,900원",
         // business: "Mid Business",
         features: ["초기 판매자라면", "베이직으로 매출 상승을!"],
@@ -31,14 +32,16 @@ const Pricing = ({ plan, title, isDarkBg, isGrdient, tag, bg, isNotTag }) => {
       {
         id: 3,
         // name: "셀파트너 프리미엄",
-        name: "스탠다드",
-        price: "32,700원",
+        name: "Standard",
+        origin_price: "84,000원",
+        price: "32,900원",
         // business: "Big Business",
         features: ["성장을 꿈꾸는 판매자라면", "스탠다드가 정답입니다"],
       },
       {
         id: 4,
-        name: "프리미엄",
+        name: "Premium",
+        origin_price: "15,000원",
         price: "54,900원",
         // business: "All Business",
         features: ["대규모 사업자라면", " 프리미엄으로 혁신하세요"],
@@ -134,7 +137,7 @@ const Pricing = ({ plan, title, isDarkBg, isGrdient, tag, bg, isNotTag }) => {
             data-aos="fade-up"
             data-aos-duration="1500"
           >
-            <ul className="nav  pricing__tab" id="myTab" role="tablist">
+            {/* <ul className="nav  pricing__tab" id="myTab" role="tablist">
               <li className="nav-item" role="presentation">
                 <button
                   className={`pricing__tab__link ${
@@ -157,7 +160,7 @@ const Pricing = ({ plan, title, isDarkBg, isGrdient, tag, bg, isNotTag }) => {
                   연간 결제 금액
                 </button>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
 
@@ -207,22 +210,22 @@ const Pricing = ({ plan, title, isDarkBg, isGrdient, tag, bg, isNotTag }) => {
           <div className="comparison-grid">
             <div className="comparison-row header-row">
               <div className="feature-name"></div>
-              <div className="plan-name">무료회원</div>
-              <div className="plan-name">베이직</div>
-              <div className="plan-name">스탠다드</div>
-              <div className="plan-name">프리미엄</div>
+              <div className="plan-name">Free</div>
+              <div className="plan-name">Basic</div>
+              <div className="plan-name">Standard</div>
+              <div className="plan-name">Premium</div>
             </div>
 
             <div className="comparison-row">
-              <div className="feature-name">아이템 발굴</div>
-              <div className="plan-value">3개월</div>
-              <div className="plan-value">6개월</div>
-              <div className="plan-value">1년</div>
-              <div className="plan-value">1년</div>
+              <div className="feature-name">오픈마켓 베스트</div>
+              <div className="plan-value">●</div>
+              <div className="plan-value">●</div>
+              <div className="plan-value">●</div>
+              <div className="plan-value">●</div>
             </div>
 
             <div className="comparison-row">
-              <div className="feature-name">인기 키워드: 키워드 데이터</div>
+              <div className="feature-name">키워드 발굴</div>
               <div className="plan-value light">●</div>
               <div className="plan-value dark">●</div>
               <div className="plan-value dark">●</div>
@@ -230,47 +233,47 @@ const Pricing = ({ plan, title, isDarkBg, isGrdient, tag, bg, isNotTag }) => {
             </div>
 
             <div className="comparison-row">
-              <div className="feature-name">인기 키워드: 조건 필터</div>
-              <div className="plan-value light">●</div>
+              <div className="feature-name">인기 키워드</div>
+              <div className="plan-value light">✕</div>
               <div className="plan-value dark">●</div>
               <div className="plan-value dark">●</div>
               <div className="plan-value dark">●</div>
             </div>
 
-            <div className="comparison-row">
+            {/* <div className="comparison-row">
               <div className="feature-name">주제별 키워드: 엑셀 다운로드</div>
               <div className="plan-value">✕</div>
               <div className="plan-value dark">●</div>
               <div className="plan-value dark">●</div>
               <div className="plan-value dark">●</div>
-            </div>
+            </div> */}
 
-            <div className="comparison-row">
+            {/* <div className="comparison-row">
               <div className="feature-name">키워드 분석</div>
               <div className="feature-subheading" colSpan="5">
                 메인: 즐겨찾기
               </div>
-            </div>
+            </div> */}
 
-            <div className="comparison-row">
+            {/* <div className="comparison-row">
               <div className="feature-name">메인: 즐겨찾기</div>
               <div className="plan-value">30개</div>
               <div className="plan-value">100개</div>
               <div className="plan-value">500개</div>
               <div className="plan-value">2,000개</div>
-            </div>
+            </div> */}
 
-            <div className="comparison-row">
+            {/* <div className="comparison-row">
               <div className="feature-name">메인: 최근 검색 내역</div>
               <div className="plan-value">50개</div>
               <div className="plan-value">50개</div>
               <div className="plan-value">100개</div>
               <div className="plan-value">200개</div>
-            </div>
+            </div> */}
 
             <div className="comparison-row">
-              <div className="feature-name">메인: 엑셀 다운로드</div>
-              <div className="plan-value light">●</div>
+              <div className="feature-name">키워드: 엑셀 다운로드</div>
+              <div className="plan-value light">✕</div>
               <div className="plan-value dark">●</div>
               <div className="plan-value dark">●</div>
               <div className="plan-value dark">●</div>
@@ -280,10 +283,10 @@ const Pricing = ({ plan, title, isDarkBg, isGrdient, tag, bg, isNotTag }) => {
               <div className="feature-name">
                 상품 목록: 예상 판매량/매출액 (베타)
               </div>
-              <div className="plan-value light">●</div>
-              <div className="plan-value dark">●</div>
-              <div className="plan-value dark">●</div>
-              <div className="plan-value dark">●</div>
+              <div className="plan-value light">✕</div>
+              <div className="plan-value dark">주 1회 제공</div>
+              <div className="plan-value dark">일 1회 제공</div>
+              <div className="plan-value dark">무제한 제공</div>
             </div>
           </div>
         </div>

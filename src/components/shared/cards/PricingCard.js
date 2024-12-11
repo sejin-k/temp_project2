@@ -2,14 +2,14 @@ import Link from "next/link";
 import React from "react";
 
 const PricingCard = ({ plan }) => {
-  const { id, name, price, business, features, isSpecial } = plan;
+  const { id, name, price, origin_price, business, features, isSpecial } = plan;
   return (
     <div
       className="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 pricing__single__wrap"
       data-aos="fade-up"
       data-aos-duration="2400"
     >
-      <div className="common__gradient__bg pricing__gradient single__transform">
+      <div>
         <div
           className={`pricing__single ${isSpecial ? " pricing__special" : ""}`}
         >
@@ -40,22 +40,34 @@ const PricingCard = ({ plan }) => {
             <span>{name}</span>
           </div>
 
-          <div className="common__gradient__bg pricing__inner__gradient">
-            <div className="pricing__single__price">
-              <h6 className="text__gradient ">{price}</h6>
-              <span>{business}</span>
-            </div>
-          </div>
           <div className="pricing__single__text">
             <ul>
               {features?.map((feature, idx) => (
-                <li key={idx}>{feature}</li>
+                <li style={{ paddingBottom: "0px" }} key={idx}>
+                  {feature}
+                </li>
               ))}
             </ul>
           </div>
+          <div>
+            <div className="pricing__single__text">
+              <span className="origin_price">{origin_price}</span>
+              {/* <h6 style={{ color: "black", fontSize: "larger" }}>{price}</h6> */}
+              <br />
+              <span
+                style={{ color: "red", fontSize: "small", display: "inline" }}
+              >
+                75%
+              </span>
+              <span style={{ display: "inline", fontSize: "larger" }}>
+                {business}
+              </span>
+              <span>{price}</span>
+            </div>
+          </div>
           <div className="pricing__single__button">
-            <Link className="default__button common__gradient__bg" href="#">
-              <span>시 작 하 기</span>
+            <Link className="default__button" href="#">
+              <span style={{ fontSize: "15px" }}>{name}로 시 작 하 기</span>
             </Link>
           </div>
         </div>

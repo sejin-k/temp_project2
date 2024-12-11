@@ -1006,6 +1006,7 @@ img {
   position: relative;
   z-index: 100;
 }
+
 img {
   height: auto;
 }
@@ -2608,6 +2609,7 @@ li {
   transition: 0.3s;
   display: inline-block;
 }
+
 @media (min-width: 992px) and (max-width: 1365px) {
   .default__button {
     padding: 20px;
@@ -2619,9 +2621,11 @@ li {
   }
 }
 .default__button:hover {
-  -webkit-filter: brightness(150%);
-  filter: brightness(150%);
-  color: var(--whiteColor);
+  /* -webkit-filter: brightness(150%); */
+  /* filter: brightness(150%); */
+  background-color: #fe0094ad;
+  /* transform: scale(1.05); 버튼을 5% 확대 */
+  color: #000000 ;
 }
 .default__button.btn__blue {
   background: var(--navyBlue);
@@ -9771,13 +9775,21 @@ button.default__button {
 }
 
 .pricing__single {
-  background: var(--whiteColor);
+  background: white;
+  border: 2px solid rgb(246, 187, 251); /* 외곽선 두께와 색상 설정 */
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
   padding: 0 20px 40px 20px;
   border-radius: var(--borderRadius);
   text-align: center;
   position: relative;
   z-index: 99;
+  transition: transform 0.3s ease; /* 부드러운 확대 효과를 위한 전환 설정 */
+
+}
+.pricing__single:hover {
+  background: rgb(254, 243, 255);
+  transform: scale(1.05); /* 버튼을 5% 확대 */
+
 }
 
 .pricing__single:hover .pricing__inner__gradient {
@@ -9817,19 +9829,27 @@ button.default__button {
   right: 20px;
 }
 .pricing__small__button {
-  margin-bottom: 50px;
+  padding-top: 20px;
+  text-align: left;
+  margin-bottom: 10px;
 }
 .pricing__small__button span {
+  text-align: left;
   padding: 3px 23px;
   border-radius: 0px 0px 6px 6px;
-  background: var(--primaryColor);
-  color: var(--whiteColor);
+  font-size: 25px;
+
+  /* background: var(--primaryColor); */
+  /* background: var(--whiteColor); */
+  color: var(--blackColor);
   display: inline-block;
-  font-size: 14px;
+  /* font-size: 20px; */
   font-weight: 700;
 }
 .pricing__single__price {
-  background: var(--pinkcolor);
+  /* background: var(--pinkcolor); */
+  text-align: left;
+  background: var();
   padding-top: 20px;
   padding-bottom: 20px;
   border-radius: var(--borderRadius);
@@ -9849,12 +9869,14 @@ button.default__button {
 .pricing__single__text {
   padding: 0 22px;
   margin-bottom: 25px;
+  text-align: left;
 }
 .pricing__single__text ul li {
   padding-bottom: 10px;
 }
 .pricing__single__button a {
   background: var(--pinkcolor);
+  /* background: var(#ffcbe94f); */
   color: var(--blackColor);
   border: 1px solid var(--pinkcolor);
 }
@@ -14357,4 +14379,10 @@ h4 {
   font-weight: 600;
   color: #495057;
   background-color: #f8f9fa;
+}
+
+.origin_price {
+  color: rgba(169, 169, 169, 0.7); /* 옅은 회색으로 설정 */
+  text-decoration: line-through; /* 중간에 작대기 추가 */
+  font-size: 16px; /* 필요에 따라 폰트 크기 조정 */
 }
