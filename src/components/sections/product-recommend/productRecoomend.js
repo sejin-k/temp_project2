@@ -37,7 +37,9 @@ const ProductRecommend = () => {
   const handleChangeRecommendCnt = (categoryId, recommendCnt, amount) => {
     setRecommendList((prev) =>
       prev.map((cat) =>
-        cat.categoryId === categoryId ? { ...cat, recommendCnt: recommendCnt, amount: amount } : cat
+        cat.categoryId === categoryId
+          ? { ...cat, recommendCnt: recommendCnt, amount: amount }
+          : cat
       )
     );
   };
@@ -46,10 +48,13 @@ const ProductRecommend = () => {
     <main>
       {/* <HeroInner title={"상품 추천"} currentItem={"Product Recommend"} /> */}
 
-      <div className="container">
-        <div className="section__title text-left sp_40">
-          <div className="section__title__heading ">
-            <h3>카테고리</h3>
+      <div className="container" style={{ paddingTop: "100px" }}>
+        <div className="section__title text-left">
+          <div
+            className="section__title"
+            style={{ textAlign: "left", marginBottom: "20px" }}
+          >
+            <h3>카테고리 선택</h3>
           </div>
         </div>
       </div>
@@ -58,15 +63,17 @@ const ProductRecommend = () => {
         selectedCategories={selectedCategories}
       />
 
-      <div className="container">
+      <div className="container" style={{ paddingTop: "100px" }}>
         <div className="section__title text-left sp_40">
-          <div className="section__title__heading">
+          <div className="section__title" style={{ textAlign: "center" }}>
             <h3>선택 된 카테고리</h3>
           </div>
         </div>
       </div>
-      <RecommendCart recommendList={recommendList} handleChangeRecommendCnt={handleChangeRecommendCnt} />
-
+      <RecommendCart
+        recommendList={recommendList}
+        handleChangeRecommendCnt={handleChangeRecommendCnt}
+      />
     </main>
   );
 };

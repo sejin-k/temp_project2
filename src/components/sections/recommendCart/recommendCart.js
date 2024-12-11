@@ -171,7 +171,16 @@ function RecommendCart({ recommendList, handleChangeRecommendCnt }) {
           <button
             className="default__button"
             onClick={handlePaymentClick}
-            style={{ backgroundColor: "#FE0094" }}
+            style={{
+              backgroundColor: "rgb(255 84 183 / 66%)",
+              fontSize: "22px",
+              paddingTop: "13px",
+              paddingBottom: "13px",
+              paddingLeft: "30px",
+              paddingRight: "30px",
+              fontWeight: "500",
+              width: "100%",
+            }}
           >
             결제하기
           </button>

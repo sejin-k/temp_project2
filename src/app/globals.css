@@ -76,7 +76,7 @@
   --borderColor3: #ccc;
   --navyBlue: #18239d;
   --navyBlue2: #221c49;
-  --pinkcolor: #fff0fa;
+  --pinkcolor: #fe0094;
   --violet: #6e1299;
   --yellow: #ff912c;
   --gradientColor: linear-gradient(
@@ -915,7 +915,7 @@ li {
   --borderColor3: #ccc;
   --navyBlue: #18239d;
   --navyBlue2: #221c49;
-  --pinkcolor: #fff0fa;
+  --pinkcolor: #fe0094;
   --violet: #6e1299;
   --yellow: #ff912c;
   --gradientColor: linear-gradient(
@@ -1731,7 +1731,7 @@ li {
   --borderColor3: #ccc;
   --navyBlue: #18239d;
   --navyBlue2: #221c49;
-  --pinkcolor: #fff0fa;
+  --pinkcolor: #fe0094;
   --violet: #6e1299;
   --yellow: #ff912c;
   --gradientColor: linear-gradient(
@@ -2597,7 +2597,7 @@ li {
 
 .default__button {
   padding: 20px 45px;
-  background: #FE0094;
+  background: #fe0094;
   color: var(--whiteColor);
   font-size: 14px;
   font-style: normal;
@@ -12691,7 +12691,7 @@ Dark Mode
   color: var(--blackColor);
 }
 .is_dark .default__button {
-  color: var(--blackColor);
+  color: var(--whiteColor);
 }
 .is_dark .default__button.btn__white {
   border: 1px solid var(--blackColor);
@@ -13464,7 +13464,7 @@ Dark Mode
 
 
 .recommend-card {
-  background: white;
+  background: rgb(254, 243, 255);
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
