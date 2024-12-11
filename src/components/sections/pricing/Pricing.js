@@ -86,14 +86,6 @@ const Pricing = ({ plan, title, isDarkBg, isGrdient, tag, bg, isNotTag }) => {
   return (
     <div
       className="pricing sp_top_120 sp_bottom_120 special__spacing"
-      style={{
-        background:
-          bg === "white"
-            ? ""
-            : `${isDarkBg ? "var(--blackBlue)" : "#F6F9FF"} url('${
-                servcieBgImage3.src
-              }')`,
-      }}
       id="tb__pricing"
     >
       <div className="container">

@@ -13426,7 +13426,7 @@ Dark Mode
 
 .category_row__contents {
   display: flex;
-  background: var(--pinkcolor);
+  background: #fff0fa;
   /* padding-top: p5x;
   padding-bottom: 5px; */
   border-radius: var(--borderRadius);
@@ -14386,3 +14386,4 @@ h4 {
   text-decoration: line-through; /* 중간에 작대기 추가 */
   font-size: 16px; /* 필요에 따라 폰트 크기 조정 */
 }
+
