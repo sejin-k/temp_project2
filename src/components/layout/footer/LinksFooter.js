@@ -4,7 +4,7 @@ const LinksFooter = () => {
   const links = [
     {
       title: "회사소개",
-      url: "/about",
+      url: "https://sellpartner.kr",
     },
     {
       title: "이용약관",
@@ -14,13 +14,13 @@ const LinksFooter = () => {
       title: "개인정보처리방침",
       url: "/privacy",
     },
-    {
-      title: "FAQ",
-      url: "/faq",
-    },
+    // {
+    //   title: "FAQ",
+    //   url: "/faq",
+    // },
     {
       title: "제휴 문의 및 상담",
-      url: "/contact",
+      url: "/https://sellpartner.kr/contacts",
     },
   ];
 

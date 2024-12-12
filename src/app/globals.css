@@ -861,47 +861,7 @@ li {
 	|___ End Style Sheet Indexing
 
  */
-:root {
-  --bodyColor: #222222;
-  --bodyBg: #fff;
-  --whiteColor: #ffffff;
-  --blackColor: #0a0624;
-  --blackBlue: #110c34;
-  --headingColor: #222222;
-  --contentColor: #5f6c76;
-  --primaryColor: #fe0094;
-  --secondaryColor: #18239d;
-  --greyColor: #ededed;
-  --borderColor: #eeeeee;
-  --borderColor2: #eacadf;
-  --borderColor3: #ccc;
-  --navyBlue: #18239d;
-  --navyBlue2: #221c49;
-  --pinkcolor: #fe0094;
-  --violet: #6e1299;
-  --yellow: #ff912c;
-  --gradientColor: linear-gradient(
-    90deg,
-    #00229e 0%,
-    #6e1299 47.92%,
-    #fe0094 100%
-  );
-  --gradientColor2: linear-gradient(
-    180deg,
-    rgba(8, 21, 42, 0) 0%,
-    #08152a 100%
-  );
-  --gradientColor3: linear-gradient(
-    90deg,
-    #0f259e 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  --borderRadius: 8px;
-  --borderRadius2: 5px;
-  --transition: 0.3s;
-  --fontSource: "Source Sans Pro";
-  --boxShadow1: 0 0 20px 5px rgba(95, 45, 237, 0.1);
-}
+ 
 
 /* .is_dark {
   --bodyColor: #fff;
@@ -1600,7 +1560,7 @@ li {
 .sp_bottom_20 {
   padding-bottom: 20px;
 }
-```
+ 
 @media (min-width: 768px) and (max-width: 991px) {
   .sp_bottom_60 {
     padding-bottom: 20px;
@@ -1754,47 +1714,7 @@ li {
 	|___ End Style Sheet Indexing
 
  */
-:root {
-  --bodyColor: #222222;
-  --bodyBg: #fff;
-  --whiteColor: #ffffff;
-  --blackColor: #0a0624;
-  --blackBlue: #110c34;
-  --headingColor: #222222;
-  --contentColor: #5f6c76;
-  --primaryColor: #fe0094;
-  --secondaryColor: #18239d;
-  --greyColor: #ededed;
-  --borderColor: #eeeeee;
-  --borderColor2: #eacadf;
-  --borderColor3: #ccc;
-  --navyBlue: #18239d;
-  --navyBlue2: #221c49;
-  --pinkcolor: #fe0094;
-  --violet: #6e1299;
-  --yellow: #ff912c;
-  --gradientColor: linear-gradient(
-    90deg,
-    #00229e 0%,
-    #6e1299 47.92%,
-    #fe0094 100%
-  );
-  --gradientColor2: linear-gradient(
-    180deg,
-    rgba(8, 21, 42, 0) 0%,
-    #08152a 100%
-  );
-  --gradientColor3: linear-gradient(
-    90deg,
-    #0f259e 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  --borderRadius: 8px;
-  --borderRadius2: 5px;
-  --transition: 0.3s;
-  --fontSource: "Source Sans Pro";
-  --boxShadow1: 0 0 20px 5px rgba(95, 45, 237, 0.1);
-}
+ 
 
 /* .is_dark {
   --bodyColor: #fff;
@@ -2493,7 +2413,7 @@ li {
 .sp_bottom_20 {
   padding-bottom: 20px;
 }
-```
+ 
 @media (min-width: 768px) and (max-width: 991px) {
   .sp_bottom_120 {
     padding-bottom: 80px;
@@ -2816,47 +2736,7 @@ li {
 	|___ End Style Sheet Indexing
 
  */
-:root {
-  --bodyColor: #222222;
-  --bodyBg: #fff;
-  --whiteColor: #ffffff;
-  --blackColor: #0a0624;
-  --blackBlue: #110c34;
-  --headingColor: #222222;
-  --contentColor: #5f6c76;
-  --primaryColor: #fe0094;
-  --secondaryColor: #18239d;
-  --greyColor: #ededed;
-  --borderColor: #eeeeee;
-  --borderColor2: #eacadf;
-  --borderColor3: #ccc;
-  --navyBlue: #18239d;
-  --navyBlue2: #221c49;
-  --pinkcolor: #fe0094;
-  --violet: #6e1299;
-  --yellow: #ff912c;
-  --gradientColor: linear-gradient(
-    90deg,
-    #00229e 0%,
-    #6e1299 47.92%,
-    #fe0094 100%
-  );
-  --gradientColor2: linear-gradient(
-    180deg,
-    rgba(8, 21, 42, 0) 0%,
-    #08152a 100%
-  );
-  --gradientColor3: linear-gradient(
-    90deg,
-    #0f259e 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  --borderRadius: 8px;
-  --borderRadius2: 5px;
-  --transition: 0.3s;
-  --fontSource: "Source Sans Pro";
-  --boxShadow1: 0 0 20px 5px rgba(95, 45, 237, 0.1);
-}
+ 
 
 /* .is_dark {
   --bodyColor: #fff;
@@ -3555,7 +3435,7 @@ li {
 .sp_bottom_20 {
   padding-bottom: 20px;
 }
-```
+ 
 @media (min-width: 768px) and (max-width: 991px) {
   .sp_bottom_60 {
     padding-bottom: 20px;
@@ -3709,47 +3589,7 @@ li {
 	|___ End Style Sheet Indexing
 
  */
-:root {
-  --bodyColor: #222222;
-  --bodyBg: #fff;
-  --whiteColor: #ffffff;
-  --blackColor: #0a0624;
-  --blackBlue: #110c34;
-  --headingColor: #222222;
-  --contentColor: #5f6c76;
-  --primaryColor: #fe0094;
-  --secondaryColor: #18239d;
-  --greyColor: #ededed;
-  --borderColor: #eeeeee;
-  --borderColor2: #eacadf;
-  --borderColor3: #ccc;
-  --navyBlue: #18239d;
-  --navyBlue2: #221c49;
-  --pinkcolor: #fe0094;
-  --violet: #6e1299;
-  --yellow: #ff912c;
-  --gradientColor: linear-gradient(
-    90deg,
-    #00229e 0%,
-    #6e1299 47.92%,
-    #fe0094 100%
-  );
-  --gradientColor2: linear-gradient(
-    180deg,
-    rgba(8, 21, 42, 0) 0%,
-    #08152a 100%
-  );
-  --gradientColor3: linear-gradient(
-    90deg,
-    #0f259e 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  --borderRadius: 8px;
-  --borderRadius2: 5px;
-  --transition: 0.3s;
-  --fontSource: "Source Sans Pro";
-  --boxShadow1: 0 0 20px 5px rgba(95, 45, 237, 0.1);
-}
+ 
 
 /* .is_dark {
   --bodyColor: #fff;
@@ -4448,7 +4288,7 @@ li {
 .sp_bottom_20 {
   padding-bottom: 20px;
 }
-```
+ 
 
 .overflow__hidden__X {
   overflow-x: hidden;
@@ -4935,7 +4775,7 @@ li {
 .sp_bottom_20 {
   padding-bottom: 20px;
 }
-```
+ 
 
 @media (min-width: 992px) and (max-width: 1365px),
   (min-width: 768px) and (max-width: 991px),
@@ -6544,47 +6384,7 @@ li {
 	|___ End Style Sheet Indexing
 
  */
-:root {
-  --bodyColor: #222222;
-  --bodyBg: #fff;
-  --whiteColor: #ffffff;
-  --blackColor: #0a0624;
-  --blackBlue: #110c34;
-  --headingColor: #222222;
-  --contentColor: #5f6c76;
-  --primaryColor: #fe0094;
-  --secondaryColor: #18239d;
-  --greyColor: #ededed;
-  --borderColor: #eeeeee;
-  --borderColor2: #eacadf;
-  --borderColor3: #ccc;
-  --navyBlue: #18239d;
-  --navyBlue2: #221c49;
-  --pinkcolor: #fe0094;
-  --violet: #6e1299;
-  --yellow: #ff912c;
-  --gradientColor: linear-gradient(
-    90deg,
-    #00229e 0%,
-    #6e1299 47.92%,
-    #fe0094 100%
-  );
-  --gradientColor2: linear-gradient(
-    180deg,
-    rgba(8, 21, 42, 0) 0%,
-    #08152a 100%
-  );
-  --gradientColor3: linear-gradient(
-    90deg,
-    #0f259e 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  --borderRadius: 8px;
-  --borderRadius2: 5px;
-  --transition: 0.3s;
-  --fontSource: "Source Sans Pro";
-  --boxShadow1: 0 0 20px 5px rgba(95, 45, 237, 0.1);
-}
+ 
 
 /* .is_dark {
   --bodyColor: #fff;
@@ -7283,7 +7083,7 @@ li {
 .sp_bottom_20 {
   padding-bottom: 20px;
 }
-```
+ 
 @media (min-width: 768px) and (max-width: 991px) {
   .sp_bottom_60 {
     padding-bottom: 20px;
@@ -7437,47 +7237,7 @@ li {
 	|___ End Style Sheet Indexing
 
  */
-:root {
-  --bodyColor: #222222;
-  --bodyBg: #fff;
-  --whiteColor: #ffffff;
-  --blackColor: #0a0624;
-  --blackBlue: #110c34;
-  --headingColor: #222222;
-  --contentColor: #5f6c76;
-  --primaryColor: #fe0094;
-  --secondaryColor: #18239d;
-  --greyColor: #ededed;
-  --borderColor: #eeeeee;
-  --borderColor2: #eacadf;
-  --borderColor3: #ccc;
-  --navyBlue: #18239d;
-  --navyBlue2: #221c49;
-  --pinkcolor: #fe0094;
-  --violet: #6e1299;
-  --yellow: #ff912c;
-  --gradientColor: linear-gradient(
-    90deg,
-    #00229e 0%,
-    #6e1299 47.92%,
-    #fe0094 100%
-  );
-  --gradientColor2: linear-gradient(
-    180deg,
-    rgba(8, 21, 42, 0) 0%,
-    #08152a 100%
-  );
-  --gradientColor3: linear-gradient(
-    90deg,
-    #0f259e 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  --borderRadius: 8px;
-  --borderRadius2: 5px;
-  --transition: 0.3s;
-  --fontSource: "Source Sans Pro";
-  --boxShadow1: 0 0 20px 5px rgba(95, 45, 237, 0.1);
-}
+ 
 
 /* .is_dark {
   --bodyColor: #fff;
@@ -8176,7 +7936,7 @@ li {
 .sp_bottom_20 {
   padding-bottom: 20px;
 }
-```
+ 
 @media (min-width: 768px) and (max-width: 991px) {
   .sp_bottom_120 {
     padding-bottom: 80px;
@@ -8499,47 +8259,7 @@ li {
 	|___ End Style Sheet Indexing
 
  */
-:root {
-  --bodyColor: #222222;
-  --bodyBg: #fff;
-  --whiteColor: #ffffff;
-  --blackColor: #0a0624;
-  --blackBlue: #110c34;
-  --headingColor: #222222;
-  --contentColor: #5f6c76;
-  --primaryColor: #fe0094;
-  --secondaryColor: #18239d;
-  --greyColor: #ededed;
-  --borderColor: #eeeeee;
-  --borderColor2: #eacadf;
-  --borderColor3: #ccc;
-  --navyBlue: #18239d;
-  --navyBlue2: #221c49;
-  --pinkcolor: #fe0094;
-  --violet: #6e1299;
-  --yellow: #ff912c;
-  --gradientColor: linear-gradient(
-    90deg,
-    #00229e 0%,
-    #6e1299 47.92%,
-    #fe0094 100%
-  );
-  --gradientColor2: linear-gradient(
-    180deg,
-    rgba(8, 21, 42, 0) 0%,
-    #08152a 100%
-  );
-  --gradientColor3: linear-gradient(
-    90deg,
-    #0f259e 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  --borderRadius: 8px;
-  --borderRadius2: 5px;
-  --transition: 0.3s;
-  --fontSource: "Source Sans Pro";
-  --boxShadow1: 0 0 20px 5px rgba(95, 45, 237, 0.1);
-}
+ 
 
 /* .is_dark {
   --bodyColor: #fff;
@@ -9238,7 +8958,7 @@ li {
 .sp_bottom_20 {
   padding-bottom: 20px;
 }
-```
+ 
 @media (min-width: 768px) and (max-width: 991px) {
   .sp_bottom_60 {
     padding-bottom: 20px;
@@ -9392,47 +9112,7 @@ li {
 	|___ End Style Sheet Indexing
 
  */
-:root {
-  --bodyColor: #222222;
-  --bodyBg: #fff;
-  --whiteColor: #ffffff;
-  --blackColor: #0a0624;
-  --blackBlue: #110c34;
-  --headingColor: #222222;
-  --contentColor: #5f6c76;
-  --primaryColor: #fe0094;
-  --secondaryColor: #18239d;
-  --greyColor: #ededed;
-  --borderColor: #eeeeee;
-  --borderColor2: #eacadf;
-  --borderColor3: #ccc;
-  --navyBlue: #18239d;
-  --navyBlue2: #221c49;
-  --pinkcolor: #fe0094;
-  --violet: #6e1299;
-  --yellow: #ff912c;
-  --gradientColor: linear-gradient(
-    90deg,
-    #00229e 0%,
-    #6e1299 47.92%,
-    #fe0094 100%
-  );
-  --gradientColor2: linear-gradient(
-    180deg,
-    rgba(8, 21, 42, 0) 0%,
-    #08152a 100%
-  );
-  --gradientColor3: linear-gradient(
-    90deg,
-    #0f259e 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  --borderRadius: 8px;
-  --borderRadius2: 5px;
-  --transition: 0.3s;
-  --fontSource: "Source Sans Pro";
-  --boxShadow1: 0 0 20px 5px rgba(95, 45, 237, 0.1);
-}
+ 
 
 /* .is_dark {
   --bodyColor: #fff;
@@ -10131,10 +9811,6 @@ li {
 .sp_bottom_20 {
   padding-bottom: 20px;
 }
-```
-```
-</rewritten_file>
-</rewritten_file>
 @media (min-width: 768px) and (max-width: 991px) {
   .sp_bottom_30 {
     padding-bottom: 5px;
@@ -10149,8 +9825,8 @@ li {
 .sp_bottom_20 {
   padding-bottom: 20px;
 }
-```
-</rewritten_file>
+ 
+
 @media (max-width: 767px) {
   .slider__controls__pagination .swiper-pagination {
     bottom: -50px;
@@ -10167,8 +9843,8 @@ li {
 .swiper-button-prev:after {
   display: none;
 }
-```
-</rewritten_file>
+
+
 /*********************************************************************************
 
 	 Template: Bastun - Multipurpose Next Js Template
@@ -10231,47 +9907,7 @@ li {
 	|___ End Style Sheet Indexing
 
  */
-:root {
-  --bodyColor: #222222;
-  --bodyBg: #fff;
-  --whiteColor: #ffffff;
-  --blackColor: #0a0624;
-  --blackBlue: #110c34;
-  --headingColor: #222222;
-  --contentColor: #5f6c76;
-  --primaryColor: #fe0094;
-  --secondaryColor: #18239d;
-  --greyColor: #ededed;
-  --borderColor: #eeeeee;
-  --borderColor2: #eacadf;
-  --borderColor3: #ccc;
-  --navyBlue: #18239d;
-  --navyBlue2: #221c49;
-  --pinkcolor: #fe0094;
-  --violet: #6e1299;
-  --yellow: #ff912c;
-  --gradientColor: linear-gradient(
-    90deg,
-    #00229e 0%,
-    #6e1299 47.92%,
-    #fe0094 100%
-  );
-  --gradientColor2: linear-gradient(
-    180deg,
-    rgba(8, 21, 42, 0) 0%,
-    #08152a 100%
-  );
-  --gradientColor3: linear-gradient(
-    90deg,
-    #0f259e 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  --borderRadius: 8px;
-  --borderRadius2: 5px;
-  --transition: 0.3s;
-  --fontSource: "Source Sans Pro";
-  --boxShadow1: 0 0 20px 5px rgba(95, 45, 237, 0.1);
-}
+ 
 
 /* .is_dark {
   --bodyColor: #fff;
@@ -10967,24 +10603,24 @@ li {
 .sp_bottom_20 {
   padding-bottom: 20px;
 }
-```
-```
-</rewritten_file>
-</rewritten_file>
+
+
+
+
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
   display: none;
 }
-```
-</rewritten_file>
+
+
 .headerarea__cart__single__dropdown__close {
   position: absolute;
   right: 0;
   top: -10px;
 }
-```
-</rewritten_file>
+ 
+
 
 /*********************************************************************************
 
@@ -11048,47 +10684,7 @@ li {
 	|___ End Style Sheet Indexing
 
  */
-:root {
-  --bodyColor: #222222;
-  --bodyBg: #ff0000;
-  --whiteColor: #ffffff;
-  --blackColor: #0a0624;
-  --blackBlue: #110c34;
-  --headingColor: #222222;
-  --contentColor: #5f6c76;
-  --primaryColor: #fe0094;
-  --secondaryColor: #18239d;
-  --greyColor: #ededed;
-  --borderColor: #eeeeee;
-  --borderColor2: #eacadf;
-  --borderColor3: #ccc;
-  --navyBlue: #18239d;
-  --navyBlue2: #221c49;
-  --pinkcolor: #fe0094;
-  --violet: #6e1299;
-  --yellow: #ff912c;
-  --gradientColor: linear-gradient(
-    90deg,
-    #00229e 0%,
-    #6e1299 47.92%,
-    #fe0094 100%
-  );
-  --gradientColor2: linear-gradient(
-    180deg,
-    rgba(8, 21, 42, 0) 0%,
-    #08152a 100%
-  );
-  --gradientColor3: linear-gradient(
-    90deg,
-    #0f259e 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  --borderRadius: 8px;
-  --borderRadius2: 5px;
-  --transition: 0.3s;
-  --fontSource: "Source Sans Pro";
-  --boxShadow1: 0 0 20px 5px rgba(95, 45, 237, 0.1);
-}
+ 
 
 /* .is_dark {
   --bodyColor: #fff;
@@ -11783,8 +11379,8 @@ li {
 .sp_bottom_20 {
   padding-bottom: 20px;
 }
-```
-</rewritten_file>
+ 
+
 
 .col--30 {
   padding-left: 30px;
@@ -12591,8 +12187,8 @@ button.default__button {
 .swiper-button-prev:after {
   display: none;
 }
-```
-</rewritten_file>
+ 
+
 
 .slider__controls__arrows .arrow-btn {
   font-size: 40px;
@@ -13405,8 +13001,8 @@ button.default__button {
   right: 0;
   top: -10px;
 }
-```
-</rewritten_file>
+ 
+
 .headerarea__cart__dropdown__price {
   text-align: left;
   font-size: 17px;
@@ -14205,8 +13801,8 @@ button.default__button {
 .headerarea--2 .mob_menu_wrapper {
   background: var(--gradientColor);
 }
-```
-</rewritten_file>
+ 
+
 
 .offcanvas__header--menu__open--svg {
   color: var(--whiteColor);
@@ -14990,8 +14586,8 @@ button.default__button {
     padding: 50px 0px;
   }
 }
-```
-</rewritten_file>
+ 
+
 @media (max-width: 767px) {
   .herobanner.herobanner__front__img__wrapper {
     height: auto;
@@ -15790,8 +15386,8 @@ button.default__button {
     right: 36%;
   }
 }
-```
-</rewritten_file>
+ 
+
 .video__button {
   position: absolute;
   top: 50%;
@@ -16592,8 +16188,8 @@ button.default__button {
     margin-bottom: 10px;
   }
 }
-```
-</rewritten_file>
+ 
+
 @media (max-width: 767px) {
   .portfolio__single {
     margin-bottom: 10px;
@@ -17393,8 +16989,8 @@ button.default__button {
 .blog__details__img__wrapper img {
   width: 100%;
 }
-```
-</rewritten_file>
+ 
+
 .blog__details__small__button span {
   padding: 10px 15px;
   background: var(--gradientColor);
@@ -18200,8 +17796,8 @@ button.default__button {
     padding-right: 10px;
   }
 }
-```
-</rewritten_file>
+ 
+
 @media (min-width: 992px) and (max-width: 1365px) {
   .team__right .row {
     margin: 0 -10px;
@@ -19003,8 +18599,8 @@ button.default__button {
     margin: 10px 0;
   }
 }
-```
-</rewritten_file>
+ 
+
 @media (min-width: 768px) and (max-width: 991px) {
   .facts__inner--3 .facts__single--3 {
     margin-right: 10px;
@@ -19822,8 +19418,8 @@ Grid Area
   .grid__badge.yellow__color {
   background: var(--yellow);
 }
-```
-</rewritten_file>
+ 
+
 .gridarea__wraper .gridarea__img .gridarea__small__icon {
   position: absolute;
   top: 3px;
@@ -20623,8 +20219,8 @@ Grid Area
 .featurearea__size__img ul li button {
   background: var(--whiteColor);
 }
-```
-</rewritten_file>
+ 
+
 .featurearea__size__img ul li button img {
   border: 1px solid var(--borderColor);
   border-radius: var(--borderRadius);
@@ -21424,8 +21020,8 @@ Grid Area
   line-height: 1;
   background: transparent;
 }
-```
-</rewritten_file>
+ 
+
 .shopsidebar__remove button:hover {
   color: var(--primaryColor);
 }
@@ -22227,8 +21823,8 @@ Dark Mode
 .is_dark .bg__black .section__title--3 .section__title__button span {
   color: var(--whiteColor);
 }
-```
-</rewritten_file>
+ 
+
 .is_dark .bg__black .section__title--3 .section__title__heading h3 {
   color: var(--blackColorb);
 }
@@ -23029,8 +22625,8 @@ h4 {
   background: var(--primaryColor);
   color: var(--whiteColor);
 }
-```
-</rewritten_file>
+ 
+
 
 .mb-2 {
   margin-bottom: 0.5rem;
@@ -23716,6 +23312,6 @@ h4 {
 .origin_price {
   color: rgba(169, 169, 169, 0.7); /* 옅은 회색으로 설정 */
   text-decoration: line-through; /* 중간에 작대기 추가 */
-  font-size: 16px; /* 필요에 따라 폰트 크기 조정 */
+  font-size: 16px; /* 필요에 따라 폰트 크기 조정  */
 }
 
