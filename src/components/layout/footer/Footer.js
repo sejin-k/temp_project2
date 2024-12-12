@@ -11,6 +11,7 @@ import Copyright2 from "./Copyright2";
 import ConsultingFooter from "./ConsultingFooter";
 import Brands4 from "@/components/sections/brands/Brands4";
 import CompanyInfo from "./CompanyInfo";
+import Link from "next/link";
 
 const Footer = ({ style, footerBg, copyright }) => {
   return (

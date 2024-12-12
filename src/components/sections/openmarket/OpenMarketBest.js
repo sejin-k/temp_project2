@@ -40,7 +40,9 @@ const OpenMarketBest = () => {
   useEffect(() => {
     const getMarketInfo = async () => {
       // 오픈 마켓 별 카테고리 정보 API 호출
+      console.log("오픈 마켓 별 카테고리 정보 API 호출");
       const response = await fetch("/api/service/best-product/categories");
+      console.log("호출 완료");
 
       // 응답 실패 시 에러 발생
       if (!response.ok) {

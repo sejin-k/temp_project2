@@ -203,34 +203,63 @@ const KeywordDiscovery = () => {
 
   // 정렬 상태 추가
   const [sortConfig, setSortConfig] = useState({
-    key: "rank",
+    column: "rank",
     direction: "asc",
   });
 
   // 정렬 처리 함수
-  const handleSort = (key) => {
-    setSortConfig((prev) => ({
-      key,
-      direction: prev.key === key && prev.direction === "asc" ? "desc" : "asc",
-    }));
+  const handleSort = (column) => {
+    const isAsc =
+      sortConfig.column === column && sortConfig.direction === "asc";
+    setSortConfig({
+      column,
+      direction: isAsc ? "desc" : "asc",
+    });
+
+    const sortedData = [...keywords].sort((a, b) => {
+      // rank는 인덱스 기반으로 정렬
+      if (column === "rank") {
+        const rankA = keywords.indexOf(a) + 1;
+        const rankB = keywords.indexOf(b) + 1;
+        return isAsc ? rankB - rankA : rankA - rankB;
+      }
+
+      // 다른 컬럼들은 기존 로직 유지
+      if (
+        column === "searchCnt" ||
+        column === "productCnt" ||
+        column === "competitionRate"
+      ) {
+        const valueA = parseInt(a[column]) || 0;
+        const valueB = parseInt(b[column]) || 0;
+        return isAsc ? rankB - rankA : rankA - rankB;
+      }
+
+      // 문자열 컬럼의 경우
+      if (a[column] < b[column]) return isAsc ? 1 : -1;
+      if (a[column] > b[column]) return isAsc ? -1 : 1;
+      return 0;
+    });
+
+    setKeywords(sortedData);
   };
 
   // 정렬된 키워드 데이터 계산
   const sortedKeywords = [...keywords].sort((a, b) => {
-    if (sortConfig.key === "rank") {
+    if (sortConfig.column === "rank") {
       return sortConfig.direction === "asc" ? a.rank - b.rank : b.rank - a.rank;
     }
-    if (sortConfig.key === "searchCnt") {
+    if (sortConfig.column === "searchCnt") {
       return sortConfig.direction === "asc"
         ? a.searchCnt - b.searchCnt
         : b.searchCnt - a.searchCnt;
     }
-    if (sortConfig.key === "productCnt") {
+    if (sortConfig.column === "productCnt") {
       return sortConfig.direction === "asc"
         ? a.productCnt - b.productCnt
         : b.productCnt - a.productCnt;
     }
-    if (sortConfig.key === "competitionRate") {
+    if (sortConfig.column === "competitionRate") {
       return sortConfig.direction === "asc"
         ? a.competitionRate - b.competitionRate
         : b.competitionRate - a.competitionRate;
@@ -239,18 +268,20 @@ const KeywordDiscovery = () => {
   });
 
   // 테이블 헤더에 정렬 표시 스타일 수정
-  const getSortIndicator = (key) => {
-    if (sortConfig.key === key) {
-      return sortConfig.direction === "asc" ? " ▲" : " ▼";
+  const getSortIndicator = (column) => {
+    if (sortConfig.column !== column) {
+      return " ↕"; // 정렬되지 않은 상태
     }
-    return " ▼";
+    return sortConfig.direction === "asc" ? " ↑" : " ↓";
   };
 
-  // 테이블 헤더 스타일 추가
-  const getHeaderStyle = (key) => ({
+  // 테이블 헤더 스���일 추가
+  const getHeaderStyle = (column) => ({
     cursor: "pointer",
-    userSelect: "none",
-    color: sortConfig.key === key ? "#000" : "#888",
+    backgroundColor: sortConfig.column === column ? "#f0f0f0" : "transparent",
+    padding: "12px 8px",
+    position: "relative",
+    userSelect: "none", // 텍스트 선택 방지
   });
 
   return (
@@ -266,7 +297,7 @@ const KeywordDiscovery = () => {
             <h3>카테고리 별 검색</h3>
           </div>
 
-          {/* 카테고리 선택 ���역 */}
+          {/* 카테고리 선택 영역 */}
           <div
             className="category__gradient"
             style={{ position: "relative", zIndex: 1 }}
@@ -389,7 +420,12 @@ const KeywordDiscovery = () => {
                 ) : sortedKeywords.length > 0 ? (
                   sortedKeywords.map((keyword, index) => (
                     <tr key={index}>
-                      <td>{index + 1}</td>
+                      <td>
+                        {sortConfig.column === "rank" &&
+                        sortConfig.direction === "desc"
+                          ? sortedKeywords.length - index
+                          : index + 1}
+                      </td>
                       <td>{keyword.keywordName}</td>
                       <td>{keyword.categoryName}</td>
                       <td>{keyword.searchCnt}</td>
