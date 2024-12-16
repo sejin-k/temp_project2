@@ -289,7 +289,10 @@ const KeywordDiscovery = () => {
   // 테이블 헤더 스일 추가
   const getHeaderStyle = (column) => ({
     cursor: "pointer",
-    backgroundColor: sortConfig.column === column ? "#f0f0f0" : "transparent",
+    // backgroundColor: sortConfig.column === column ? "#f0f0f0" : "transparent",
+    backgroundColor:
+      sortConfig.column === column ? "rgb(243 238 255)" : "transparent",
+
     padding: "12px 8px",
     position: "relative",
     userSelect: "none", // 텍스트 선택 방지

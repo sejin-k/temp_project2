@@ -5,12 +5,12 @@
 <linearGradient id="paint0_linear_1501_3759" x1="1.92578" y1="14.6551" x2="23.0732" y2="14.6551" gradientUnits="userSpaceOnUse">
 <stop stop-color="#00229E"/>
 <stop offset="0.479167" stop-color="#6E1299"/>
-<stop offset="1" stop-color="#FE0094"/>
+<stop offset="1" stop-color="#45179B"/>
 </linearGradient>
 <linearGradient id="paint1_linear_1501_3759" x1="7.83984" y1="10.9777" x2="17.1592" y2="10.9777" gradientUnits="userSpaceOnUse">
 <stop stop-color="#00229E"/>
 <stop offset="0.479167" stop-color="#6E1299"/>
-<stop offset="1" stop-color="#FE0094"/>
+<stop offset="1" stop-color="#45179B"/>
 </linearGradient>
 </defs>
 </svg>

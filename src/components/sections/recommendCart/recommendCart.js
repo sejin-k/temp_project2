@@ -172,7 +172,7 @@ function RecommendCart({ recommendList, handleChangeRecommendCnt }) {
             className="default__button"
             onClick={handlePaymentClick}
             style={{
-              backgroundColor: "rgb(255 84 183 / 66%)",
+              backgroundColor: "var(--primaryColor)",
               fontSize: "22px",
               paddingTop: "13px",
               paddingBottom: "13px",

@@ -115,7 +115,7 @@ const TeamDetailsPrimary = ({ pb }) => {
                           >
                             <stop stopColor="#00229E" />
                             <stop offset="0.479167" stopColor="#6E1299" />
-                            <stop offset="1" stopColor="#FE0094" />
+                            <stop offset="1" stopColor="#45179B" />
                           </linearGradient>
                           <linearGradient
                             id="paint1_linear_1501_3494"
@@ -127,7 +127,7 @@ const TeamDetailsPrimary = ({ pb }) => {
                           >
                             <stop stopColor="#00229E" />
                             <stop offset="0.479167" stopColor="#6E1299" />
-                            <stop offset="1" stopColor="#FE0094" />
+                            <stop offset="1" stopColor="#45179B" />
                           </linearGradient>
                           <linearGradient
                             id="paint2_linear_1501_3494"
@@ -139,7 +139,7 @@ const TeamDetailsPrimary = ({ pb }) => {
                           >
                             <stop stopColor="#00229E" />
                             <stop offset="0.479167" stopColor="#6E1299" />
-                            <stop offset="1" stopColor="#FE0094" />
+                            <stop offset="1" stopColor="#45179B" />
                           </linearGradient>
                           <clipPath id="clip0_1501_3494">
                             <rect width="22" height="22" fill="white" />
@@ -206,7 +206,7 @@ const TeamDetailsPrimary = ({ pb }) => {
                           >
                             <stop stopColor="#00229E" />
                             <stop offset="0.479167" stopColor="#6E1299" />
-                            <stop offset="1" stopColor="#FE0094" />
+                            <stop offset="1" stopColor="#45179B" />
                           </linearGradient>
                           <linearGradient
                             id="paint1_linear_1501_3467"
@@ -218,7 +218,7 @@ const TeamDetailsPrimary = ({ pb }) => {
                           >
                             <stop stopColor="#00229E" />
                             <stop offset="0.479167" stopColor="#6E1299" />
-                            <stop offset="1" stopColor="#FE0094" />
+                            <stop offset="1" stopColor="#45179B" />
                           </linearGradient>
                           <linearGradient
                             id="paint2_linear_1501_3467"
@@ -230,7 +230,7 @@ const TeamDetailsPrimary = ({ pb }) => {
                           >
                             <stop stopColor="#00229E" />
                             <stop offset="0.479167" stopColor="#6E1299" />
-                            <stop offset="1" stopColor="#FE0094" />
+                            <stop offset="1" stopColor="#45179B" />
                           </linearGradient>
                           <linearGradient
                             id="paint3_linear_1501_3467"
@@ -242,7 +242,7 @@ const TeamDetailsPrimary = ({ pb }) => {
                           >
                             <stop stopColor="#00229E" />
                             <stop offset="0.479167" stopColor="#6E1299" />
-                            <stop offset="1" stopColor="#FE0094" />
+                            <stop offset="1" stopColor="#45179B" />
                           </linearGradient>
                           <linearGradient
                             id="paint4_linear_1501_3467"
@@ -254,7 +254,7 @@ const TeamDetailsPrimary = ({ pb }) => {
                           >
                             <stop stopColor="#00229E" />
                             <stop offset="0.479167" stopColor="#6E1299" />
-                            <stop offset="1" stopColor="#FE0094" />
+                            <stop offset="1" stopColor="#45179B" />
                           </linearGradient>
                           <linearGradient
                             id="paint5_linear_1501_3467"
@@ -266,7 +266,7 @@ const TeamDetailsPrimary = ({ pb }) => {
                           >
                             <stop stopColor="#00229E" />
                             <stop offset="0.479167" stopColor="#6E1299" />
-                            <stop offset="1" stopColor="#FE0094" />
+                            <stop offset="1" stopColor="#45179B" />
                           </linearGradient>
                           <linearGradient
                             id="paint6_linear_1501_3467"
@@ -278,7 +278,7 @@ const TeamDetailsPrimary = ({ pb }) => {
                           >
                             <stop stopColor="#00229E" />
                             <stop offset="0.479167" stopColor="#6E1299" />
-                            <stop offset="1" stopColor="#FE0094" />
+                            <stop offset="1" stopColor="#45179B" />
                           </linearGradient>
                           <linearGradient
                             id="paint7_linear_1501_3467"
@@ -290,7 +290,7 @@ const TeamDetailsPrimary = ({ pb }) => {
                           >
                             <stop stopColor="#00229E" />
                             <stop offset="0.479167" stopColor="#6E1299" />
-                            <stop offset="1" stopColor="#FE0094" />
+                            <stop offset="1" stopColor="#45179B" />
                           </linearGradient>
                           <clipPath id="clip0_1501_3467">
                             <rect width="25" height="25" fill="white" />

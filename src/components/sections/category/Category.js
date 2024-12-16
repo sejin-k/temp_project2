@@ -160,7 +160,7 @@ const Category = ({ isDarkBg, bg, onAddCategory, selectedCategories }) => {
               style={{
                 border: "1px solid #ddd",
                 borderRadius: "8px",
-                // backgroundColor: "#fe0094",
+                // backgroundColor: "#45179B",
               }}
             >
               <CategorySection

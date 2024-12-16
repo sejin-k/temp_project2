@@ -356,7 +356,7 @@ const OpenMarketBest = () => {
                         style={{
                           backgroundColor:
                             selectedCategory === category.categoryDepth1Id
-                              ? "#FE0094"
+                              ? "#45179B"
                               : "transparent",
                           color:
                             selectedCategory === category.categoryDepth1Id
@@ -467,7 +467,7 @@ const OpenMarketBest = () => {
                         style={{
                           backgroundColor:
                             selectedCategory2 === category.categoryDepth2Id
-                              ? "#FE0094"
+                              ? "#45179B"
                               : "transparent",
                           color:
                             selectedCategory2 === category.categoryDepth2Id

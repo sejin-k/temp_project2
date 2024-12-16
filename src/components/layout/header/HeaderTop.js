@@ -41,7 +41,7 @@ const HeaderTop = () => {
                       >
                         <stop offset="0.479167" stopColor="#00229E" />
                         <stop offset="0.479167" stopColor="#6E1299" />
-                        <stop offset="1" stopColor="#FE0094" />
+                        <stop offset="1" stopColor="#45179B" />
                       </linearGradient>
                       <linearGradient
                         id="paint1_linear_1212_633"
@@ -53,7 +53,7 @@ const HeaderTop = () => {
                       >
                         <stop offset="0.479167" stopColor="#00229E" />
                         <stop offset="0.479167" stopColor="#6E1299" />
-                        <stop offset="1" stopColor="#FE0094" />
+                        <stop offset="1" stopColor="#45179B" />
                       </linearGradient>
                       <linearGradient
                         id="paint2_linear_1212_633"
@@ -65,7 +65,7 @@ const HeaderTop = () => {
                       >
                         <stop offset="0.479167" stopColor="#00229E" />
                         <stop offset="0.479167" stopColor="#6E1299" />
-                        <stop offset="1" stopColor="#FE0094" />
+                        <stop offset="1" stopColor="#45179B" />
                       </linearGradient>
                       <clipPath id="clip0_1212_633">
                         <rect width="22" height="22" fill="white" />
@@ -127,7 +127,7 @@ const HeaderTop = () => {
                       >
                         <stop offset="0.479167" stopColor="#00229E" />
                         <stop offset="0.479167" stopColor="#6E1299" />
-                        <stop offset="1" stopColor="#FE0094" />
+                        <stop offset="1" stopColor="#45179B" />
                       </linearGradient>
                       <linearGradient
                         id="paint1_linear_1212_606"
@@ -139,7 +139,7 @@ const HeaderTop = () => {
                       >
                         <stop offset="0.479167" stopColor="#00229E" />
                         <stop offset="0.479167" stopColor="#6E1299" />
-                        <stop offset="1" stopColor="#FE0094" />
+                        <stop offset="1" stopColor="#45179B" />
                       </linearGradient>
                       <linearGradient
                         id="paint2_linear_1212_606"
@@ -151,7 +151,7 @@ const HeaderTop = () => {
                       >
                         <stop offset="0.479167" stopColor="#00229E" />
                         <stop offset="0.479167" stopColor="#6E1299" />
-                        <stop offset="1" stopColor="#FE0094" />
+                        <stop offset="1" stopColor="#45179B" />
                       </linearGradient>
                       <linearGradient
                         id="paint3_linear_1212_606"
@@ -163,7 +163,7 @@ const HeaderTop = () => {
                       >
                         <stop offset="0.479167" stopColor="#00229E" />
                         <stop offset="0.479167" stopColor="#6E1299" />
-                        <stop offset="1" stopColor="#FE0094" />
+                        <stop offset="1" stopColor="#45179B" />
                       </linearGradient>
                       <linearGradient
                         id="paint4_linear_1212_606"
@@ -175,7 +175,7 @@ const HeaderTop = () => {
                       >
                         <stop offset="0.479167" stopColor="#00229E" />
                         <stop offset="0.479167" stopColor="#6E1299" />
-                        <stop offset="1" stopColor="#FE0094" />
+                        <stop offset="1" stopColor="#45179B" />
                       </linearGradient>
                       <linearGradient
                         id="paint5_linear_1212_606"
@@ -187,7 +187,7 @@ const HeaderTop = () => {
                       >
                         <stop offset="0.479167" stopColor="#00229E" />
                         <stop offset="0.479167" stopColor="#6E1299" />
-                        <stop offset="1" stopColor="#FE0094" />
+                        <stop offset="1" stopColor="#45179B" />
                       </linearGradient>
                       <linearGradient
                         id="paint6_linear_1212_606"
@@ -199,7 +199,7 @@ const HeaderTop = () => {
                       >
                         <stop offset="0.479167" stopColor="#00229E" />
                         <stop offset="0.479167" stopColor="#6E1299" />
-                        <stop offset="1" stopColor="#FE0094" />
+                        <stop offset="1" stopColor="#45179B" />
                       </linearGradient>
                       <linearGradient
                         id="paint7_linear_1212_606"
@@ -211,7 +211,7 @@ const HeaderTop = () => {
                       >
                         <stop offset="0.479167" stopColor="#00229E" />
                         <stop offset="0.479167" stopColor="#6E1299" />
-                        <stop offset="1" stopColor="#FE0094" />
+                        <stop offset="1" stopColor="#45179B" />
                       </linearGradient>
                       <clipPath id="clip0_1212_606">
                         <rect width="25" height="25" fill="white" />
@@ -251,7 +251,7 @@ const HeaderTop = () => {
                   >
                     <stop offset="0.479167" stopColor="#00229E" />
                     <stop offset="0.479167" stopColor="#6E1299" />
-                    <stop offset="1" stopColor="#FE0094" />
+                    <stop offset="1" stopColor="#45179B" />
                   </linearGradient>
                   <linearGradient
                     id="paint1_linear_1212_598"
@@ -263,7 +263,7 @@ const HeaderTop = () => {
                   >
                     <stop offset="0.479167" stopColor="#00229E" />
                     <stop offset="0.479167" stopColor="#6E1299" />
-                    <stop offset="1" stopColor="#FE0094" />
+                    <stop offset="1" stopColor="#45179B" />
                   </linearGradient>
                 </defs>
               </svg>

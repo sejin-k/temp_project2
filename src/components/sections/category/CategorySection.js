@@ -42,7 +42,7 @@ const CategorySection = ({
           width: "100px",
           minWidth: "100px",
           maxWidth: "100px",
-          backgroundColor: "#FE0094",
+          backgroundColor: "#45179B",
           justifyContent: "space-around",
           padding: "8px",
           borderRadius: "4px",
@@ -95,7 +95,7 @@ const CategorySection = ({
                   }
                   onClick={(e) => e.stopPropagation()}
                   style={{
-                    accentColor: "#FE0094",
+                    accentColor: "#45179B",
                     cursor: "pointer",
                     width: "20px",
                     height: "20px",

@@ -206,7 +206,7 @@ const ContactPrimary = () => {
                         >
                           <stop stopColor="#00229E" />
                           <stop offset="0.479167" stopColor="#6E1299" />
-                          <stop offset="1" stopColor="#FE0094" />
+                          <stop offset="1" stopColor="#45179B" />
                         </linearGradient>
                         <linearGradient
                           id="paint1_linear_1501_3784"
@@ -218,7 +218,7 @@ const ContactPrimary = () => {
                         >
                           <stop stopColor="#00229E" />
                           <stop offset="0.479167" stopColor="#6E1299" />
-                          <stop offset="1" stopColor="#FE0094" />
+                          <stop offset="1" stopColor="#45179B" />
                         </linearGradient>
                         <clipPath id="clip0_1501_3784">
                           <rect width="25" height="25" fill="white" />
@@ -273,7 +273,7 @@ const ContactPrimary = () => {
                         >
                           <stop stopColor="#00229E" />
                           <stop offset="0.479167" stopColor="#6E1299" />
-                          <stop offset="1" stopColor="#FE0094" />
+                          <stop offset="1" stopColor="#45179B" />
                         </linearGradient>
                         <linearGradient
                           id="paint1_linear_1501_3772"
@@ -285,7 +285,7 @@ const ContactPrimary = () => {
                         >
                           <stop stopColor="#00229E" />
                           <stop offset="0.479167" stopColor="#6E1299" />
-                          <stop offset="1" stopColor="#FE0094" />
+                          <stop offset="1" stopColor="#45179B" />
                         </linearGradient>
                         <linearGradient
                           id="paint2_linear_1501_3772"
@@ -297,7 +297,7 @@ const ContactPrimary = () => {
                         >
                           <stop stopColor="#00229E" />
                           <stop offset="0.479167" stopColor="#6E1299" />
-                          <stop offset="1" stopColor="#FE0094" />
+                          <stop offset="1" stopColor="#45179B" />
                         </linearGradient>
                         <clipPath id="clip0_1501_3772">
                           <rect width="25" height="25" fill="white" />
@@ -346,7 +346,7 @@ const ContactPrimary = () => {
                         >
                           <stop stopColor="#00229E" />
                           <stop offset="0.479167" stopColor="#6E1299" />
-                          <stop offset="1" stopColor="#FE0094" />
+                          <stop offset="1" stopColor="#45179B" />
                         </linearGradient>
                         <linearGradient
                           id="paint1_linear_1501_3759"
@@ -358,7 +358,7 @@ const ContactPrimary = () => {
                         >
                           <stop stopColor="#00229E" />
                           <stop offset="0.479167" stopColor="#6E1299" />
-                          <stop offset="1" stopColor="#FE0094" />
+                          <stop offset="1" stopColor="#45179B" />
                         </linearGradient>
                       </defs>
                     </svg>

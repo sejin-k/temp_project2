@@ -68,7 +68,7 @@
   --blackBlue: #110c34;
   --headingColor: #222222;
   --contentColor: #5f6c76;
-  --primaryColor: #fe0094;
+  --primaryColor: #45179B;
   --secondaryColor: #18239d;
   --greyColor: #ededed;
   --borderColor: #eeeeee;
@@ -76,14 +76,14 @@
   --borderColor3: #ccc;
   --navyBlue: #18239d;
   --navyBlue2: #221c49;
-  --pinkcolor: #fe0094;
+  --pinkcolor: #45179B;
   --violet: #6e1299;
   --yellow: #ff912c;
   --gradientColor: linear-gradient(
     90deg,
     #00229e 0%,
     #6e1299 47.92%,
-    #fe0094 100%
+    #45179B 100%
   );
   --gradientColor2: linear-gradient(
     180deg,
@@ -11526,7 +11526,7 @@ li {
 
 .default__button {
   padding: 20px 45px;
-  background: #fe0094;
+  background: #45179B;
   color: var(--whiteColor);
   font-size: 14px;
   font-style: normal;
@@ -11551,7 +11551,7 @@ li {
 .default__button:hover {
   /* -webkit-filter: brightness(150%); */
   /* filter: brightness(150%); */
-  background-color: #fe0094ad;
+  background-color: #45179Bad;
   /* transform: scale(1.05); 버튼을 5% 확대 */
   color: #000000 ;
 }
@@ -11636,7 +11636,7 @@ button.default__button {
   z-index: 99;
 }
 .direction__btn svg path {
-  stroke: var(--blackColor);
+  stroke: var(--whiteColor);
   transition: var(--transition);
 }
 .direction__btn--2 {
@@ -11658,7 +11658,7 @@ button.default__button {
   stroke: var(--whiteColor);
 }
 .direction__btn--2:hover svg path {
-  stroke: var(--blackColor);
+  stroke: var(--whiteColor);
 }
 
 .gradient__bg {
@@ -12272,7 +12272,7 @@ button.default__button {
   }
 }
 .slider__controls__arrows .arrow-btn-2 {
-  border: 2px solid #fff0fa;
+  border: 2px solid #f3eef3;
 }
 .slider__controls__arrows .arrow-btn-2 svg {
   z-index: 999;
@@ -14813,7 +14813,7 @@ button.default__button {
   stroke: var(--whiteColor);
 }
 .service__single__wraper--2:hover .direction__btn--2 svg path {
-  stroke: var(--blackColor);
+  stroke: var(--whiteColor);
 }
 .service__single__wraper--2:hover .service__bg__img svg stop {
   stop-color: var(--whiteColor);
@@ -16033,7 +16033,7 @@ button.default__button {
   opacity: 0.4;
   background: var(
     --Gradient,
-    linear-gradient(90deg, #00229e 0%, #6e1299 47.92%, #fe0094 100%)
+    linear-gradient(90deg, #00229e 0%, #6e1299 47.92%, #45179B 100%)
   );
 }
 
@@ -18704,7 +18704,7 @@ button.default__button {
 
 .pricing__single {
   background: white;
-  border: 2px solid rgb(246, 187, 251); /* 외곽선 두께와 색상 설정 */
+  border: 2px solid rgb(223, 147, 255); /* 외곽선 두께와 색상 설정 */
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
   padding: 0 20px 40px 20px;
   border-radius: var(--borderRadius);
@@ -18715,7 +18715,7 @@ button.default__button {
 
 }
 .pricing__single:hover {
-  background: rgb(254, 243, 255);
+  background: rgb(246, 231, 255);
   transform: scale(1.05); /* 버튼을 5% 확대 */
 
 }
@@ -21785,13 +21785,13 @@ Dark Mode
   box-shadow: var(--darkShadow);
 }
 .is_dark .facts__single__counter .counter__number {
-  color: var(--blackColor);
+  color: var(--whiteColor);
 }
 .is_dark .facts__single__counter .counter__number span {
-  color: var(--blackColor);
+  color: var(--whiteColor);
 }
 .is_dark .facts__single__counter p {
-  color: var(--blackColor);
+  color: var(--whiteColor);
 }
 .is_dark .project__heading--2 h3 a {
   color: var(--blackColor);
@@ -21829,7 +21829,7 @@ Dark Mode
   color: var(--blackColorb);
 }
 .is_dark .direction__btn--2 svg path {
-  stroke: var(--blackColor);
+  stroke: var(--whiteColor);
 }
 .is_dark .team__member__3__single:hover .team__member__name h6 a {
   color: var(--blackColor);
@@ -22354,7 +22354,7 @@ Dark Mode
 
 .category_row__contents {
   display: flex;
-  background: #fff0fa;
+  background: #F3EEFF;
   /* padding-top: p5x;
   padding-bottom: 5px; */
   border-radius: var(--borderRadius);
@@ -22374,7 +22374,7 @@ Dark Mode
 }
 
 [type="radio"]:checked {
-  border: 0.4em solid rgb(248, 194, 225);
+  border: 0.4em solid rgb(232 154 247);
 }
 
 [type="radio"]:focus-visible {
@@ -22414,7 +22414,7 @@ Dark Mode
 
 
 .recommend-card {
-  background: rgb(254, 243, 255);
+  background: rgb(241 229 247);
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -23103,16 +23103,16 @@ h4 {
 }
 
 .btn-primary {
-  background: #FE0094;
+  background: #45179B;
   color: white;
-  border: 1px solid #FE0094;
+  border: 1px solid #45179B;
 }
 
 .btn-primary:hover {
   background: #ffffff;
   color: black;
-  border-color: #FE0094;
-  border: 1px solid #FE0094;
+  border-color: #45179B;
+  border: 1px solid #45179B;
 
   /* background: #ff60bd;
   border-color: #ff60bd; */
@@ -23148,11 +23148,11 @@ h4 {
 }
 
 .nav-link {
-  color: #FE0094;
+  color: #45179B;
 }
 
 .nav-link.arrow-btn:hover{
-  color: #FE0094;
+  color: #45179B;
 }
 
 /* 결제 팝업 스타일 css 추가 - 11.14 */
@@ -23332,7 +23332,7 @@ h4 {
 }
 
 .btn.btn-outline.active {
-  border-bottom: 3px solid #FE0094;
+  border-bottom: 3px solid #45179B;
   border-radius: 0;
 }
 .btn.active{
@@ -23343,13 +23343,15 @@ h4 {
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 2px solid #FE0094;
+  border-bottom: 2px solid #45179B;
 }
 
 .btn.btn-outline.active {
-  border-bottom: 2px solid #FE0094;
+  border-bottom: 2px solid #45179B;
   border-radius: 0;
   border-top: none;
   border-left: none;
   border-right: none;
 } */
+
+

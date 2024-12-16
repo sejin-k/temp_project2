@@ -41,7 +41,7 @@ const ServiceCard2 = ({ service, type }) => {
                   >
                     <stop offset="0.479167" stopColor="#00229E" />
                     <stop offset="0.479167" stopColor="#6E1299" />
-                    <stop offset="1" stopColor="#FE0094" />
+                    <stop offset="1" stopColor="#45179B" />
                   </linearGradient>
                 </defs>
               </svg>
