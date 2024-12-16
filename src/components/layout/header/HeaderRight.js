@@ -7,6 +7,7 @@ import userIconWhite from "@/assets/img/login/user_white.svg";
 import userIconBlack from "@/assets/img/login/user_black.svg";
 import UserDropdown from "./UserDropdown";
 import { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const HeaderRight = () => {
   const { style } = useHeaderContex();
@@ -14,6 +15,7 @@ const HeaderRight = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const dropdownRef = useRef(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -39,10 +41,12 @@ const HeaderRight = () => {
             <li className="header__nav-item">
               <Link
                 href="/openmarket-best"
-                className="btn btn-outline"
+                className={`btn btn-outline ${
+                  pathname === "/openmarket-best" ? "active" : ""
+                }`}
                 style={{
-                  fontWeight: "700", // Navbar와 동일한 굵기
-                  fontSize: "16px", // Navbar와 동일한 크기
+                  fontWeight: "700",
+                  fontSize: "18px",
                 }}
               >
                 오픈마켓 베스트
@@ -51,10 +55,12 @@ const HeaderRight = () => {
             <li className="header__nav-item">
               <Link
                 href="/keyword-discovery"
-                className="btn btn-outline"
+                className={`btn btn-outline ${
+                  pathname === "/keyword-discovery" ? "active" : ""
+                }`}
                 style={{
-                  fontWeight: "700", // Navbar와 동일한 굵기
-                  fontSize: "16px", // Navbar와 동일한 크기
+                  fontWeight: "700",
+                  fontSize: "18px",
                 }}
               >
                 키워드 발굴
@@ -63,10 +69,12 @@ const HeaderRight = () => {
             <li className="header__nav-item">
               <Link
                 href="/product-recommend"
-                className="btn btn-outline"
+                className={`btn btn-outline ${
+                  pathname === "/product-recommend" ? "active" : ""
+                }`}
                 style={{
-                  fontWeight: "700", // Navbar와 동일한 굵기
-                  fontSize: "16px", // Navbar와 동일한 크기
+                  fontWeight: "700",
+                  fontSize: "18px",
                 }}
               >
                 상품추천
@@ -75,16 +83,18 @@ const HeaderRight = () => {
             <li className="header__nav-item">
               <Link
                 href="/membership"
-                className="btn btn-outline"
+                className={`btn btn-outline ${
+                  pathname === "/membership" ? "active" : ""
+                }`}
                 style={{
-                  fontWeight: "700", // Navbar와 동일한 굵기
-                  fontSize: "16px", // Navbar와 동일한 크기
+                  fontWeight: "700",
+                  fontSize: "18px",
                 }}
               >
                 멤버쉽
               </Link>
             </li>
-            <li className="header__nav-item">
+            {/* <li className="header__nav-item">
               <Link
                 href="/guide"
                 className="btn btn-outline"
@@ -95,7 +105,7 @@ const HeaderRight = () => {
               >
                 가이드
               </Link>
-            </li>
+            </li> */}
             <li className="header__nav-item">
               {loading ? (
                 <div className="w-[24px] h-[24px] animate-pulse bg-gray-200 rounded-full" />

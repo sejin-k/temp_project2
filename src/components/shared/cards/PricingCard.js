@@ -55,14 +55,22 @@ const PricingCard = ({ plan }) => {
               {/* <h6 style={{ color: "black", fontSize: "larger" }}>{price}</h6> */}
               <br />
               <span
-                style={{ color: "red", fontSize: "small", display: "inline" }}
+                style={{ color: "red", fontSize: "17px", display: "inline" }}
               >
                 75%
               </span>
               <span style={{ display: "inline", fontSize: "larger" }}>
                 {business}
               </span>
-              <span>{price}</span>
+              <span
+                style={{
+                  display: "inline",
+                  fontSize: "larger",
+                  marginLeft: "7px",
+                }}
+              >
+                <strong>{price}</strong>
+              </span>
             </div>
           </div>
           <div className="pricing__single__button">

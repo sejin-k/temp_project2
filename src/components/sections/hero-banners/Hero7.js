@@ -64,7 +64,7 @@ const Hero7 = ({ type }) => {
                   <div className="herobanner__button">
                     <ButtonPrimary
                       text={"지금 무료 체험하기"}
-                      path={"/service"}
+                      path={"/membership"}
                     />
                     <div className="video__button">
                       <ButtonPopup

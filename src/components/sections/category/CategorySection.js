@@ -42,14 +42,16 @@ const CategorySection = ({
           width: "100px",
           minWidth: "100px",
           maxWidth: "100px",
-          backgroundColor: "rgb(248 194 225)",
+          backgroundColor: "#FE0094",
           justifyContent: "space-around",
           padding: "8px",
           borderRadius: "4px",
           display: "flex",
           alignItems: "center",
           fontSize: "18px",
-          color: "#282424",
+          // color: "#282424",
+          color: "#FFF",
+          fontWeight: "700",
         }}
       >
         {name}
@@ -93,7 +95,7 @@ const CategorySection = ({
                   }
                   onClick={(e) => e.stopPropagation()}
                   style={{
-                    accentColor: "rgb(248, 194, 225)",
+                    accentColor: "#FE0094",
                     cursor: "pointer",
                     width: "20px",
                     height: "20px",

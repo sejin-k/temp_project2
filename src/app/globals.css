@@ -5546,12 +5546,12 @@ li {
   transform: translate(-50%, -50%);
 }
 
-.single__transform {
+/* .single__transform {
   transition: var(--transition);
 }
 .single__transform:hover {
   transform: translateY(-10px);
-}
+} */
 
 .ssla__animation {
   position: absolute;
@@ -5961,7 +5961,7 @@ li {
     max-width: 150px;
   }
 }
-@media (max-width: 2465px) {
+@media (min-width: 1365px) {
   .headerarea__logo img {
     max-width: 150px;
   }
@@ -11940,12 +11940,12 @@ button.default__button {
   transform: translate(-50%, -50%);
 }
 
-.single__transform {
+/* .single__transform {
   transition: var(--transition);
 }
 .single__transform:hover {
   transform: translateY(-10px);
-}
+} */
 
 .ssla__animation {
   position: absolute;
@@ -21868,7 +21868,7 @@ Dark Mode
   color: var(--blackColor);
 }
 .is_dark .section__title--4 .section__title__small span::before {
-  background: var(--blackColor);
+  background: var(--whiteColor);
 }
 .is_dark .portfolio__filter button span {
   color: var(--blackColor);
@@ -23315,3 +23315,41 @@ h4 {
   font-size: 16px; /* 필요에 따라 폰트 크기 조정  */
 }
 
+/* 추가할 CSS */
+.responsive-text {
+  font-size: clamp(16px, 3vw, 32px);
+  text-align: center;
+  line-height: 1.5;
+  color: white;
+  white-space: pre-line;
+  margin: 0;
+  padding: 0;
+}
+
+.responsive-text br {
+  display: block;
+  content: "";
+}
+
+.btn.btn-outline.active {
+  border-bottom: 3px solid #FE0094;
+  border-radius: 0;
+}
+.btn.active{
+  border-color: white;
+}
+
+/* .btn.btn-outline.active:hover {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid #FE0094;
+}
+
+.btn.btn-outline.active {
+  border-bottom: 2px solid #FE0094;
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+} */

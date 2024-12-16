@@ -20,13 +20,15 @@ const CallToAction = ({ title, label }) => {
                 data-aos-duration="1500"
               >
                 <div className="section__title__small">
-                  <span>{label ? label : "Contact"}</span>
+                  <span style={{ color: "white" }}>
+                    {label ? label : "Contact"}
+                  </span>
                 </div>
                 <div className="section__title__heading">
-                  <h3>
-                    {title
-                      ? title
-                      : "셀파트너는 판매자를 위해 고민하고 또 고민합니다. 원하시는 서비스나 제안이 있으실까요?"}
+                  <h3 className="responsive-text">
+                    셀파트너는 판매자를 위해 고민하고 연구합니다.
+                    <br></br>
+                    원하시는 서비스나 제안이 있으실까요?
                   </h3>
                 </div>
 
@@ -34,7 +36,7 @@ const CallToAction = ({ title, label }) => {
                   <ButtonPrimary
                     text="제안하기"
                     path="/services"
-                    button={"white"}
+                    // button={"white"}
                   />
                 </div>
               </div>

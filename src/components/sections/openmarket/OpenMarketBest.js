@@ -260,16 +260,13 @@ const OpenMarketBest = () => {
       style={{ marginTop: "80px" }}
     >
       <div className="container">
-        <div className="section__title text-center sp_bottom_40">
+        {/* <div className="section__title text-center sp_bottom_40">
           <div className="section__title__button">
             <span className="text__gradient" style={{ fontSize: "1.6rem" }}>
               오픈마켓 베스트
             </span>
           </div>
-          {/* <div className="section__title__heading">
-            <h2 style={{ fontSize: "2rem" }}>인기 상품 모아보기</h2>
-          </div> */}
-        </div>
+        </div> */}
 
         {/* 마켓 선택 탭 */}
         <div className="market-tabs sp_bottom_30">
@@ -600,7 +597,7 @@ const OpenMarketBest = () => {
                         marginTop: "4px",
                       }}
                     >
-                      {product.listPrice.toLocaleString()}원
+                      {product.price.toLocaleString()}원
                     </div>
                     <div className="price-info mb-2">
                       <span
@@ -613,7 +610,7 @@ const OpenMarketBest = () => {
                         {product.listPrice === 0
                           ? 0
                           : Math.round(
-                              (1 - product.price / product.listPrice) * 100
+                              (1 - product.listPrice / product.price) * 100
                             )}
                         %
                       </span>
@@ -623,7 +620,7 @@ const OpenMarketBest = () => {
                           fontSize: "22px",
                         }}
                       >
-                        {product.price.toLocaleString()}원
+                        {product.listPrice.toLocaleString()}원
                       </span>
                     </div>
 

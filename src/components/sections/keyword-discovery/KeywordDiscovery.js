@@ -245,27 +245,38 @@ const KeywordDiscovery = () => {
   };
 
   // 정렬된 키워드 데이터 계산
-  const sortedKeywords = [...keywords].sort((a, b) => {
-    if (sortConfig.column === "rank") {
-      return sortConfig.direction === "asc" ? a.rank - b.rank : b.rank - a.rank;
-    }
-    if (sortConfig.column === "searchCnt") {
-      return sortConfig.direction === "asc"
-        ? a.searchCnt - b.searchCnt
-        : b.searchCnt - a.searchCnt;
-    }
-    if (sortConfig.column === "productCnt") {
-      return sortConfig.direction === "asc"
-        ? a.productCnt - b.productCnt
-        : b.productCnt - a.productCnt;
-    }
-    if (sortConfig.column === "competitionRate") {
-      return sortConfig.direction === "asc"
-        ? a.competitionRate - b.competitionRate
-        : b.competitionRate - a.competitionRate;
-    }
-    return 0;
-  });
+  const sortedKeywords = [...keywords]
+    .map((keyword) => ({
+      ...keyword,
+      // 경쟁률 = 검색수 / 상품수
+      competitionRate:
+        keyword.productCnt === 0
+          ? 0
+          : (keyword.searchCnt / keyword.productCnt).toFixed(2),
+    }))
+    .sort((a, b) => {
+      if (sortConfig.column === "rank") {
+        return sortConfig.direction === "asc"
+          ? a.rank - b.rank
+          : b.rank - a.rank;
+      }
+      if (sortConfig.column === "searchCnt") {
+        return sortConfig.direction === "asc"
+          ? a.searchCnt - b.searchCnt
+          : b.searchCnt - a.searchCnt;
+      }
+      if (sortConfig.column === "productCnt") {
+        return sortConfig.direction === "asc"
+          ? a.productCnt - b.productCnt
+          : b.productCnt - a.productCnt;
+      }
+      if (sortConfig.column === "competitionRate") {
+        return sortConfig.direction === "asc"
+          ? parseFloat(a.competitionRate) - parseFloat(b.competitionRate)
+          : parseFloat(b.competitionRate) - parseFloat(a.competitionRate);
+      }
+      return 0;
+    });
 
   // 테이블 헤더에 정렬 표시 스타일 수정
   const getSortIndicator = (column) => {
@@ -275,7 +286,7 @@ const KeywordDiscovery = () => {
     return sortConfig.direction === "asc" ? " ↑" : " ↓";
   };
 
-  // 테이블 헤더 스���일 추가
+  // 테이블 헤더 스일 추가
   const getHeaderStyle = (column) => ({
     cursor: "pointer",
     backgroundColor: sortConfig.column === column ? "#f0f0f0" : "transparent",
@@ -288,6 +299,15 @@ const KeywordDiscovery = () => {
     <main className="main_wrapper" style={{ paddingTop: "100px" }}>
       <div className="container">
         {/* 카테고리 선택 영역 */}
+
+        {/* <div className="section__title text-center sp_bottom_40">
+          <div className="section__title__button">
+            <span className="text__gradient" style={{ fontSize: "1.6rem" }}>
+              키워드 발굴
+            </span>
+          </div>
+        </div> */}
+
         <div className="mt-4">
           {/* 카테고리 헤더 */}
           <div

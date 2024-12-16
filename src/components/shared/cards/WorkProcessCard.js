@@ -5,13 +5,12 @@ const WorkProcessCard = ({ item }) => {
   const { img, path, title, desc, duration } = item;
   return (
     <div
-      className="work__process__single single__transform "
+      className="work__process__single"
+      style={{ backgroundColor: "white" }}
       data-aos="fade-up"
       data-aos-duration={duration}
     >
-      <div className="work__process__icon">
-        <Link href={path}>{img}</Link>
-      </div>
+      <div className="work__process__icon">{img}</div>
       <div className="work__process__content">
         <div className="work__process__name">
           <h5>

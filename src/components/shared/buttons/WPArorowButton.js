@@ -9,7 +9,7 @@ const WPArorowButton = ({ arrow }) => {
       data-aos="fade-up"
       data-aos-duration={duration}
     >
-      <Link className="direction__btn direction__btn--2" href={path}>
+      <div className="direction__btn direction__btn--2">
         <svg
           width="24"
           height="24"
@@ -34,7 +34,7 @@ const WPArorowButton = ({ arrow }) => {
             strokeLinejoin="round"
           />
         </svg>
-      </Link>
+      </div>
     </div>
   );
 };

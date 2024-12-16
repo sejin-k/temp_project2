@@ -15,9 +15,7 @@ const ServiceCard4 = ({ service }) => {
           <Image src={img} alt="" />
         </div>
         <div className="service__heading__4">
-          <h3>
-            <Link href={`/services/${id}`}>{title}</Link>
-          </h3>
+          <h3 style={{ fontSize: "20px" }}>{title}</h3>
         </div>
         <div className="service__content__4">
           <p>{desc}</p>

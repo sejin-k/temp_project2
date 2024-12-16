@@ -21,7 +21,7 @@ function CategoryDropdown({
     const selected = selectedCategories[`depth${depth}`];
     if (!selected) return categoryName;
     const nameKey = `categoryDepth${depth}Name`;
-    return selected[nameKey] === "선택 없음" ? "" : selected[nameKey];
+    return selected[nameKey] === "선택 없음" ? categoryName : selected[nameKey];
   };
 
   return (
@@ -44,13 +44,26 @@ function CategoryDropdown({
               <div
                 className="dropdown-menu show w-100"
                 style={{
-                  maxHeight: "200px", // 드롭다운 최대 높이 설정
-                  overflowY: "auto", // Y축 스크롤 추가
+                  maxHeight: "200px",
+                  overflowY: "auto",
                   position: "absolute",
                   marginTop: "2px",
                   padding: "0.5rem 0",
                 }}
               >
+                <button
+                  type="button"
+                  className="dropdown-item"
+                  onClick={() =>
+                    handleCategorySelect(depth, {
+                      [`categoryDepth${depth}Id`]: null,
+                      [`categoryDepth${depth}Name`]: "선택 없음",
+                      childCategory: [],
+                    })
+                  }
+                >
+                  선택 없음
+                </button>
                 {getCategoryData().map((cat) => (
                   <button
                     key={cat[`categoryDepth${depth}Id`]}

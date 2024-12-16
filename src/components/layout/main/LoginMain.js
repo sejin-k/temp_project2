@@ -27,7 +27,7 @@ const LoginMain = () => {
                   </div>
                   <div className="section__title__heading">
                     <h2
-                      className="text-white"
+                      className="text-black"
                       style={{
                         fontSize: "24px",
                         lineHeight: "1.4",
@@ -43,7 +43,7 @@ const LoginMain = () => {
 
                 {/* 로그인/회원가입 텍스트 */}
                 <div className="login__subtitle sp_bottom_20">
-                  <p className="text-white opacity-75" style={{ marginTop: 0 }}>
+                  <p className="text-black opacity-75" style={{ marginTop: 0 }}>
                     로그인/회원가입
                   </p>
                 </div>
