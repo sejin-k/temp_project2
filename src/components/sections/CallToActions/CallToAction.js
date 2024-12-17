@@ -26,7 +26,7 @@ const CallToAction = ({ title, label }) => {
                 </div>
                 <div className="section__title__heading">
                   <h3 className="responsive-text" style={{ color: "white" }}>
-                    셀파트너는 판매자를 위해 고민하고 연구합니다.
+                    셀파트너는 판매자를 위해 계속 고민합니다.
                     <br></br>
                     원하시는 서비스나 제안이 있으실까요?
                   </h3>

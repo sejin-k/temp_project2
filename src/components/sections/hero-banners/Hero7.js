@@ -68,7 +68,9 @@ const Hero7 = ({ type }) => {
                     />
                     <div className="video__button">
                       <ButtonPopup
-                        link={"https://www.youtube.com/watch?v=gLb2Gbo_bbs"}
+                        link={
+                          "https://www.youtube.com/watch?v=B_zoQZLKfj0&t=10s"
+                        }
                       />
 
                       <span className="video__button__text"> Watch Demo</span>

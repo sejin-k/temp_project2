@@ -664,7 +664,7 @@ const OpenMarketBest = () => {
 
         {allProducts.length === 0 && selectedMarket !== "naver" && (
           <div className="col-12 text-center py-5">
-            <p>해당 마켓의 데이터는 준비 ��입니다.</p>
+            <p>해당 마켓의 데이터는 준비 중 입니다.</p>
           </div>
         )}
       </div>

@@ -95,29 +95,28 @@ const Offer2 = ({ type, isVideo, img, title, tag, id, pt }) => {
               <div className="about__list">
                 <ul>
                   <li>
-                    <i className="icofont-check"></i>상품 선택을 감과 경험에만
-                    의존하고 계신 분들
+                    <i className="icofont-check"></i>상품 선택을 감에만 의존하고
+                    계신 분들
                   </li>
                   <li>
-                    <i className="icofont-check"></i>온라인 판매를 이제 막
-                    시작하신 분들
+                    <i className="icofont-check"></i>온라인 판매를 시작하신 분들
                   </li>
                   <li>
                     <i className="icofont-check"></i>어떤 상품을 판매해야 할지
-                    고민이 많으신 분들
+                    고민이신 분들
                   </li>
                   <li>
-                    <i className="icofont-check"></i>월 매출 100만 원을 넘기지
+                    <i className="icofont-check"></i>매출 100만 원을 넘기지
                     못하고 계신 분들
                   </li>
                   <li>
-                    <i className="icofont-check"></i>매출 성장을 위해 적합한
-                    상품을 찾고 계신 분들
+                    <i className="icofont-check"></i>매출 성장을 위해 상품을
+                    찾고 계신 분들
                   </li>
 
                   <li>
-                    <i className="icofont-check"></i>수익성 높은 상품을 빠르게
-                    파악하고 싶으신 분들
+                    <i className="icofont-check"></i>수익성 높은 상품을 알고
+                    싶으신 분들
                   </li>
                 </ul>
               </div>
