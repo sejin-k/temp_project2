@@ -5,7 +5,11 @@ import Popup from "@/components/sellpartner/popup/Popup";
 import TossPayments from "@/components/sellpartner/payment/TossPayments";
 import * as PortOne from "@portone/browser-sdk/v2";
 
-function RecommendCart({ recommendList, handleChangeRecommendCnt }) {
+function RecommendCart({
+  recommendList,
+  handleChangeRecommendCnt,
+  onDeleteCategory,
+}) {
   // 모든 카드의 총액 계산
   const totalAmount = recommendList.reduce((sum, item) => sum + item.amount, 0);
   let orderId = "";
@@ -43,7 +47,7 @@ function RecommendCart({ recommendList, handleChangeRecommendCnt }) {
   // };
   /* 토스 페이먼츠 결제 코드 끝 ================================================================== */
 
-  /* 포트원 결제 코드 시작 ====================================================================== */
+  /* 포���원 결제 코드 시작 ====================================================================== */
   const createOrderId = async () => {
     // 백엔드 오더아이디 생성 API 호출
     const orderCreateData = {
@@ -136,7 +140,7 @@ function RecommendCart({ recommendList, handleChangeRecommendCnt }) {
       }
     );
 
-    // 상품 추천 요청 API 호출
+    // 상품 ��천 요청 API 호출
     await productRecommend();
   };
   /* 포트원 결제 코드 끝 ====================================================================== */
@@ -151,6 +155,7 @@ function RecommendCart({ recommendList, handleChangeRecommendCnt }) {
               categoryId={item.categoryId}
               categoryName={item.categoryName}
               handleChangeRecommendCnt={handleChangeRecommendCnt}
+              onDelete={onDeleteCategory}
             />
           ))}
         </div>

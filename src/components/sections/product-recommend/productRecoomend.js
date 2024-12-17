@@ -44,6 +44,18 @@ const ProductRecommend = () => {
     );
   };
 
+  const handleDeleteCategory = (categoryId) => {
+    // recommendList에서 제거
+    setRecommendList((prev) =>
+      prev.filter((cat) => cat.categoryId !== categoryId)
+    );
+
+    // selectedCategories에서도 제거
+    setSelectedCategories((prev) =>
+      prev.filter((cat) => cat.categoryId !== categoryId)
+    );
+  };
+
   return (
     <main>
       {/* <HeroInner title={"상품 추천"} currentItem={"Product Recommend"} /> */}
@@ -73,6 +85,7 @@ const ProductRecommend = () => {
       <RecommendCart
         recommendList={recommendList}
         handleChangeRecommendCnt={handleChangeRecommendCnt}
+        onDeleteCategory={handleDeleteCategory}
       />
     </main>
   );

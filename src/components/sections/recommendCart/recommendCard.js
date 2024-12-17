@@ -2,7 +2,12 @@
 import RecommendCntRadio from "@/components/sellpartner/recommendCart/recommendCntRadio";
 import { useState, useEffect } from "react";
 
-function RecommendCard({ categoryId, categoryName, handleChangeRecommendCnt }) {
+function RecommendCard({
+  categoryId,
+  categoryName,
+  handleChangeRecommendCnt,
+  onDelete,
+}) {
   const [checkedCnt, setCheckedCnt] = useState(30);
   const [priceRange, setPriceRange] = useState({ min: 0, max: 100000 });
   const [totalPrice, setTotalPrice] = useState(30000); // 기본값 3만원
@@ -50,7 +55,33 @@ function RecommendCard({ categoryId, categoryName, handleChangeRecommendCnt }) {
 
   return (
     <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-      <div className="recommend-card">
+      <div className="recommend-card position-relative">
+        <button
+          className="btn-close position-absolute"
+          style={{
+            top: "15px",
+            right: "15px",
+            zIndex: 10,
+            background:
+              "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e\") center/1em auto no-repeat", // X 아이콘 SVG
+            // backgroundColor: "white",
+            borderRadius: "50%",
+            width: "20px",
+            height: "20px",
+            padding: "0",
+            cursor: "pointer",
+            border: "1px solid #dee2e6",
+            opacity: "0.8",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          onClick={() => onDelete(categoryId)}
+          aria-label="Close"
+          onMouseOver={(e) => (e.currentTarget.style.opacity = "1")}
+          onMouseOut={(e) => (e.currentTarget.style.opacity = "0.8")}
+        ></button>
+
         <div className="recommend-card__header">
           <h3 className="category-name">{categoryName}</h3>
         </div>
