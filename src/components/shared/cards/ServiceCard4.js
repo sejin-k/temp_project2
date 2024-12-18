@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 const ServiceCard4 = ({ service }) => {
-  const { id, title, desc, img, duration } = service;
+  const { id, title, desc, img, duration, url } = service;
   return (
     <div
       className="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12"
@@ -21,7 +21,7 @@ const ServiceCard4 = ({ service }) => {
           <p>{desc}</p>
         </div>
         <div className="service__icon">
-          <Link className="direction__btn" href={`/services/${id}`}>
+          <Link className="direction__btn" href={`${url}`}>
             <svg
               width="34"
               height="34"

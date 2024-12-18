@@ -188,6 +188,7 @@ const getAllServices = () => {
       img: serviceImage1,
       category: "Business Process",
       duration: "1500",
+      url: "/openmarket-best",
     },
     {
       id: 19,
@@ -197,6 +198,7 @@ const getAllServices = () => {
       img: serviceImage2,
       category: "Financial Restructuring",
       duration: "1700",
+      url: "/keyword-discovery",
     },
     {
       id: 20,
@@ -206,6 +208,7 @@ const getAllServices = () => {
       img: serviceImage3,
       category: "Cost Reduction Analysis",
       duration: "1900",
+      url: "/product-recommend",
     },
     {
       id: 21,
@@ -215,6 +218,7 @@ const getAllServices = () => {
       img: serviceImage4,
       category: "Cost Reduction Analysis",
       duration: "2100",
+      url: "javascript:void(0)",
     },
   ];
   return services;
