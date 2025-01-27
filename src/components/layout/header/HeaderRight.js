@@ -54,6 +54,20 @@ const HeaderRight = () => {
             </li>
             <li className="header__nav-item">
               <Link
+                href="/category-recommend"
+                className={`btn btn-outline ${
+                  pathname === "/category-recommend" ? "active" : ""
+                }`}
+                style={{
+                  fontWeight: "700",
+                  fontSize: "18px",
+                }}
+              >
+                카테고리 추천
+              </Link>
+            </li>
+            <li className="header__nav-item">
+              <Link
                 href="/keyword-discovery"
                 className={`btn btn-outline ${
                   pathname === "/keyword-discovery" ? "active" : ""
