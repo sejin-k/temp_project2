@@ -60,7 +60,7 @@ export function AuthProvider({ children }) {
       if (e.key === 'auth_sync') {
         // storage 이벤트에 의한 checkAuthStatus 호출 시 skipStorageUpdate를 true로 설정
         checkAuthStatus(true);
-        console.log('🔄 인증 상태 동기화:', e.newValue);
+        // console.log('🔄 인증 상태 동기화:', e.newValue);
       }
     };
 

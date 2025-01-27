@@ -30,7 +30,7 @@ export async function GET(request, { params }) {
         }
 
         const responseData = await response.json();
-        console.log('JWT 토큰 받아오기 ' + responseData.access_token);
+        // console.log('JWT 토큰 받아오기 ' + responseData.access_token);
 
         // JWT 토큰을 받아서 쿠키에 저장
         if (responseData.access_token) {
@@ -39,25 +39,26 @@ export async function GET(request, { params }) {
 
             cookieStore.set('authorization', `Bearer ${responseData.access_token}`, {
                 httpOnly: true,
-                secure: true,
+                // secure: true, # TODO: 배포 후 쿠키 보안 설정 필요
                 sameSite: 'lax',
                 path: '/',
                 ...(responseData.expiresIn && { maxAge: parseInt(responseData.expiresIn) })
             });
 
-            console.log("쿠키 저장 완료s");
+            // console.log("쿠키 저장 완료");
 
             // cookieStore.delete('authorization');
             // cookieStore.delete('next-auth.session-token	');
             // 홈페이지로 리다이렉트
-            const redirectUrl = new URL('/', request.url);
+            const redirectUrl = new URL('/', process.env.NEXT_PUBLIC_FRONTEEND_SERVER_URL);
+
             return NextResponse.redirect(redirectUrl);
         }
 
-        return NextResponse.redirect(new URL('/login', request.url));
+        return NextResponse.redirect(new URL('/login', process.env.NEXT_PUBLIC_FRONTEEND_SERVER_URL));
 
     } catch (error) {
         console.error(`${provider} 로그인 콜백 에러:`, error);
-        return NextResponse.redirect(new URL('/login', request.url));
+        return NextResponse.redirect(new URL('/login', process.env.NEXT_PUBLIC_FRONTEEND_SERVER_URL));
     }
 } 
