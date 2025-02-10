@@ -91,10 +91,10 @@ const TossPayments = ({ paymentInfo, changePopupContent }) => {
 
             // 응답 데이터 처리
             const responseData = await response.json();
-            console.log('응답:', responseData);
+            // console.log('응답:', responseData);
         } catch (error) {
             // 결제 승인 요청 실패 로직 구현 필요
-            console.log(error); 
+            // console.log(error); 
         }
     }
 
