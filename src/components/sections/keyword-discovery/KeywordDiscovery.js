@@ -113,11 +113,13 @@ const KeywordDiscovery = () => {
 
     // 상품수 필터 파싱
     const productCntFilter = filters.상품수;
-    const [minProduct, maxProduct] = productCntFilter
-      .split("-")
-      .map((num) => parseInt(num.replace(/,/g, "")));
+    // const [minProduct, maxProduct] = productCntFilter
+    //   .split("-")
+    //   .map((num) => parseInt(num.replace(/,/g, "")));
+    // # TODO: 상품데이터 필터 임시 제거
+    const [minProduct, maxProduct] = [-2, 9999999];
 
-    console.log(filters.검색수?.[0]);
+    // console.log(filters.검색수?.[0]);
 
     // 경쟁강도 파싱
     const competitionFilter = filters.경쟁강도;
@@ -137,16 +139,13 @@ const KeywordDiscovery = () => {
     try {
       setIsLoading(true);
       const params = getApiParameters();
-      console.log(params);
+      // console.log(params);
 
       const queryString = new URLSearchParams(params).toString();
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_SERVER_URL}/service/keyword-discovery/keyword?${queryString}`,
+        `/api/service/keywords?${queryString}`,
         {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          method: "GET"
         }
       );
 
@@ -171,7 +170,7 @@ const KeywordDiscovery = () => {
     }
   };
 
-  console.log(categoryData);
+  // console.log(categoryData);
   useEffect(() => {
     // 카테고리 데이터 fetch
     const fetchCategories = async () => {
@@ -181,7 +180,8 @@ const KeywordDiscovery = () => {
         });
 
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_BACKEND_SERVER_URL}/service/product-recommend/category?${params}`,
+          // `${process.env.NEXT_PUBLIC_BACKEND_SERVER_URL}/service/product-recommend/category?${params}`,
+          `/api/service/categories?platformId=${1}`,
           {
             method: "GET",
           }
@@ -419,7 +419,7 @@ const KeywordDiscovery = () => {
                   >
                     검색량{getSortIndicator("searchCnt")}
                   </th>
-                  <th
+                  {/* <th
                     onClick={() => handleSort("productCnt")}
                     style={getHeaderStyle("productCnt")}
                   >
@@ -430,6 +430,15 @@ const KeywordDiscovery = () => {
                     style={getHeaderStyle("competitionRate")}
                   >
                     경쟁률{getSortIndicator("competitionRate")}
+                  </th> */}
+                  <th>
+                    클릭량
+                  </th>
+                  <th>
+                    클릭률
+                  </th>
+                  <th>
+                    경쟁강도
                   </th>
                 </tr>
               </thead>
@@ -449,11 +458,15 @@ const KeywordDiscovery = () => {
                           ? sortedKeywords.length - index
                           : index + 1}
                       </td>
+                      {/* <td>{keyword.keywordName}</td> */}
                       <td>{keyword.keywordName}</td>
                       <td>{keyword.categoryName}</td>
                       <td>{keyword.searchCnt}</td>
-                      <td>{keyword.productCnt}</td>
-                      <td>{keyword.competitionRate}</td>
+                      {/* <td>{keyword.productCnt}</td>
+                      <td>{keyword.competitionRate}</td> */}
+                      <td>{keyword.mothlyClickCnt}</td>
+                      <td>{keyword.monthlyClickRate}</td>
+                      <td>{keyword.competitionIntensity}</td>
                     </tr>
                   ))
                 ) : (
