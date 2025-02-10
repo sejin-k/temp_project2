@@ -26,6 +26,7 @@ const OpenMarketBest = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedCategory2, setSelectedCategory2] = useState(null);
 
+  // 
   const [currentPage, setCurrentPage] = useState(1);
   const [allProducts, setAllProducts] = useState([]);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -36,76 +37,142 @@ const OpenMarketBest = () => {
   const category1ScrollRef = useRef(null);
   const category2ScrollRef = useRef(null);
 
-  // 오픈 마켓 별 카테고리 정보 가져오기
-  useEffect(() => {
-    const getMarketInfo = async () => {
-      // 오픈 마켓 별 카테고리 정보 API 호출
-      console.log("오픈 마켓 별 카테고리 정보 API 호출");
-      const response = await fetch("/api/service/best-product/categories");
-      console.log("호출 완료");
+  // console.log("화면 랜더링");
 
-      // 응답 실패 시 에러 발생
-      if (!response.ok) {
-        throw new Error("Failed to fetch market info");
+  // 베스트 상품 카테고리 조회
+  const getBestProductCategories = async (platformId) => {
+    // console.log("getBestProductCategories 함수 호출 : ", platformId);
+    // 오픈 마켓 별 카테고리 정보 API 호출
+    const response = await fetch(`/api/service/best-product/categories?platformId=${platformId}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    // 응답 실패 시 에러 발생
+    if (!response.ok) {
+      throw new Error("Failed to fetch market info");
+    }
+
+    const marketInfoData = await response.json();
+
+    return marketInfoData.data;
+  };
+
+  // 베스트 상품 조회
+  const getBestProducts = async (platformId, categoryDepth1Id, categoryDepth2Id) => {
+    // URL 파라미터 구성
+    const params = new URLSearchParams({
+      platformId: platformId,
+      categoryDepth1Id: categoryDepth1Id,
+      categoryDepth2Id: categoryDepth2Id,
+    });
+
+    const response = await fetch(`/api/service/best-product/products?${params}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    // 응답 실패 시 에러 발생
+    if (!response.ok) {
+      throw new Error("Failed to fetch products");
+    }
+
+    const data = await response.json();
+    return data.products;
+  }
+
+  // 초기 랜딩 시 마켓 정보 초기화
+  useEffect(() => {
+    const initMarketInfo = async () => {
+      // console.log("initMarketInfo 함수 호출");
+      const markets = [];
+
+      for (const [marketId, marketIcon] of Object.entries(marketIcons)) {
+        markets.push({ platformId: parseInt(marketId), icon: marketIcon });
       }
 
-      const marketInfoData = await response.json();
-
-      // 마켓 아이콘 맵핑
-      marketInfoData.data.map((market) => {
-        market.icon = marketIcons[market.platformId];
-      });
-
-      setMarketInfo(marketInfoData.data);
-      setCategory1List(
-        marketInfoData.data[0].categories.sort(
-          (a, b) => Number(a.categoryDepth1Id) - Number(b.categoryDepth1Id)
-        )
-      );
-      setCategory2List(
-        marketInfoData.data[0].categories[0].childCategory.sort(
-          (a, b) => Number(a.categoryDepth2Id) - Number(b.categoryDepth2Id)
-        )
-      );
-
-      // 초기 선택 마켓 설정
-      setSelectedMarket(marketInfoData.data[0].platformId);
-      setSelectedCategory(
-        marketInfoData.data[0].categories[0].categoryDepth1Id
-      );
-      setSelectedCategory2(
-        marketInfoData.data[0].categories[0].childCategory[0].categoryDepth2Id
-      );
+      setMarketInfo(markets);
+      setSelectedMarket(markets[1].platformId);
     };
 
-    getMarketInfo();
+    initMarketInfo();
   }, []);
+
+  // 마켓 선택 시 카테고리 정보 초기화
+  useEffect(() => {
+    const getMarketInfo = async () => {
+      if (selectedMarket) {
+        const marketInfoData = await getBestProductCategories(selectedMarket);
+
+        const newMarketInfo = marketInfo.map((market) => {
+          const marketData = marketInfoData[0] && marketInfoData[0].platformId === market.platformId ? marketInfoData[0] : {};
+
+          return {
+            icon: market.icon,
+            platformId: market.platformId,
+            ...marketData,
+          };
+        });
+
+        setMarketInfo(newMarketInfo);
+
+        // 대/중분류 셋팅
+        if (marketInfoData) {
+          setCategory1List(
+            marketInfoData[0]?.categories?.sort(
+              (a, b) => Number(a.categoryDepth1Id) - Number(b.categoryDepth1Id)
+            )
+          );
+          setCategory2List(
+            marketInfoData[0]?.categories[0]?.childCategory?.sort(
+              (a, b) => Number(a.categoryDepth2Id) - Number(b.categoryDepth2Id)
+            )
+          );
+
+          setSelectedCategory(
+            marketInfoData[0]?.categories[0]?.categoryDepth1Id
+          );
+          setSelectedCategory2(
+            marketInfoData[0]?.categories[0]?.childCategory[0]?.categoryDepth2Id
+          );
+        }
+        else {
+          setCategory1List([]);
+          setCategory2List([]);
+          setSelectedCategory(null);
+          setSelectedCategory2(null);
+          setAllProducts([]);
+        }
+      }
+    }
+    getMarketInfo();
+  }, [selectedMarket]);
 
   const handleMarketClick = (platformId) => {
     setSelectedMarket(platformId);
-    setCategory1List(
-      marketInfo
-        .find((market) => market.platformId === platformId)
-        .categories.sort(
-          (a, b) => Number(a.categoryDepth1Id) - Number(b.categoryDepth1Id)
-        )
-    );
-    handleCategory1Click(category1List[0].categoryDepth1Id);
+    // handleCategory1Click(category1List[0].categoryDepth1Id);
   };
 
   const handleCategory1Click = (categoryId) => {
     // 대분류 카테고리 선택
     setSelectedCategory(categoryId);
-    setCategory2List(
-      marketInfo
-        .find((market) => market.platformId === selectedMarket)
-        .categories.find((category) => category.categoryDepth1Id === categoryId)
-        .childCategory.sort(
-          (a, b) => Number(a.categoryDepth2Id) - Number(b.categoryDepth2Id)
-        )
-    );
+    const childCategories = marketInfo
+      .find((market) => market.platformId === selectedMarket)
+      .categories.find((category) => category.categoryDepth1Id === categoryId)
+      .childCategory.sort(
+        (a, b) => Number(a.categoryDepth2Id) - Number(b.categoryDepth2Id)
+      )
+    setCategory2List(childCategories);
 
-    handleCategory2Click(category2List[0].categoryDepth2Id);
+    handleCategory2Click(childCategories[0].categoryDepth2Id);
   };
 
   const handleCategory2Click = (categoryId) => {
@@ -155,19 +222,19 @@ const OpenMarketBest = () => {
   }, [selectedCategory2]);
 
   // 마켓이나 카테고리 변경시 상품 목록 업데이트
-  // useEffect(() => {
-  //   if (selectedMarket === "naver") {
-  //     const products =
-  //       selectedCategory === "all"
-  //         ? dummyProducts.naver.all
-  //         : dummyProducts.naver[selectedCategory] || [];
-  //     setAllProducts(products);
-  //     setCurrentPage(1);
-  //     setIsExpanded(false); // 카테고리 변경시 접힌 상태로 초기화
-  //   } else {
-  //     setAllProducts([]);
-  //   }
-  // }, [selectedMarket, selectedCategory]);
+  useEffect(() => {
+    if (selectedMarket === "naver") {
+      const products =
+        selectedCategory === "all"
+          ? dummyProducts.naver.all
+          : dummyProducts.naver[selectedCategory] || [];
+      setAllProducts(products);
+      setCurrentPage(1);
+      setIsExpanded(false); // 카테고리 변경시 접힌 상태로 초기화
+    } else {
+      setAllProducts([]);
+    }
+  }, [selectedMarket, selectedCategory]);
 
   // 총 페이지 수 계산
   const totalPages = Math.ceil(allProducts.length / PRODUCTS_PER_PAGE);
@@ -210,9 +277,8 @@ const OpenMarketBest = () => {
         <button
           key={i}
           onClick={() => setCurrentPage(i)}
-          className={`btn ${
-            currentPage === i ? "btn-primary" : "btn-outline-primary"
-          } mx-1`}
+          className={`btn ${currentPage === i ? "btn-primary" : "btn-outline-primary"
+            } mx-1`}
         >
           {i}
         </button>
@@ -274,14 +340,13 @@ const OpenMarketBest = () => {
             {marketInfo.map((market) => (
               <li key={market.platformId} className="nav-item">
                 <button
-                  className={`nav-link ${
-                    selectedMarket === market.platformId ? "active" : ""
-                  }`}
+                  className={`nav-link ${selectedMarket === market.platformId ? "active" : ""
+                    }`}
                   onClick={() => handleMarketClick(market.platformId)}
                 >
                   <Image
                     src={market.icon}
-                    alt={market.platformName}
+                    alt="마켓 아이콘"
                     width={100}
                     height={100}
                     style={{
@@ -331,7 +396,7 @@ const OpenMarketBest = () => {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  {category1List.map((category, index) => (
+                  {category1List?.map((category, index) => (
                     <li
                       key={category.categoryDepth1Id}
                       className="nav-item"
@@ -345,11 +410,10 @@ const OpenMarketBest = () => {
                       }}
                     >
                       <button
-                        className={`nav-link ${
-                          selectedCategory === category.categoryDepth1Id
-                            ? "active"
-                            : ""
-                        }`}
+                        className={`nav-link ${selectedCategory === category.categoryDepth1Id
+                          ? "active"
+                          : ""
+                          }`}
                         onClick={() =>
                           handleCategory1Click(category.categoryDepth1Id)
                         }
@@ -442,7 +506,7 @@ const OpenMarketBest = () => {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  {category2List.map((category, index) => (
+                  {category2List?.map((category, index) => (
                     <li
                       key={category.categoryDepth2Id}
                       className="nav-item"
@@ -456,11 +520,10 @@ const OpenMarketBest = () => {
                       }}
                     >
                       <button
-                        className={`nav-link ${
-                          selectedCategory2 === category.categoryDepth2Id
-                            ? "active"
-                            : ""
-                        }`}
+                        className={`nav-link ${selectedCategory2 === category.categoryDepth2Id
+                          ? "active"
+                          : ""
+                          }`}
                         onClick={() =>
                           handleCategory2Click(category.categoryDepth2Id)
                         }
@@ -610,8 +673,8 @@ const OpenMarketBest = () => {
                         {product.listPrice === 0
                           ? 0
                           : Math.round(
-                              (1 - product.listPrice / product.price) * 100
-                            )}
+                            (1 - product.listPrice / product.price) * 100
+                          )}
                         %
                       </span>
                       <span

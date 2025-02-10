@@ -1,12 +1,13 @@
 import { NextResponse } from 'next/server';
 
+export const dynamic = "force-dynamic";
+
 export async function GET(request) {
     try {
         // URL에서 쿼리 파라미터 추출
-        const { searchParams } = new URL(request.url);
-        const platformId = searchParams.get('platformId');
-        const categoryDepth1Id = searchParams.get('categoryDepth1Id');
-        const categoryDepth2Id = searchParams.get('categoryDepth2Id');
+        const platformId = request.nextUrl.searchParams.get('platformId');
+        const categoryDepth1Id = request.nextUrl.searchParams.get('categoryDepth1Id');
+        const categoryDepth2Id = request.nextUrl.searchParams.get('categoryDepth2Id');
 
         // 필수 파라미터 검증
         if (!platformId || !categoryDepth1Id || !categoryDepth2Id) {
