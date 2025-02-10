@@ -18,7 +18,7 @@ export async function POST(request) {
         'Authorization': authToken.value
     };
 
-    console.log(JSON.stringify(requestJson));
+    // console.log(JSON.stringify(requestJson));
 
     // 상품 추천 요청 API 호출
     const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_SERVER_URL}/service/product-recommend/product`, {
