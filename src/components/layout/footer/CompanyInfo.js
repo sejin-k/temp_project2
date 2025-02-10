@@ -27,7 +27,7 @@ const CompanyInfo = () => {
             {/* <span style={{ color: "#adb5bd" }}>|</span> */}
             <span>사업자등록번호: 405-07-58496</span>
             {/* <span style={{ color: "#adb5bd" }}>|</span> */}
-            <span>통신판매업신고: 제2024-서울강남-1234호</span>
+            <span>통신판매업신고: 2024-서울용산-1229</span>
           </div>
           <div
             className="mt-2"
@@ -39,7 +39,7 @@ const CompanyInfo = () => {
               gap: "20px",
             }}
           >
-            <span>서울특별시 용산구 서빙고로 17 4층</span>
+            <span>서울 강동구 성내동 87-1</span>
             {/* <span style={{ color: "#adb5bd" }}>|</span> */}
 
             <span>대표번호: 010-7202-8295</span>
