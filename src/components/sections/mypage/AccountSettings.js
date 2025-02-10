@@ -5,7 +5,7 @@ const AccountSettings = () => {
 
   const handleDeleteAccount = () => {
     // 계정 삭제 로직 구현
-    console.log("계정 삭제 처리");
+    // console.log("계정 삭제 처리");
   };
 
   return (
