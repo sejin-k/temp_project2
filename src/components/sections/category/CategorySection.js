@@ -11,7 +11,7 @@ const CategorySection = ({
 
   // 카테고리 클릭 시 하위 카테고리 변경
   const handleCategoryClick = (categoryId) => {
-    console.log("클릭됨", categoryId);
+    // console.log("클릭됨", categoryId);
     setActiveCategory(categoryId);
     if (onDataChange) {
       onDataChange(categoryId);

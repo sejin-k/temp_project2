@@ -15,12 +15,10 @@ const Category = ({ isDarkBg, bg, onAddCategory, selectedCategories }) => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const params = new URLSearchParams({
-                    platformId: 1
-                });
+                const platformId = 1
                 
                 const response = await fetch(
-                    `http://localhost:8000/service/product-recommend/category?${params}`,
+                    `/api/service/categories?platformId=${platformId}`,
                     {
                         method: 'GET',
                     }
