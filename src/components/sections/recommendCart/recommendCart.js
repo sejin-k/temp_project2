@@ -4,6 +4,7 @@ import { useState } from "react";
 import Popup from "@/components/sellpartner/popup/Popup";
 import TossPayments from "@/components/sellpartner/payment/TossPayments";
 import * as PortOne from "@portone/browser-sdk/v2";
+import Link from "next/link";
 
 function RecommendCart({
   recommendList,
@@ -47,7 +48,7 @@ function RecommendCart({
   // };
   /* 토스 페이먼츠 결제 코드 끝 ================================================================== */
 
-  /* 포���원 결제 코드 시작 ====================================================================== */
+  /* 포트원 결제 코드 시작 ====================================================================== */
   const createOrderId = async () => {
     // 백엔드 오더아이디 생성 API 호출
     const orderCreateData = {
@@ -73,14 +74,19 @@ function RecommendCart({
 
   const orderComplete = async (orderId) => {
     // 결제 완료 요청 API 호출
-    const notified = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_SERVER_URL}/payment/complete`,
+    const response = await fetch(
+      `/api/payment/complete`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ orderId }),
       }
     );
+
+    // 응답 실패 시 에러 발생
+    if (!response.ok) {
+      throw new Error("Failed to complete order");
+    }
   };
 
   const productRecommend = async () => {
@@ -98,7 +104,7 @@ function RecommendCart({
       orderId,
     };
 
-    console.log(JSON.stringify(productRecommendData));
+    // console.log(JSON.stringify(productRecommendData));
 
     // 상품 추천 요청 API 호출
     const response = await fetch(`/api/service/product-recommend`, {
@@ -130,7 +136,7 @@ function RecommendCart({
 
     // 결제 완료 요청 API 호출
     const notified = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_SERVER_URL}/payment/complete`,
+      `/api/payment/complete`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -140,7 +146,12 @@ function RecommendCart({
       }
     );
 
-    // 상품 ��천 요청 API 호출
+    // 결제 완료 요청 오류
+    if (!notified.ok) {
+      throw new Error("Failed to complete order");
+    }
+
+    // 상품 추천 요청 API 호출
     await productRecommend();
   };
   /* 포트원 결제 코드 끝 ====================================================================== */
@@ -173,11 +184,12 @@ function RecommendCart({
           className="sp_bottom_40"
           style={{ textAlign: "right", marginTop: "20px" }}
         >
-          <button
+          {/* <button
             className="default__button"
             onClick={handlePaymentClick}
             style={{
-              backgroundColor: "var(--primaryColor)",
+              // backgroundColor: "var(--primaryColor)",
+              border: "1px solid var(--primaryColor)",
               fontSize: "22px",
               paddingTop: "13px",
               paddingBottom: "13px",
@@ -188,7 +200,32 @@ function RecommendCart({
             }}
           >
             결제하기
-          </button>
+          </button> */}
+          <Link
+            href={{
+              pathname: "/payment/beta-check",
+              query: {
+                totalAmount,
+                recommendList: JSON.stringify(recommendList),
+              },
+            }}
+            // as="/payment/beta-check"
+            className="default__button"
+            style={{
+              // backgroundColor: "var(--primaryColor)",
+              border: "1px solid var(--primaryColor)",
+              fontSize: "22px",
+              paddingTop: "13px",
+              paddingBottom: "13px",
+              paddingLeft: "30px",
+              paddingRight: "30px",
+              fontWeight: "500",
+              width: "100%",
+              textAlign: "center",
+            }}
+            >
+              결제하기
+            </Link>
         </div>
       </div>
 

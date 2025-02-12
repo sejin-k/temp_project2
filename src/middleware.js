@@ -8,7 +8,7 @@ export function middleware(request) {
   const { pathname } = request.nextUrl;
 
   // 로그인이 필요한 페이지 목록
-  const protectedRoutes = ['/mypage'];
+  const protectedRoutes = ['/mypage', '/payment/beta-check'];
   
   // 로그인한 사용자가 접근하면 안 되는 페이지 목록
   const authRoutes = ['/login'];
@@ -28,5 +28,5 @@ export function middleware(request) {
 
 // 미들웨어를 적용할 경로 설정
 export const config = {
-  matcher: ['/mypage', '/login']
+  matcher: ['/mypage', '/login', '/payment/beta-check']
 }; 

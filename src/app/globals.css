@@ -11551,7 +11551,7 @@ li {
 .default__button:hover {
   /* -webkit-filter: brightness(150%); */
   /* filter: brightness(150%); */
-  background-color: #45179Bad;
+  background-color: var(--whiteColor);
   /* transform: scale(1.05); 버튼을 5% 확대 */
   color: #000000 ;
 }
@@ -18805,7 +18805,7 @@ button.default__button {
 .pricing__single__button a {
   background: var(--pinkcolor);
   /* background: var(#ffcbe94f); */
-  color: var(--blackColor);
+  color: var(--whiteColor);
   border: 1px solid var(--pinkcolor);
 }
 .pricing__single__button a span {

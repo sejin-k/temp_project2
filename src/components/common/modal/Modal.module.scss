@@ -1,0 +1,60 @@
+// Variables
+$modal-bg: white;
+$modal-border-radius: 8px;
+$modal-padding: 24px;
+$modal-min-width: 320px;
+$modal-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+$backdrop-bg: rgba(0, 0, 0, 0.5);
+
+// Colors
+$color-primary: #FF6B6C;
+$color-primary-hover: #ff5152;
+$color-text-dark: #333;
+$color-text-light: #666;
+$color-bg-cancel: #f5f5f5;
+$color-bg-cancel-hover: #eeeeee;
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1055;
+  border: none;
+  border-radius: $modal-border-radius;
+  background-color: $modal-bg;
+  padding: $modal-padding;
+  min-width: $modal-min-width;
+
+  &::backdrop {
+    background-color: $backdrop-bg;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: none;
+
+    &-close {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      width: 0.5em;
+      height: 0.5em;
+      // padding: 0;
+      // font-size: 12px;
+    }
+
+    &.center {
+      justify-content: center;
+    }
+  }
+
+  &-body {
+    padding: 12px 0px 0px;
+
+    &.center {
+      justify-content: center;
+    }
+  }
+}

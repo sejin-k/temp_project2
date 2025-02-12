@@ -23,12 +23,15 @@ export const metadata = {
   description: "셀파트너 - 셀러 활동의 파트너",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, modal }) {
   return (
     <html lang="en" className={inter.variable}>
       <body className={`${inter.className}`}>
         <AuthProvider>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>
+            {children}
+            {modal}
+          </ThemeProvider>
         </AuthProvider>
       </body>
     </html>
