@@ -41,6 +41,16 @@ const CategoryRecommend = () => {
     depth3: false,
     depth4: false,
   });
+
+  // 정렬 상태 추가
+  const [sortConfig, setSortConfig] = useState({
+    key: null,
+    direction: 'desc'
+  });
+
+  // 원본 데이터 상태 추가
+  const [originalData, setOriginalData] = useState([]);
+
   // 카테고리 선택 핸들러
   const handleCategorySelect = async (depth, category) => {
     const newSelectedCategories = { ...selectedCategories };
@@ -134,6 +144,7 @@ const CategoryRecommend = () => {
 
         const data = await response.json();
         setRecommendedCategories(data || []);
+        setOriginalData(data || []); // 원본 데이터 저장
       } else {
         setRecommendedCategories([]); // 선택된 카테고리가 없으면 추천 목록 초기화
       }
@@ -163,6 +174,20 @@ const CategoryRecommend = () => {
 
         const data = await response.json();
         setCategoryData(data.categoryList);
+
+        // 첫 번째 카테고리 선택
+        if (data.categoryList && data.categoryList.length > 0) {
+          const firstCategory = data.categoryList[0];
+          const newSelectedCategories = {
+            ...selectedCategories,
+            depth1: firstCategory
+          };
+          setSelectedCategories(newSelectedCategories);
+          
+          // 첫 번째 카테고리 선택 후 추천 API 호출
+          await fetchRecommendedCategories(newSelectedCategories);
+        }
+
       } catch (err) {
         console.error("카테고리 데이터 조회 중 오류:", err);
       }
@@ -240,7 +265,6 @@ const CategoryRecommend = () => {
 
   // 차트 데이터 생성 함수
   const getChartData = () => {
-    console.log(recommendedCategories);
     return {
       labels: recommendedCategories.map(cat => cat.category_name),
       datasets: [
@@ -296,6 +320,41 @@ const CategoryRecommend = () => {
       ctx.restore();
     }
   }];
+
+  // 정렬 함수
+  const handleSort = (key) => {
+    let direction = 'desc';
+    
+    // 이미 정렬된 상태에서 같은 키로 다시 클릭한 경우
+    if (sortConfig.key === key) {
+      if (sortConfig.direction === 'desc') {
+        direction = 'asc';
+      } else if (sortConfig.direction === 'asc') {
+        // 정렬 초기화
+        setSortConfig({ key: null, direction: null });
+        setRecommendedCategories([...originalData]);
+        return;
+      }
+    }
+    
+    setSortConfig({ key, direction });
+
+    const sortedData = [...recommendedCategories].sort((a, b) => {
+      if (direction === 'asc') {
+        return a[key] - b[key];
+      }
+      return b[key] - a[key];
+    });
+    setRecommendedCategories(sortedData);
+  };
+
+  // 정렬 방향 표시 화살표 함수 수정
+  const getSortArrow = (key) => {
+    if (sortConfig.key === key) {
+      return sortConfig.direction === 'asc' ? ' ⬆️' : ' ⬇️';
+    }
+    return ' ⇅';
+  };
 
   return (
     <div className="container" style={{ paddingTop: "100px" }}>
@@ -371,7 +430,7 @@ const CategoryRecommend = () => {
 
         <div className="mt-4">
             {/* 추천 결과 표시 영역 수정 */}
-            {recommendedCategories.length > 0 && (
+            {recommendedCategories.length > 0 ? (
             <div className="mt-4">
                 <div className="section__title" style={{ textAlign: "left", marginBottom: "20px" }}>
                 <h3>추천 카테고리</h3>
@@ -398,9 +457,40 @@ const CategoryRecommend = () => {
                     <thead>
                     <tr>
                         <th>카테고리명</th>
-                        <th>월간 검색량</th>
-                        <th>상품수</th>
-                        <th>기준일</th>
+                        <th 
+                          onClick={() => handleSort('monthly_search_cnt')}
+                          style={{ 
+                            cursor: 'pointer',
+                            userSelect: 'none',
+                            whiteSpace: 'nowrap'
+                          }}
+                        >
+                          월간 검색량
+                          <span style={{ 
+                            fontSize: '14px',
+                            opacity: sortConfig.key === 'monthly_search_cnt' ? 1 : 0.5,
+                            marginLeft: '4px'
+                          }}>
+                            {getSortArrow('monthly_search_cnt')}
+                          </span>
+                        </th>
+                        <th 
+                          onClick={() => handleSort('product_cnt')}
+                          style={{ 
+                            cursor: 'pointer',
+                            userSelect: 'none',
+                            whiteSpace: 'nowrap'
+                          }}
+                        >
+                          상품수
+                          <span style={{ 
+                            fontSize: '14px',
+                            opacity: sortConfig.key === 'product_cnt' ? 1 : 0.5,
+                            marginLeft: '4px'
+                          }}>
+                            {getSortArrow('product_cnt')}
+                          </span>
+                        </th>
                     </tr>
                     </thead>
                     <tbody>
@@ -409,11 +499,16 @@ const CategoryRecommend = () => {
                         <td>{category.category_name}</td>
                         <td>{category.monthly_search_cnt.toLocaleString()}</td>
                         <td>{category.product_cnt.toLocaleString()}</td>
-                        <td>{new Date(category.retrieved_dt).toLocaleDateString()}</td>
                         </tr>
                     ))}
                     </tbody>
                 </table>
+                </div>
+            </div>
+            ) : selectedCategories.depth1 && (
+            <div className="mt-4">
+                <div className="" role="alert" style={{ textAlign: "center", background: "#f8f9fa", color: "#666",  }}>
+                비교할 하위 카테고리가 존재하지 않습니다.
                 </div>
             </div>
             )}

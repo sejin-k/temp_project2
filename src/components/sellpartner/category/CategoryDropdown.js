@@ -26,9 +26,8 @@ function CategoryDropdown({
 
   return (
     <div
-      className={`dropdown-container ${
-        showDropdowns[`depth${depth}`] ? "active" : ""
-      }`}
+      className={`dropdown-container ${showDropdowns[`depth${depth}`] ? "active" : ""
+        }`}
       style={{ flex: 1, marginLeft: depth === 1 ? 0 : "10px" }}
     >
       <div className="category-label mb-2">{categoryName}</div>
@@ -51,19 +50,21 @@ function CategoryDropdown({
                   padding: "0.5rem 0",
                 }}
               >
-                <button
-                  type="button"
-                  className="dropdown-item"
-                  onClick={() =>
-                    handleCategorySelect(depth, {
-                      [`categoryDepth${depth}Id`]: null,
-                      [`categoryDepth${depth}Name`]: "선택 없음",
-                      childCategory: [],
-                    })
-                  }
-                >
-                  선택 없음
-                </button>
+                {depth > 1 && (
+                  <button
+                    type="button"
+                    className="dropdown-item"
+                    onClick={() =>
+                      handleCategorySelect(depth, {
+                        [`categoryDepth${depth}Id`]: null,
+                        [`categoryDepth${depth}Name`]: "선택 없음",
+                        childCategory: [],
+                      })
+                    }
+                  >
+                    선택 없음
+                  </button>
+                )}
                 {getCategoryData().map((cat) => (
                   <button
                     key={cat[`categoryDepth${depth}Id`]}
