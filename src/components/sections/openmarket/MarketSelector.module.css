@@ -1,0 +1,18 @@
+.market_tabs {
+  margin-bottom: 30px;
+}
+
+.market_button {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.market_button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.market_button.active {
+  background-color: #f8f9fa;
+  border-color: #45179B;
+} 

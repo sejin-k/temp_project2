@@ -25,6 +25,10 @@ export async function GET(request) {
                 headers: {
                     'Content-Type': 'application/json',
                 },
+
+                // 캐시 설정
+                // next: { revalidate: 60 },  // 60초 동안 캐시 유지
+                cache: 'no-cache'        // 매번 서버에 새로운 요청
             }
         );
 

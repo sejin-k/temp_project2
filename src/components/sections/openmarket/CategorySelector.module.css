@@ -1,0 +1,85 @@
+.category_selector {
+  margin-bottom: 30px;
+}
+
+.category_group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.scroll_container {
+  position: relative;
+  margin: 0 40px;
+}
+
+.category_list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  padding: 10px 0;
+  margin: 0;
+  list-style: none;
+  gap: 8px;
+}
+
+.category_button {
+  padding: 8px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  background: white;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.category_button:hover {
+  background: #f0f2f5;
+}
+
+.category_button.active {
+  background: #45179B;
+  color: white;
+  border-color: #45179B;
+}
+
+.scroll_button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.scroll_button:hover {
+  background: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.scroll_button.left {
+  left: -40px;
+}
+
+.scroll_button.right {
+  right: -40px;
+}
+
+.no_data_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+} 
