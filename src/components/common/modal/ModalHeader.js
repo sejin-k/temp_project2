@@ -1,12 +1,13 @@
 import styles from './Modal.module.scss';
+import { useModal } from '@/hooks/useModal';
 
-export default function ModalHeader({ title, onClose, closeBtn=true, center=false }) {
+export default function ModalHeader({ title }) {
+    const { onClose } = useModal();
+
     return (
-        <div className={`${styles['modal-header']} ${center ? styles['center'] : ''}`}>
+        <div className={styles['modal-header']}>
             <h5>{title}</h5>
-            {closeBtn && (
-                <button className={`btn-close ${styles['modal-header-close']}`} onClick={onClose} />
-            )}
+            <button className={`btn-close ${styles['modal-header-close']}`} onClick={onClose} />
         </div>
     );
 }
