@@ -15,9 +15,9 @@ function RecommendCard({
   // 추천 건수에 따른 가격 매핑
   const getPriceByCount = (count) => {
     const priceMap = {
-      30: 30000, // 3만원
-      50: 50000, // 5만원
-      100: 100000, // 10만원
+      30: 15000, // 15000원
+      50: 20000, // 20000원
+      100: 30000, // 30000원
     };
     return priceMap[count];
   };
