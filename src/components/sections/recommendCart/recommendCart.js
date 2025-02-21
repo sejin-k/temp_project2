@@ -104,8 +104,6 @@ function RecommendCart({
       orderId,
     };
 
-    // console.log(JSON.stringify(productRecommendData));
-
     // 상품 추천 요청 API 호출
     const response = await fetch(`/api/service/product-recommend`, {
       method: "POST",
@@ -202,14 +200,8 @@ function RecommendCart({
             결제하기
           </button> */}
           <Link
-            href={{
-              pathname: "/payment/beta-check",
-              query: {
-                totalAmount,
-                recommendList: JSON.stringify(recommendList),
-              },
-            }}
-            // as="/payment/beta-check"
+            href={{ pathname: "/payment/beta-check" }}
+            onClick={() => createOrderId()}
             className="default__button"
             style={{
               // backgroundColor: "var(--primaryColor)",

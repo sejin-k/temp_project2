@@ -31,9 +31,11 @@ export default function RootLayout({ children, modal }) {
       <body className={`${inter.className}`}>
         <AuthProvider>
           <ThemeProvider>
-            {children}
-            {modal}
-            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+            <ModalProvider>
+              {children}
+              {modal}
+              <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+            </ModalProvider>
           </ThemeProvider>
         </AuthProvider>
       </body>

@@ -1,3 +1,4 @@
+'use client';
 import styles from './Modal.module.scss';
 import { useModal } from '@/hooks/useModal';
 
