@@ -1,6 +1,79 @@
 import styles from './ProductList.module.css';
+import { useState, useEffect } from 'react';
 
-const ProductList = ({ products, isExpanded, initialProducts, onShowMore, currentPage, totalPages, onPageChange }) => {
+const ProductList = ({ platformId, categoryDepth1Id, categoryDepth2Id }) => {
+
+  // 오픈마켓 베스트 상품 변수
+  const [products, setProducts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const INITIAL_PRODUCTS = 10; // 초기 표시 상품 수
+  const PRODUCTS_PER_PAGE = 20; // 확장 후 페이지당 상품 수
+
+  // 베스트 상품 조회
+  const getBestProducts = async (platformId, categoryDepth1Id, categoryDepth2Id) => {
+    // URL 파라미터 구성
+    const params = new URLSearchParams({
+      platformId: platformId,
+      categoryDepth1Id: categoryDepth1Id,
+      categoryDepth2Id: categoryDepth2Id,
+    });
+
+    const response = await fetch(`/api/service/best-product/products?${params}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    // 응답 실패 시 에러 발생
+    if (!response.ok) {
+      throw new Error("Failed to fetch products");
+    }
+
+    const data = await response.json();
+    return data.products;
+  }
+
+  // 총 페이지 수 계산
+  const totalPages = Math.ceil(products.length / PRODUCTS_PER_PAGE);
+
+  // 현재 표시할 상품 가져오기
+  const getCurrentProducts = () => {
+    if (!isExpanded) {
+      return products.slice(0, INITIAL_PRODUCTS);
+    }
+    const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
+    const endIndex = startIndex + PRODUCTS_PER_PAGE;
+    return products.slice(startIndex, endIndex);
+  };
+
+  // 더보기 버튼 클릭 핸들러
+  const handleShowMore = () => {
+    setIsExpanded(true);
+  };
+
+  // 오픈마켓 베스트 상품 조회
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const fetchedProducts = await getBestProducts(platformId, categoryDepth1Id, categoryDepth2Id);
+        setProducts(fetchedProducts);
+        setCurrentPage(1);
+        setIsExpanded(false);
+      } catch (error) {
+        console.error('Failed to fetch products:', error);
+      }
+    };
+
+    if (platformId && categoryDepth1Id && categoryDepth2Id) {
+      fetchProducts();
+    }
+  }, [platformId, categoryDepth1Id, categoryDepth2Id]);
+
   if (!products || products.length === 0) {
     return (
       <div className={styles.no_data_wrapper}>
@@ -12,7 +85,7 @@ const ProductList = ({ products, isExpanded, initialProducts, onShowMore, curren
   return (
     <div className={styles.product_list_container}>
       <div className="row row-cols-5">
-        {products.map((product, index) => (
+        {getCurrentProducts().map((product, index) => (
           <div key={`${product.platformId}-${product.productId}-${index}`} className="col mb-4">
             <div className={styles.product_card}>
               <div className={styles.product_image_wrapper}>
@@ -58,14 +131,14 @@ const ProductList = ({ products, isExpanded, initialProducts, onShowMore, curren
       {products.length > 0 && (
         <div className={styles.pagination_container}>
           {!isExpanded ? (
-            <button className={styles.show_more_button} onClick={onShowMore}>
-              더보기 ({initialProducts}/{products.length})
+            <button className={styles.show_more_button} onClick={handleShowMore}>
+              더보기 ({INITIAL_PRODUCTS}/{products.length})
             </button>
           ) : (
             <PaginationButtons
               currentPage={currentPage}
               totalPages={totalPages}
-              onPageChange={onPageChange}
+              onPageChange={setCurrentPage}
             />
           )}
         </div>

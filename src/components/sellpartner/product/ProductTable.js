@@ -45,11 +45,15 @@ export default function ProductTable({ products }) {
               <TableRow key={product.productId}>
                 <TableCell>
                     <div className="relative" style={{position: 'relative', width: '150px', height: '150px' }}>
-                        <Image
-                            src={product.imageUrl }
+                        <img
+                            src={product.imageUrl}
                             alt={product.productName}
-                            fill
                             className="rounded-md object-cover"
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover'
+                            }}
                         />
                     </div>
                 </TableCell>

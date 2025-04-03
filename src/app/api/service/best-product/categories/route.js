@@ -11,13 +11,9 @@ export async function GET(request) {
             headers: {
                 'Content-Type': 'application/json',
             },
+            cache: 'no-store',
         }
     );
-
-    // 응답 실패 시 에러 발생
-    if (!response.ok) {
-        throw new Error('Failed to fetch categories');
-    }
 
     const data = await response.json();
 

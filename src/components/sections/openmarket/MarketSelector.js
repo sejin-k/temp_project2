@@ -1,21 +1,29 @@
 import Image from "next/image";
 import styles from './MarketSelector.module.css';
 
-const MarketSelector = ({ marketInfo, selectedMarket, onMarketSelect }) => {
+const MarketSelector = ({ openMarketInfo, onChangeMarket }) => {
+  const handleMarketChange = (platformId) => {
+    const updatedMarketInfo = openMarketInfo.map(openMarket => ({
+      ...openMarket,
+      selected: openMarket.platformId === platformId
+    }));
+    onChangeMarket(updatedMarketInfo);
+  };
+
   return (
     <div className={styles.market_tabs}>
       <ul className="nav justify-content-center">
-        {marketInfo.map((market) => (
-          <li key={market.platformId} className="nav-item">
+        {openMarketInfo.map((openMarket) => (
+          <li key={openMarket.platformId} className="nav-item">
             <button
               className={`nav-link ${styles.market_button} ${
-                selectedMarket === market.platformId ? styles.active : ""
+                openMarket.selected ? styles.active : ""
               }`}
-              onClick={() => onMarketSelect(market.platformId)}
+              onClick={() => handleMarketChange(openMarket.platformId)}
             >
               <Image
-                src={market.icon}
-                alt="마켓 아이콘"
+                src={openMarket.icon}
+                alt={openMarket.platformName}
                 width={100}
                 height={100}
                 style={{
@@ -24,7 +32,7 @@ const MarketSelector = ({ marketInfo, selectedMarket, onMarketSelect }) => {
                   objectFit: "contain",
                 }}
               />
-              <span>{market.name}</span>
+              <span>{openMarket.platformName}</span>
             </button>
           </li>
         ))}
